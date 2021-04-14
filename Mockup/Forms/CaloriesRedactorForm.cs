@@ -54,6 +54,7 @@ namespace Mockup
             }
             else
             {
+                MessageBox.Show("Поиск");
                 guna2Button4.Dock = DockStyle.None;
                 guna2Button4.Location = new Point(709, 0);
                 while (guna2Button4.Location.X != 0)

@@ -153,23 +153,44 @@ namespace Mockup
         {
             AddFormToContainer(new CaloriesRedactorForm(theme));
             titleLabel.Text = EditorButton.Text;
+
+            CaloriesButton.Checked = false;
+            CalculationButton.Checked = false;
+            EditorButton.Checked = true;
+            SettingsButton.Checked = false;
         }
 
         private void CaloriesButton_Click(object sender, EventArgs e)
         {
             AddFormToContainer(new CaloriesValueForm(theme));
             titleLabel.Text = CaloriesButton.Text;
+
+            CaloriesButton.Checked = true;
+            CalculationButton.Checked = false;
+            EditorButton.Checked = false;
+            SettingsButton.Checked = false;
         }
 
         private void CalculationButton_Click(object sender, EventArgs e)
         {
             AddFormToContainer(new CaloriesCalculationForm(theme));
             titleLabel.Text = CalculationButton.Text;
+
+            CaloriesButton.Checked = false;
+            CalculationButton.Checked = true;
+            EditorButton.Checked = false;
+            SettingsButton.Checked = false;
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             AddFormToContainer(new SettingsForm(theme));
+
+
+            CaloriesButton.Checked = false;
+            CalculationButton.Checked = false;
+            EditorButton.Checked = false;
+            SettingsButton.Checked = true;
         }
         #endregion
 

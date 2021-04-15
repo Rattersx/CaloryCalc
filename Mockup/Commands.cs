@@ -18,13 +18,10 @@ namespace Mockup
                                       .Concat(controls)
                                       .Where(c => c.GetType() == type);
         }
-        static public void ApplyTheme(Form form, Panel Container, Themes.ThemeInfo theme)
+        static public void ApplyTheme(Form form, Themes.ThemeInfo theme)
         {
-            if (Container != null)
-                Container.BackColor = theme.ContainerTheme.Value;
-            else
-                form.BackColor = theme.ContainerTheme.Value;
 
+            form.BackColor = theme.ContainerTheme.Value;
 
             var labels = GetAllControls(form, typeof(Label));
             var radioButtons = GetAllControls(form, typeof(RadioButton));
@@ -34,6 +31,7 @@ namespace Mockup
             var progressBars = GetAllControls(form, typeof(Guna2ProgressBar));
             var GroupBoxes = GetAllControls(form, typeof(Guna2GroupBox));
             var listViews = GetAllControls(form, typeof(ListBox));
+            var tileButtons = GetAllControls(form, typeof(Guna2TileButton));
 
             foreach (Control label in labels)
             {
@@ -82,6 +80,13 @@ namespace Mockup
             {
                 lv.ForeColor = theme.ListViewForeColor.Value;
                 lv.BackColor = theme.ListViewFill.Value;
+            }
+            foreach (Guna2TileButton button in tileButtons)
+            {
+                button.FillColor = theme.ButtonFill.Value;
+                button.ForeColor = theme.ButtonForeColor.Value;
+                button.ShadowDecoration.Color = theme.ButtonShadowColor.Value;
+                button.BorderColor = theme.ButtonBorder.Value;
             }
         }
 

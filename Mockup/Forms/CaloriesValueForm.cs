@@ -15,12 +15,22 @@ namespace Mockup
 {
     public partial class CaloriesValueForm : Form
     {
+        bool productActive = false;
+        bool dishActive = false;
+        bool productFocused = false;
+        bool dishFocused = false;
         Themes.ThemeInfo theme = null;
         public CaloriesValueForm(Themes.ThemeInfo _theme)
         {
             InitializeComponent();
             theme = _theme;
-            Commands.ApplyTheme(this, Container, theme);
+            Commands.ApplyTheme(this, theme);
+            ProductBorder.Visible = false;
+            DishBorder.Visible = false;
+            panel1.BackColor = theme.MenuColor1.Value;
+
+            ProductBorder.FillColor = theme.ButtonFill.Value;
+            DishBorder.FillColor = theme.ButtonFill.Value;
         }
         private void AddFormToContainer(object form)
         {
@@ -39,25 +49,61 @@ namespace Mockup
         private void CaloriesValueForm_Load(object sender, EventArgs e)
         {
             AddFormToContainer(new CaloriesValueProductForm(theme));
+            ProductBorder.Visible = true;
+
+            ProductButton.FillColor = theme.ContainerTheme.Value;
+            ProductBorder.FillColor = theme.ContainerTheme.Value;
+            ProductButton.ForeColor = theme.InterfaceLabelTheme.Value;
+            ProductButton.HoverState.FillColor = theme.ContainerTheme.Value;
+            ProductButton.CheckedState.FillColor = theme.ContainerTheme.Value;
+            ProductButton.PressedDepth = 0;
         }
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void DishButton_Click(object sender, EventArgs e)
         {
-            if(guna2Button4.Dock == DockStyle.Left)
+            if (!dishFocused)
             {
-                guna2Button4.Dock = DockStyle.None;
-                guna2Button4.Location = new Point(0, 0);
-                while (guna2Button4.Location.X != 709)
-                    guna2Button4.Location = new Point(guna2Button4.Location.X + 1, guna2Button4.Location.Y);
-                guna2Button4.Dock = DockStyle.Right;
+                dishFocused = true;
+                productFocused = false;
+                ProductButton.FillColor = theme.ButtonFill.Value;
+                ProductButton.ForeColor = theme.ButtonForeColor.Value;
+                ProductButton.HoverState.FillColor = Color.Empty;
+                ProductButton.CheckedState.FillColor = Color.Empty;
+                ProductButton.PressedDepth = 30;
+
+                DishButton.FillColor = theme.ContainerTheme.Value;
+                DishBorder.FillColor = theme.ContainerTheme.Value;
+                DishButton.ForeColor = theme.InterfaceLabelTheme.Value;
+                DishButton.HoverState.FillColor = theme.ContainerTheme.Value;
+                DishButton.CheckedState.FillColor = theme.ContainerTheme.Value;
+                DishButton.PressedDepth = 0;
+
+                ProductBorder.Visible = false;
+                DishBorder.Visible = true;
                 AddFormToContainer(new CaloriesValueDishForm(theme));
             }
-            else
+        }
+        private void ProductButton_Click(object sender, EventArgs e)
+        {
+            if (!productFocused)
             {
-                guna2Button4.Dock = DockStyle.None;
-                guna2Button4.Location = new Point(709, 0);
-                while (guna2Button4.Location.X != 0)
-                    guna2Button4.Location = new Point(guna2Button4.Location.X - 1, guna2Button4.Location.Y);
-                guna2Button4.Dock = DockStyle.Left;
+                dishFocused = false;
+                productFocused = true;
+                DishButton.FillColor = theme.ButtonFill.Value;
+                DishButton.ForeColor = theme.ButtonForeColor.Value;
+                DishButton.HoverState.FillColor = Color.Empty;
+                DishButton.CheckedState.FillColor = Color.Empty;
+                DishButton.PressedDepth = 30;
+
+                ProductButton.FillColor = theme.ContainerTheme.Value;
+                ProductBorder.FillColor = theme.ContainerTheme.Value;
+                ProductButton.ForeColor = theme.InterfaceLabelTheme.Value;
+                ProductButton.HoverState.FillColor = theme.ContainerTheme.Value;
+                ProductButton.CheckedState.FillColor = theme.ContainerTheme.Value;
+                ProductButton.PressedDepth = 0;
+
+                ProductBorder.Visible = true;
+                DishBorder.Visible = false;
+
                 AddFormToContainer(new CaloriesValueProductForm(theme));
             }
         }

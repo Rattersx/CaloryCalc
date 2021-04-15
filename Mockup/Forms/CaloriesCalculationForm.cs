@@ -19,7 +19,7 @@ namespace Mockup
             InitializeComponent();
 
             theme = _theme;
-            Commands.ApplyTheme(this, null, theme);
+            Commands.ApplyTheme(this, theme);
         }
     }
 }

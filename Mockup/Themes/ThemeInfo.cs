@@ -54,6 +54,10 @@ namespace Mockup.Themes
         public ColorHolder progressBarValue1 = new ColorHolder();
         public ColorHolder progressBarValue2 = new ColorHolder();
         #endregion
+        #region panelAnimation
+        public ColorHolder panelHover = new ColorHolder();
+        public ColorHolder panelClick = new ColorHolder();
+        #endregion
 
 
         public bool black { get; set; }
@@ -71,6 +75,11 @@ namespace Mockup.Themes
         public void SetInterfaceLabelTheme(Color color)
         {
             InterfaceLabelTheme.Value = color;
+        }
+        public void SetPanelAnimation(Color hover, Color click)
+        {
+            panelHover.Value = hover;
+            panelClick.Value = click;
         }
         public void SetTextBoxTheme(Color fill, Color hold, Color border, Color focusedBorder, Color checked_ForeColor)
         {
@@ -171,6 +180,9 @@ namespace Mockup.Themes
             ListViewFill.Value = obj.ListViewFill.Value;
             ListViewBorderFill.Value = obj.ListViewBorderFill.Value;
             ListViewForeColor.Value = obj.ListViewForeColor.Value;
+
+            panelHover.Value = obj.panelHover.Value;
+            panelClick.Value = obj.panelClick.Value;
 
             black = obj.black;
         }

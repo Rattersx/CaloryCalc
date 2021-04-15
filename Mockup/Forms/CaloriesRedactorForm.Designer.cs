@@ -29,51 +29,88 @@ namespace Mockup
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DishButton = new Guna.UI2.WinForms.Guna2TileButton();
+            this.ProductButton = new Guna.UI2.WinForms.Guna2TileButton();
+            this.ProductBorder = new Guna.UI2.WinForms.Guna2Panel();
+            this.DishBorder = new Guna.UI2.WinForms.Guna2Panel();
             this.Container = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Button4
-            // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderRadius = 24;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Button4.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2Button4.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.BorderRadius = 24;
-            this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button4.ShadowDecoration.Depth = 5;
-            this.guna2Button4.ShadowDecoration.Enabled = true;
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(238, 44);
-            this.guna2Button4.TabIndex = 2;
-            this.guna2Button4.Text = "Продукт/Блюдо";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.guna2Button4);
+            this.panel1.Controls.Add(this.DishButton);
+            this.panel1.Controls.Add(this.ProductButton);
+            this.panel1.Controls.Add(this.ProductBorder);
+            this.panel1.Controls.Add(this.DishBorder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(947, 44);
             this.panel1.TabIndex = 7;
             // 
+            // DishButton
+            // 
+            this.DishButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.DishButton.CheckedState.Parent = this.DishButton;
+            this.DishButton.CustomImages.Parent = this.DishButton;
+            this.DishButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DishButton.ForeColor = System.Drawing.Color.White;
+            this.DishButton.HoverState.Parent = this.DishButton;
+            this.DishButton.Location = new System.Drawing.Point(489, 0);
+            this.DishButton.Name = "DishButton";
+            this.DishButton.ShadowDecoration.Parent = this.DishButton;
+            this.DishButton.Size = new System.Drawing.Size(180, 44);
+            this.DishButton.TabIndex = 1;
+            this.DishButton.Text = "Блюда";
+            this.DishButton.Click += new System.EventHandler(this.DishButton_Click);
+            // 
+            // ProductButton
+            // 
+            this.ProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ProductButton.CheckedState.Parent = this.ProductButton;
+            this.ProductButton.CustomImages.Parent = this.ProductButton;
+            this.ProductButton.FillColor = System.Drawing.Color.LightSteelBlue;
+            this.ProductButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ProductButton.ForeColor = System.Drawing.Color.White;
+            this.ProductButton.HoverState.Parent = this.ProductButton;
+            this.ProductButton.Location = new System.Drawing.Point(282, 0);
+            this.ProductButton.Name = "ProductButton";
+            this.ProductButton.ShadowDecoration.Parent = this.ProductButton;
+            this.ProductButton.Size = new System.Drawing.Size(180, 44);
+            this.ProductButton.TabIndex = 0;
+            this.ProductButton.Text = "Продукты";
+            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
+            // 
+            // ProductBorder
+            // 
+            this.ProductBorder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ProductBorder.BackColor = System.Drawing.Color.Transparent;
+            this.ProductBorder.BorderRadius = 60;
+            this.ProductBorder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ProductBorder.Location = new System.Drawing.Point(259, -14);
+            this.ProductBorder.Name = "ProductBorder";
+            this.ProductBorder.ShadowDecoration.Parent = this.ProductBorder;
+            this.ProductBorder.Size = new System.Drawing.Size(224, 136);
+            this.ProductBorder.TabIndex = 3;
+            // 
+            // DishBorder
+            // 
+            this.DishBorder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.DishBorder.BackColor = System.Drawing.Color.Transparent;
+            this.DishBorder.BorderRadius = 60;
+            this.DishBorder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DishBorder.Location = new System.Drawing.Point(467, -17);
+            this.DishBorder.Name = "DishBorder";
+            this.DishBorder.ShadowDecoration.Parent = this.DishBorder;
+            this.DishBorder.Size = new System.Drawing.Size(224, 138);
+            this.DishBorder.TabIndex = 4;
+            // 
             // Container
             // 
-            this.Container.BackColor = System.Drawing.Color.LightCyan;
+            this.Container.BackColor = System.Drawing.Color.Transparent;
             this.Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Container.Location = new System.Drawing.Point(0, 44);
             this.Container.Name = "Container";
@@ -99,9 +136,11 @@ namespace Mockup
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Container;
+        private Guna.UI2.WinForms.Guna2TileButton DishButton;
+        private Guna.UI2.WinForms.Guna2TileButton ProductButton;
+        private Guna.UI2.WinForms.Guna2Panel ProductBorder;
+        private Guna.UI2.WinForms.Guna2Panel DishBorder;
     }
 }

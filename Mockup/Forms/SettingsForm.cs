@@ -51,6 +51,7 @@ namespace Mockup
                     Color.Black);
                 theme.SetTextBoxTheme(Color.White, Color.PaleTurquoise, Color.FromArgb(217, 221, 226), Color.PowderBlue,
                     Color.Black);
+                theme.SetPanelAnimation(Color.FromArgb(198, 201, 204), Color.FromArgb(139, 141, 143));
                 theme.SetButton(Color.FromArgb(94, 148, 255), Color.Black, Color.FromArgb(94, 148, 255), Color.White);
                 theme.SetInterfaceLabelTheme(Color.Black);
                 theme.SetProgressBar(Color.SteelBlue, Color.FromArgb(192, 192, 255), Color.FromArgb(172, 122, 230));
@@ -63,10 +64,11 @@ namespace Mockup
         private void guna2CustomRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (guna2CustomRadioButton1.Checked)
-            {
+            { 
                 theme.title = "DarkBlue";
                 theme.SetMainPage(Color.FromArgb(46, 51, 73), Color.FromArgb(24, 30, 54), Color.FromArgb(19, 26, 46),
                     Color.FromArgb(27, 39, 65), Color.PowderBlue, Color.FromArgb(24, 30, 54), false);
+                theme.SetPanelAnimation(Color.FromArgb(59, 64, 84), Color.FromArgb(139, 141, 143));
                 theme.SetComboBox(Color.SteelBlue, Color.Azure, Color.Black, Color.White, Color.White);
                 theme.SetTextBoxTheme(Color.LightSteelBlue, Color.Azure, Color.Black, Color.White, Color.White);
                 theme.SetButton(Color.LightSteelBlue, Color.Black, Color.LightSteelBlue, Color.Black);
@@ -88,6 +90,7 @@ namespace Mockup
                 theme.SetInterfaceLabelTheme(Color.Black);
                 theme.SetComboBox(Color.White, Color.PaleTurquoise, Color.FromArgb(217, 221, 226), Color.PowderBlue,
     Color.Black);
+                theme.SetPanelAnimation(Color.FromArgb(190, 217, 217), Color.FromArgb(133,152,152));
                 theme.SetTextBoxTheme(Color.LightSteelBlue, Color.Azure, Color.Black, Color.White, Color.White);
                 theme.SetButton(Color.PaleTurquoise, Color.Black, Color.FromArgb(94, 148, 255), Color.Black);
                 theme.SetProgressBar(Color.FromArgb(0, 197, 199), Color.FromArgb(192, 192, 255), Color.RoyalBlue);

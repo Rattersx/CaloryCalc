@@ -12,14 +12,13 @@ namespace Mockup.Forms.SecondLevelForms
             InitializeComponent();
             theme = _theme;
             Commands.ApplyTheme(this, theme);
-
             panel24.BackColor = theme.MenuColor1.Value;
-            productListExpand = false;
+            guna2Button1.BackColor = panel24.BackColor;
 
             if (theme.black)
-                guna2Button1.Image = blackList.Images[0];
+                guna2Button1.Image = blackList.Images[1];
             else
-                guna2Button1.Image = blueList.Images[0];
+                guna2Button1.Image = blueList.Images[1];
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -32,9 +31,13 @@ namespace Mockup.Forms.SecondLevelForms
                     guna2Button1.Image = blackList.Images[0];
                 else
                     guna2Button1.Image = blueList.Images[0];
-
-                while (Program.parent.Width != 1200)
-                    Program.parent.Width -= 110;
+                if (Program.parent.WindowState != FormWindowState.Maximized)
+                {
+                    while (Program.parent.Width != 1200)
+                        Program.parent.Width -= 110;
+                    while (ProductContainer.Width != 30)
+                        ProductContainer.Width -= 110;
+                }
                 while (ProductContainer.Width != 30)
                     ProductContainer.Width -= 110;
             }
@@ -46,12 +49,21 @@ namespace Mockup.Forms.SecondLevelForms
                     guna2Button1.Image = blackList.Images[1];
                 else
                     guna2Button1.Image = blueList.Images[1];
-                while (Program.parent.Width != 1420)
-                    Program.parent.Width += 110;
+                if (Program.parent.WindowState != FormWindowState.Maximized)
+                {
+                    while (Program.parent.Width != 1420)
+                        Program.parent.Width += 110;
+                    while (ProductContainer.Width != 250)
+                        ProductContainer.Width += 110;
+                }
                 while (ProductContainer.Width != 250)
                     ProductContainer.Width += 110;
-                ProductContainer.Width = 250;
             }
+        }
+
+        private void CaloriesValueDishForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.parent.Width = 1200;
         }
     }
 }

@@ -29,6 +29,8 @@ namespace Mockup
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaloriesCalculationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.modeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.activityComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -48,7 +50,13 @@ namespace Mockup
             this.dailyCalorieRequirement1 = new System.Windows.Forms.Label();
             this.dailyCalorieRequirement2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.errorGrowth = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorWeight = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorAge = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrowth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAge)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +88,10 @@ namespace Mockup
             this.modeComboBox.HoverState.FillColor = System.Drawing.Color.PaleTurquoise;
             this.modeComboBox.HoverState.Parent = this.modeComboBox;
             this.modeComboBox.ItemHeight = 30;
+            this.modeComboBox.Items.AddRange(new object[] {
+            "Сброс веса",
+            "Поддержание",
+            "Набор веса"});
             this.modeComboBox.ItemsAppearance.Parent = this.modeComboBox;
             this.modeComboBox.Location = new System.Drawing.Point(20, 62);
             this.modeComboBox.Margin = new System.Windows.Forms.Padding(2);
@@ -105,18 +117,24 @@ namespace Mockup
             this.activityComboBox.HoverState.FillColor = System.Drawing.Color.PaleTurquoise;
             this.activityComboBox.HoverState.Parent = this.activityComboBox;
             this.activityComboBox.ItemHeight = 30;
+            this.activityComboBox.Items.AddRange(new object[] {
+            "Минимальный (никаких физических нагрузок)",
+            "Низкий (физические нагрузки 1-3 раза в неделю)",
+            "Средний (физические нагрузки 3-5 дней в неделю)",
+            "Высокий (ежедневный физические нагрузки)",
+            "Очень высокий (физические нагрузки по несколько раз в день)"});
             this.activityComboBox.ItemsAppearance.Parent = this.activityComboBox;
-            this.activityComboBox.Location = new System.Drawing.Point(393, 62);
+            this.activityComboBox.Location = new System.Drawing.Point(440, 62);
             this.activityComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.activityComboBox.Name = "activityComboBox";
             this.activityComboBox.ShadowDecoration.Parent = this.activityComboBox;
-            this.activityComboBox.Size = new System.Drawing.Size(287, 36);
+            this.activityComboBox.Size = new System.Drawing.Size(461, 36);
             this.activityComboBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(391, 46);
+            this.label2.Location = new System.Drawing.Point(437, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -140,6 +158,7 @@ namespace Mockup
             this.growthTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.growthTextBox.HoverState.Parent = this.growthTextBox;
             this.growthTextBox.Location = new System.Drawing.Point(22, 163);
+            this.growthTextBox.MaxLength = 3;
             this.growthTextBox.Name = "growthTextBox";
             this.growthTextBox.PasswordChar = '\0';
             this.growthTextBox.PlaceholderText = "";
@@ -147,6 +166,8 @@ namespace Mockup
             this.growthTextBox.ShadowDecoration.Parent = this.growthTextBox;
             this.growthTextBox.Size = new System.Drawing.Size(150, 32);
             this.growthTextBox.TabIndex = 4;
+            this.growthTextBox.TextChanged += new System.EventHandler(this.growthTextBox_TextChanged);
+            this.growthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.growthTextBox_KeyPress);
             // 
             // label3
             // 
@@ -154,9 +175,9 @@ namespace Mockup
             this.label3.Location = new System.Drawing.Point(20, 148);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Рост";
+            this.label3.Text = "Рост (см)";
             // 
             // weigthTextBox
             // 
@@ -174,6 +195,7 @@ namespace Mockup
             this.weigthTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(182)))), ((int)(((byte)(255)))));
             this.weigthTextBox.HoverState.Parent = this.weigthTextBox;
             this.weigthTextBox.Location = new System.Drawing.Point(328, 163);
+            this.weigthTextBox.MaxLength = 6;
             this.weigthTextBox.Name = "weigthTextBox";
             this.weigthTextBox.PasswordChar = '\0';
             this.weigthTextBox.PlaceholderText = "";
@@ -181,6 +203,8 @@ namespace Mockup
             this.weigthTextBox.ShadowDecoration.Parent = this.weigthTextBox;
             this.weigthTextBox.Size = new System.Drawing.Size(150, 32);
             this.weigthTextBox.TabIndex = 6;
+            this.weigthTextBox.TextChanged += new System.EventHandler(this.weigthTextBox_TextChanged);
+            this.weigthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.weigthTextBox_KeyPress);
             // 
             // ageTextBox
             // 
@@ -197,6 +221,7 @@ namespace Mockup
             this.ageTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ageTextBox.HoverState.Parent = this.ageTextBox;
             this.ageTextBox.Location = new System.Drawing.Point(641, 163);
+            this.ageTextBox.MaxLength = 3;
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.PasswordChar = '\0';
             this.ageTextBox.PlaceholderText = "";
@@ -204,6 +229,8 @@ namespace Mockup
             this.ageTextBox.ShadowDecoration.Parent = this.ageTextBox;
             this.ageTextBox.Size = new System.Drawing.Size(150, 32);
             this.ageTextBox.TabIndex = 7;
+            this.ageTextBox.TextChanged += new System.EventHandler(this.ageTextBox_TextChanged);
+            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
             // 
             // label4
             // 
@@ -221,9 +248,9 @@ namespace Mockup
             this.label5.Location = new System.Drawing.Point(326, 148);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Вес";
+            this.label5.Text = "Вес (кг)";
             // 
             // label6
             // 
@@ -239,6 +266,7 @@ namespace Mockup
             // 
             this.maleRadioButton.Animated = true;
             this.maleRadioButton.AutoSize = true;
+            this.maleRadioButton.Checked = true;
             this.maleRadioButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maleRadioButton.CheckedState.BorderThickness = 0;
             this.maleRadioButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -271,7 +299,6 @@ namespace Mockup
             this.femaleRadioButton.Name = "femaleRadioButton";
             this.femaleRadioButton.Size = new System.Drawing.Size(75, 17);
             this.femaleRadioButton.TabIndex = 12;
-            this.femaleRadioButton.TabStop = true;
             this.femaleRadioButton.Text = "Женщина";
             this.femaleRadioButton.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.femaleRadioButton.UncheckedState.BorderThickness = 2;
@@ -320,6 +347,7 @@ namespace Mockup
             this.calculateButton.Size = new System.Drawing.Size(150, 37);
             this.calculateButton.TabIndex = 15;
             this.calculateButton.Text = "Расcчитать";
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // dailyCalorieRequirement1
             // 
@@ -359,6 +387,27 @@ namespace Mockup
             this.guna2GradientPanel1.Size = new System.Drawing.Size(949, 49);
             this.guna2GradientPanel1.TabIndex = 18;
             // 
+            // errorGrowth
+            // 
+            this.errorGrowth.BlinkRate = 0;
+            this.errorGrowth.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorGrowth.ContainerControl = this;
+            this.errorGrowth.Icon = ((System.Drawing.Icon)(resources.GetObject("errorGrowth.Icon")));
+            // 
+            // errorWeight
+            // 
+            this.errorWeight.BlinkRate = 0;
+            this.errorWeight.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorWeight.ContainerControl = this;
+            this.errorWeight.Icon = ((System.Drawing.Icon)(resources.GetObject("errorWeight.Icon")));
+            // 
+            // errorAge
+            // 
+            this.errorAge.BlinkRate = 0;
+            this.errorAge.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorAge.ContainerControl = this;
+            this.errorAge.Icon = ((System.Drawing.Icon)(resources.GetObject("errorAge.Icon")));
+            // 
             // CaloriesCalculationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +436,9 @@ namespace Mockup
             this.Text = "n";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrowth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,6 +465,9 @@ namespace Mockup
         private System.Windows.Forms.Label dailyCalorieRequirement1;
         private System.Windows.Forms.Label dailyCalorieRequirement2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.ErrorProvider errorGrowth;
+        private System.Windows.Forms.ErrorProvider errorWeight;
+        private System.Windows.Forms.ErrorProvider errorAge;
     }
 }
 

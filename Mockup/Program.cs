@@ -12,7 +12,7 @@ namespace Mockup
     {
         public static Form1 parent;
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Главная точка входа для приложения. Vvovo
         /// </summary>
         [STAThread]
         static void Main()

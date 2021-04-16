@@ -30,11 +30,11 @@ namespace Mockup.Forms.SecondLevelForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaloriesValueDishForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dishListBox = new System.Windows.Forms.ListBox();
             this.panel22 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,6 +44,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.label22 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -86,13 +89,29 @@ namespace Mockup.Forms.SecondLevelForms
             this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.ProductContainer = new System.Windows.Forms.Panel();
+            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.productListBox = new System.Windows.Forms.ListBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.blackList = new System.Windows.Forms.ImageList(this.components);
+            this.blueList = new System.Windows.Forms.ImageList(this.components);
+            this.gramsListBox = new System.Windows.Forms.ListBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -107,13 +126,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.ProductContainer.SuspendLayout();
+            this.guna2GroupBox2.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 16;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // panel1
             // 
@@ -145,7 +161,7 @@ namespace Mockup.Forms.SecondLevelForms
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2GroupBox1.Controls.Add(this.listBox1);
+            this.guna2GroupBox1.Controls.Add(this.dishListBox);
             this.guna2GroupBox1.Controls.Add(this.panel22);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.PaleTurquoise;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -159,16 +175,16 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2GroupBox1.Text = "Блюда";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // listBox1
+            // dishListBox
             // 
-            this.listBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 21;
-            this.listBox1.Location = new System.Drawing.Point(0, 40);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(264, 322);
-            this.listBox1.TabIndex = 4;
+            this.dishListBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.dishListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dishListBox.FormattingEnabled = true;
+            this.dishListBox.ItemHeight = 21;
+            this.dishListBox.Location = new System.Drawing.Point(0, 40);
+            this.dishListBox.Name = "dishListBox";
+            this.dishListBox.Size = new System.Drawing.Size(264, 322);
+            this.dishListBox.TabIndex = 4;
             // 
             // panel22
             // 
@@ -269,18 +285,51 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(346, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 570);
+            this.panel2.Size = new System.Drawing.Size(555, 570);
             this.panel2.TabIndex = 34;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(585, 570);
+            this.panel5.Size = new System.Drawing.Size(555, 570);
             this.panel5.TabIndex = 33;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.label21);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 468);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(555, 102);
+            this.panel6.TabIndex = 0;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(0, 14);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(96, 19);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Описание";
+            // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(0, 33);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(555, 69);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "описание";
             // 
             // panel7
             // 
@@ -295,7 +344,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(585, 468);
+            this.panel7.Size = new System.Drawing.Size(555, 570);
             this.panel7.TabIndex = 33;
             // 
             // panel19
@@ -305,7 +354,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 351);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(585, 53);
+            this.panel19.Size = new System.Drawing.Size(555, 53);
             this.panel19.TabIndex = 36;
             // 
             // panel20
@@ -316,21 +365,22 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(100, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(485, 53);
+            this.panel20.Size = new System.Drawing.Size(455, 53);
             this.panel20.TabIndex = 16;
             // 
             // guna2ProgressBar3
             // 
             this.guna2ProgressBar3.BorderRadius = 10;
             this.guna2ProgressBar3.BorderThickness = 1;
+            this.guna2ProgressBar3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ProgressBar3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar3.Location = new System.Drawing.Point(4, 20);
+            this.guna2ProgressBar3.Location = new System.Drawing.Point(0, 16);
             this.guna2ProgressBar3.Name = "guna2ProgressBar3";
             this.guna2ProgressBar3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar3.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.guna2ProgressBar3.ShadowDecoration.Parent = this.guna2ProgressBar3;
-            this.guna2ProgressBar3.Size = new System.Drawing.Size(423, 30);
+            this.guna2ProgressBar3.Size = new System.Drawing.Size(403, 37);
             this.guna2ProgressBar3.TabIndex = 15;
             this.guna2ProgressBar3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -341,17 +391,17 @@ namespace Mockup.Forms.SecondLevelForms
             this.label15.ForeColor = System.Drawing.Color.Gray;
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(197, 0, 0, 0);
-            this.label15.Size = new System.Drawing.Size(433, 16);
+            this.label15.Size = new System.Drawing.Size(403, 16);
             this.label15.TabIndex = 23;
             this.label15.Text = "мин.: 0";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label17
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Right;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(433, 0);
+            this.label17.Location = new System.Drawing.Point(403, 0);
             this.label17.Name = "label17";
             this.label17.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.label17.Size = new System.Drawing.Size(52, 53);
@@ -402,7 +452,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 298);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(585, 53);
+            this.panel16.Size = new System.Drawing.Size(555, 53);
             this.panel16.TabIndex = 35;
             // 
             // panel17
@@ -413,21 +463,22 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(100, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(485, 53);
+            this.panel17.Size = new System.Drawing.Size(455, 53);
             this.panel17.TabIndex = 16;
             // 
             // guna2ProgressBar2
             // 
             this.guna2ProgressBar2.BorderRadius = 10;
             this.guna2ProgressBar2.BorderThickness = 1;
+            this.guna2ProgressBar2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ProgressBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar2.Location = new System.Drawing.Point(4, 20);
+            this.guna2ProgressBar2.Location = new System.Drawing.Point(0, 16);
             this.guna2ProgressBar2.Name = "guna2ProgressBar2";
             this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.guna2ProgressBar2.ShadowDecoration.Parent = this.guna2ProgressBar2;
-            this.guna2ProgressBar2.Size = new System.Drawing.Size(423, 30);
+            this.guna2ProgressBar2.Size = new System.Drawing.Size(403, 37);
             this.guna2ProgressBar2.TabIndex = 15;
             this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -438,17 +489,17 @@ namespace Mockup.Forms.SecondLevelForms
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(197, 0, 0, 0);
-            this.label10.Size = new System.Drawing.Size(433, 16);
+            this.label10.Size = new System.Drawing.Size(403, 16);
             this.label10.TabIndex = 23;
             this.label10.Text = "мин.: 0";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Right;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(433, 0);
+            this.label11.Location = new System.Drawing.Point(403, 0);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.label11.Size = new System.Drawing.Size(52, 53);
@@ -499,7 +550,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 245);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(585, 53);
+            this.panel13.Size = new System.Drawing.Size(555, 53);
             this.panel13.TabIndex = 34;
             // 
             // panel14
@@ -510,21 +561,22 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(100, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(485, 53);
+            this.panel14.Size = new System.Drawing.Size(455, 53);
             this.panel14.TabIndex = 16;
             // 
             // guna2ProgressBar1
             // 
             this.guna2ProgressBar1.BorderRadius = 10;
             this.guna2ProgressBar1.BorderThickness = 1;
+            this.guna2ProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(4, 20);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(0, 16);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.guna2ProgressBar1.ShadowDecoration.Parent = this.guna2ProgressBar1;
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(423, 30);
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(403, 37);
             this.guna2ProgressBar1.TabIndex = 15;
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -535,17 +587,17 @@ namespace Mockup.Forms.SecondLevelForms
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(197, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(433, 16);
+            this.label6.Size = new System.Drawing.Size(403, 16);
             this.label6.TabIndex = 23;
             this.label6.Text = "мин.: 0";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(433, 0);
+            this.label7.Location = new System.Drawing.Point(403, 0);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.label7.Size = new System.Drawing.Size(52, 53);
@@ -596,7 +648,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 192);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(585, 53);
+            this.panel10.Size = new System.Drawing.Size(555, 53);
             this.panel10.TabIndex = 33;
             // 
             // panel12
@@ -607,42 +659,45 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(100, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(485, 53);
+            this.panel12.Size = new System.Drawing.Size(455, 53);
             this.panel12.TabIndex = 16;
             // 
             // CaloriesPB
             // 
+            this.CaloriesPB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CaloriesPB.BorderRadius = 10;
             this.CaloriesPB.BorderThickness = 1;
             this.CaloriesPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.CaloriesPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.CaloriesPB.Location = new System.Drawing.Point(4, 20);
+            this.CaloriesPB.Location = new System.Drawing.Point(0, 16);
             this.CaloriesPB.Name = "CaloriesPB";
             this.CaloriesPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.CaloriesPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.CaloriesPB.ShadowDecoration.Parent = this.CaloriesPB;
-            this.CaloriesPB.Size = new System.Drawing.Size(423, 30);
+            this.CaloriesPB.Size = new System.Drawing.Size(403, 37);
             this.CaloriesPB.TabIndex = 15;
             this.CaloriesPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // label16
             // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label16.ForeColor = System.Drawing.Color.Gray;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(197, 0, 0, 0);
-            this.label16.Size = new System.Drawing.Size(433, 16);
+            this.label16.Size = new System.Drawing.Size(403, 53);
             this.label16.TabIndex = 23;
             this.label16.Text = "мин.: 0";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Right;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(433, 0);
+            this.label12.Location = new System.Drawing.Point(403, 0);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.label12.Size = new System.Drawing.Size(52, 53);
@@ -696,7 +751,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 129);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(585, 63);
+            this.panel8.Size = new System.Drawing.Size(555, 63);
             this.panel8.TabIndex = 31;
             // 
             // label3
@@ -767,7 +822,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(0, 35);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(585, 28);
+            this.label32.Size = new System.Drawing.Size(555, 28);
             this.label32.TabIndex = 33;
             // 
             // label1
@@ -786,7 +841,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 73);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(585, 56);
+            this.panel9.Size = new System.Drawing.Size(555, 56);
             this.panel9.TabIndex = 32;
             // 
             // label30
@@ -796,41 +851,227 @@ namespace Mockup.Forms.SecondLevelForms
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(0, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(585, 73);
+            this.label30.Size = new System.Drawing.Size(555, 73);
             this.label30.TabIndex = 30;
             // 
-            // panel6
+            // ProductContainer
             // 
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 468);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(585, 102);
-            this.panel6.TabIndex = 0;
+            this.ProductContainer.Controls.Add(this.guna2GroupBox2);
+            this.ProductContainer.Controls.Add(this.panel24);
+            this.ProductContainer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ProductContainer.Location = new System.Drawing.Point(901, 0);
+            this.ProductContainer.Name = "ProductContainer";
+            this.ProductContainer.Size = new System.Drawing.Size(30, 570);
+            this.ProductContainer.TabIndex = 37;
             // 
-            // label20
+            // guna2GroupBox2
             // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(0, 14);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 19);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "Описание";
+            this.guna2GroupBox2.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.guna2GroupBox2.Controls.Add(this.gramsListBox);
+            this.guna2GroupBox2.Controls.Add(this.productListBox);
+            this.guna2GroupBox2.Controls.Add(this.panel4);
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.PaleTurquoise;
+            this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox2.Location = new System.Drawing.Point(32, 0);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
+            this.guna2GroupBox2.Size = new System.Drawing.Size(0, 570);
+            this.guna2GroupBox2.TabIndex = 34;
+            this.guna2GroupBox2.Text = "Продукты";
+            this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label21
+            // productListBox
             // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(0, 33);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(585, 69);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "описание";
+            this.productListBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.productListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.productListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productListBox.FormattingEnabled = true;
+            this.productListBox.ItemHeight = 21;
+            this.productListBox.Location = new System.Drawing.Point(0, 40);
+            this.productListBox.Name = "productListBox";
+            this.productListBox.Size = new System.Drawing.Size(0, 530);
+            this.productListBox.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(0, 40);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.label39);
+            this.panel24.Controls.Add(this.label38);
+            this.panel24.Controls.Add(this.label37);
+            this.panel24.Controls.Add(this.label36);
+            this.panel24.Controls.Add(this.label35);
+            this.panel24.Controls.Add(this.label34);
+            this.panel24.Controls.Add(this.label33);
+            this.panel24.Controls.Add(this.label29);
+            this.panel24.Controls.Add(this.guna2Button1);
+            this.panel24.Controls.Add(this.label24);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel24.Location = new System.Drawing.Point(0, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(32, 570);
+            this.panel24.TabIndex = 36;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::Mockup.Properties.Resources.left_arrow;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 10);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(32, 20);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // label24
+            // 
+            this.label24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(0, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(32, 10);
+            this.label24.TabIndex = 31;
+            // 
+            // blackList
+            // 
+            this.blackList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blackList.ImageStream")));
+            this.blackList.TransparentColor = System.Drawing.Color.Transparent;
+            this.blackList.Images.SetKeyName(0, "Left_Arrow_Black_Gradient.png");
+            this.blackList.Images.SetKeyName(1, "Right_Arrow_Black_Gradient.png");
+            // 
+            // blueList
+            // 
+            this.blueList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blueList.ImageStream")));
+            this.blueList.TransparentColor = System.Drawing.Color.Transparent;
+            this.blueList.Images.SetKeyName(0, "left_arrow.png");
+            this.blueList.Images.SetKeyName(1, "rigth_arrow.png");
+            // 
+            // gramsListBox
+            // 
+            this.gramsListBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.gramsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gramsListBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gramsListBox.FormattingEnabled = true;
+            this.gramsListBox.ItemHeight = 21;
+            this.gramsListBox.Location = new System.Drawing.Point(-47, 40);
+            this.gramsListBox.Name = "gramsListBox";
+            this.gramsListBox.Size = new System.Drawing.Size(47, 530);
+            this.gramsListBox.TabIndex = 5;
+            // 
+            // label29
+            // 
+            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(0, 30);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(32, 30);
+            this.label29.TabIndex = 32;
+            this.label29.Text = "П";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label33.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(0, 60);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(32, 30);
+            this.label33.TabIndex = 33;
+            this.label33.Text = "Р";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(0, 90);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(32, 30);
+            this.label34.TabIndex = 34;
+            this.label34.Text = "О";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label35.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(0, 120);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(32, 30);
+            this.label35.TabIndex = 35;
+            this.label35.Text = "Д";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label36.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(0, 150);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(32, 30);
+            this.label36.TabIndex = 36;
+            this.label36.Text = "У";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label37.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(0, 180);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(32, 30);
+            this.label37.TabIndex = 37;
+            this.label37.Text = "К";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label38.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label38.ForeColor = System.Drawing.Color.Black;
+            this.label38.Location = new System.Drawing.Point(0, 210);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(32, 30);
+            this.label38.TabIndex = 38;
+            this.label38.Text = "Т";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label39
+            // 
+            this.label39.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label39.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label39.ForeColor = System.Drawing.Color.Black;
+            this.label39.Location = new System.Drawing.Point(0, 240);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(32, 30);
+            this.label39.TabIndex = 39;
+            this.label39.Text = "Ы";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CaloriesValueDishForm
             // 
@@ -840,14 +1081,18 @@ namespace Mockup.Forms.SecondLevelForms
             this.ClientSize = new System.Drawing.Size(931, 570);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ProductContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CaloriesValueDishForm";
             this.Text = "CaloriesValueDishForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CaloriesValueDishForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel19.ResumeLayout(false);
@@ -867,15 +1112,14 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.ProductContainer.ResumeLayout(false);
+            this.guna2GroupBox2.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label25;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
@@ -931,8 +1175,26 @@ namespace Mockup.Forms.SecondLevelForms
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox dishListBox;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel ProductContainer;
+        private System.Windows.Forms.Panel panel24;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private System.Windows.Forms.ListBox productListBox;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.ImageList blackList;
+        private System.Windows.Forms.ImageList blueList;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ListBox gramsListBox;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
     }
 }

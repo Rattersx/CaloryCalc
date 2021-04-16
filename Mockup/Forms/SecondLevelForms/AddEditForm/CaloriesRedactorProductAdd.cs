@@ -20,7 +20,7 @@ namespace Mockup.Forms.AddForms
             AnimateWindow.SetAnimateWindow(this);
             guna2ShadowForm1.SetShadowForm(this);
             theme = _theme;
-            Commands.ApplyTheme(this, null, theme);
+            Commands.ApplyTheme(this, theme);
             if (isAdd)
                 bunifuCustomLabel1.Text = "Добавить";
             else

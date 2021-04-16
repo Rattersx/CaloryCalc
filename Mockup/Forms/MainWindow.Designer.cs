@@ -75,7 +75,7 @@ namespace Mockup
             this.TitlePanel.Location = new System.Drawing.Point(0, 0);
             this.TitlePanel.Name = "TitlePanel";
             this.TitlePanel.ShadowDecoration.Parent = this.TitlePanel;
-            this.TitlePanel.Size = new System.Drawing.Size(1207, 46);
+            this.TitlePanel.Size = new System.Drawing.Size(1200, 46);
             this.TitlePanel.TabIndex = 8;
             // 
             // titleLabel
@@ -101,7 +101,7 @@ namespace Mockup
             this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
             this.minimizeBtn.Image = global::Mockup.Properties.Resources.BlueMinimize;
             this.minimizeBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.minimizeBtn.Location = new System.Drawing.Point(988, 0);
+            this.minimizeBtn.Location = new System.Drawing.Point(981, 0);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.minimizeBtn.PressedState.Parent = this.minimizeBtn;
@@ -119,7 +119,7 @@ namespace Mockup
             this.expandBtn.HoverState.Parent = this.expandBtn;
             this.expandBtn.Image = global::Mockup.Properties.Resources.BlueExpand;
             this.expandBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.expandBtn.Location = new System.Drawing.Point(1061, 0);
+            this.expandBtn.Location = new System.Drawing.Point(1054, 0);
             this.expandBtn.Name = "expandBtn";
             this.expandBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.expandBtn.PressedState.Parent = this.expandBtn;
@@ -137,7 +137,7 @@ namespace Mockup
             this.exitBtn.HoverState.Parent = this.exitBtn;
             this.exitBtn.Image = global::Mockup.Properties.Resources.blueExit;
             this.exitBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.exitBtn.Location = new System.Drawing.Point(1134, 0);
+            this.exitBtn.Location = new System.Drawing.Point(1127, 0);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.exitBtn.PressedState.Parent = this.exitBtn;
@@ -173,7 +173,7 @@ namespace Mockup
             this.Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Container.Location = new System.Drawing.Point(260, 46);
             this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(947, 653);
+            this.Container.Size = new System.Drawing.Size(940, 653);
             this.Container.TabIndex = 9;
             // 
             // Menu
@@ -360,7 +360,7 @@ namespace Mockup
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1207, 699);
+            this.ClientSize = new System.Drawing.Size(1200, 699);
             this.Controls.Add(this.Container);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.TitlePanel);

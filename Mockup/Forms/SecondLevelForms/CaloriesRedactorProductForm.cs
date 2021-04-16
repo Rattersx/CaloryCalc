@@ -19,7 +19,8 @@ namespace Mockup.Forms.SecondLevelForms
         {
             InitializeComponent();
             theme = _theme;
-            Commands.ApplyTheme(this, Container, theme);
+            Commands.ApplyTheme(this, theme);
+            Container.BackColor = theme.ContainerTheme.Value;
         }
 
         private void addButton_Click(object sender, EventArgs e)

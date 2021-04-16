@@ -25,7 +25,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
                 bunifuCustomLabel1.Text = "Добавить";
             else
                 bunifuCustomLabel1.Text = "Изменить";
-            Commands.ApplyTheme(this, null, theme);
+            Commands.ApplyTheme(this, theme);
             if(theme.black)
             {
                 guna2ImageButton1.Image = blackList.Images[0];

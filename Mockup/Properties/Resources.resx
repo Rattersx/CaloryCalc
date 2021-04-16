@@ -139,8 +139,11 @@
   <data name="left_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="right_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BlueMinimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlueMinimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +169,8 @@
   <data name="calculator_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blueExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,13 +178,13 @@
   <data name="rollDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rollDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="right_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\right_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="left_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="right_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\right_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="right_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

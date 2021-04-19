@@ -30,13 +30,11 @@ namespace Mockup.Forms.AddForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaloriesRedactorProductAdd));
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.AcceptButton = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
@@ -57,9 +55,12 @@ namespace Mockup.Forms.AddForms
             this.NoRB = new System.Windows.Forms.RadioButton();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.AnimateWindow = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.densityTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.descriptionTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,45 +74,35 @@ namespace Mockup.Forms.AddForms
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.Animator.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.LightCoral;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.LightCoral;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 2);
+            this.guna2Button2.Location = new System.Drawing.Point(135, 0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.BorderRadius = 25;
             this.guna2Button2.ShadowDecoration.Color = System.Drawing.Color.LightSkyBlue;
             this.guna2Button2.ShadowDecoration.Depth = 5;
             this.guna2Button2.ShadowDecoration.Enabled = true;
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(145, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(130, 47);
             this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "Отменить";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Controls.Add(this.AcceptButton);
             this.Animator.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 482);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 47);
+            this.panel1.Size = new System.Drawing.Size(265, 47);
             this.panel1.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.AcceptButton);
-            this.Animator.SetDecoration(this.panel3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(134, 47);
-            this.panel3.TabIndex = 1;
             // 
             // AcceptButton
             // 
@@ -123,7 +114,7 @@ namespace Mockup.Forms.AddForms
             this.AcceptButton.CheckedState.Parent = this.AcceptButton;
             this.AcceptButton.CustomImages.Parent = this.AcceptButton;
             this.Animator.SetDecoration(this.AcceptButton, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.AcceptButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AcceptButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.AcceptButton.Enabled = false;
             this.AcceptButton.FillColor = System.Drawing.Color.Transparent;
             this.AcceptButton.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -131,26 +122,16 @@ namespace Mockup.Forms.AddForms
             this.AcceptButton.HoverState.BorderColor = System.Drawing.Color.PaleGreen;
             this.AcceptButton.HoverState.FillColor = System.Drawing.Color.PaleGreen;
             this.AcceptButton.HoverState.Parent = this.AcceptButton;
-            this.AcceptButton.Location = new System.Drawing.Point(0, 2);
+            this.AcceptButton.Location = new System.Drawing.Point(0, 0);
             this.AcceptButton.Name = "AcceptButton";
             this.AcceptButton.ShadowDecoration.BorderRadius = 25;
             this.AcceptButton.ShadowDecoration.Color = System.Drawing.Color.LightSkyBlue;
             this.AcceptButton.ShadowDecoration.Depth = 5;
             this.AcceptButton.ShadowDecoration.Enabled = true;
             this.AcceptButton.ShadowDecoration.Parent = this.AcceptButton;
-            this.AcceptButton.Size = new System.Drawing.Size(134, 45);
+            this.AcceptButton.Size = new System.Drawing.Size(135, 47);
             this.AcceptButton.TabIndex = 2;
             this.AcceptButton.Text = "Подтвердить";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.guna2Button2);
-            this.Animator.SetDecoration(this.panel2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(133, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(145, 47);
-            this.panel2.TabIndex = 0;
             // 
             // guna2GradientPanel1
             // 
@@ -166,20 +147,21 @@ namespace Mockup.Forms.AddForms
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(278, 100);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(265, 100);
             this.guna2GradientPanel1.TabIndex = 3;
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
             this.Animator.SetDecoration(this.bunifuCustomLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(48, 26);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(190, 41);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(265, 100);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Добавить";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2ColorTransition1
             // 
@@ -199,22 +181,22 @@ namespace Mockup.Forms.AddForms
             // Animator
             // 
             this.Animator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.Animator.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.Animator.DefaultAnimation = animation2;
             // 
             // ProteinTB
             // 
@@ -437,12 +419,88 @@ namespace Mockup.Forms.AddForms
             this.NoRB.UseVisualStyleBackColor = true;
             this.NoRB.CheckedChanged += new System.EventHandler(this.NoRB_CheckedChanged);
             // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.Animator.SetDecoration(this.bunifuCustomLabel2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(319, 192);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(103, 22);
+            this.bunifuCustomLabel2.TabIndex = 18;
+            this.bunifuCustomLabel2.Text = "Плотность";
+            // 
+            // densityTB
+            // 
+            this.densityTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Animator.SetDecoration(this.densityTB, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.densityTB.DefaultText = "";
+            this.densityTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.densityTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.densityTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.densityTB.DisabledState.Parent = this.densityTB;
+            this.densityTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.densityTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.densityTB.FocusedState.Parent = this.densityTB;
+            this.densityTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.densityTB.HoverState.Parent = this.densityTB;
+            this.densityTB.Location = new System.Drawing.Point(270, 217);
+            this.densityTB.Name = "densityTB";
+            this.densityTB.PasswordChar = '\0';
+            this.densityTB.PlaceholderText = "";
+            this.densityTB.SelectedText = "";
+            this.densityTB.ShadowDecoration.Parent = this.densityTB;
+            this.densityTB.Size = new System.Drawing.Size(200, 28);
+            this.densityTB.TabIndex = 17;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.Animator.SetDecoration(this.bunifuCustomLabel3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(315, 251);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(110, 22);
+            this.bunifuCustomLabel3.TabIndex = 20;
+            this.bunifuCustomLabel3.Text = "Описание";
+            // 
+            // descriptionTB
+            // 
+            this.descriptionTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Animator.SetDecoration(this.descriptionTB, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.descriptionTB.DefaultText = "";
+            this.descriptionTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.descriptionTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.descriptionTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.descriptionTB.DisabledState.Parent = this.descriptionTB;
+            this.descriptionTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.descriptionTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.descriptionTB.FocusedState.Parent = this.descriptionTB;
+            this.descriptionTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.descriptionTB.HoverState.Parent = this.descriptionTB;
+            this.descriptionTB.Location = new System.Drawing.Point(270, 276);
+            this.descriptionTB.Name = "descriptionTB";
+            this.descriptionTB.PasswordChar = '\0';
+            this.descriptionTB.PlaceholderText = "";
+            this.descriptionTB.SelectedText = "";
+            this.descriptionTB.ShadowDecoration.Parent = this.descriptionTB;
+            this.descriptionTB.Size = new System.Drawing.Size(200, 118);
+            this.descriptionTB.TabIndex = 19;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // CaloriesRedactorProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(278, 529);
+            this.ClientSize = new System.Drawing.Size(265, 529);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.descriptionTB);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.densityTB);
             this.Controls.Add(this.NoRB);
             this.Controls.Add(this.AlergLabel);
             this.Controls.Add(this.YesRB);
@@ -465,10 +523,7 @@ namespace Mockup.Forms.AddForms
             this.Text = "CaloriesRedactorProductAdd";
             this.Load += new System.EventHandler(this.CaloriesRedactorProductAdd_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,8 +533,6 @@ namespace Mockup.Forms.AddForms
 
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button AcceptButton;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
@@ -501,5 +554,10 @@ namespace Mockup.Forms.AddForms
         private System.Windows.Forms.RadioButton YesRB;
         private Bunifu.Framework.UI.BunifuCustomLabel AlergLabel;
         private System.Windows.Forms.RadioButton NoRB;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox densityTB;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox descriptionTB;
+        private System.Windows.Forms.Timer timer2;
     }
 }

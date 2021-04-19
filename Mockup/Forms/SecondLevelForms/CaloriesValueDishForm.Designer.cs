@@ -96,6 +96,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel4 = new System.Windows.Forms.Panel();
             this.blackList = new System.Windows.Forms.ImageList(this.components);
             this.blueList = new System.Windows.Forms.ImageList(this.components);
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.addButton = new Guna.UI2.WinForms.Guna2Button();
+            this.trackBar = new Guna.UI2.WinForms.Guna2TrackBar();
             this.panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,6 +118,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.ProductContainer.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -343,7 +347,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel19.Controls.Add(this.panel20);
             this.panel19.Controls.Add(this.panel21);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 351);
+            this.panel19.Location = new System.Drawing.Point(0, 332);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(365, 53);
             this.panel19.TabIndex = 36;
@@ -441,7 +445,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel16.Controls.Add(this.panel17);
             this.panel16.Controls.Add(this.panel18);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 298);
+            this.panel16.Location = new System.Drawing.Point(0, 279);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(365, 53);
             this.panel16.TabIndex = 35;
@@ -539,7 +543,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 245);
+            this.panel13.Location = new System.Drawing.Point(0, 226);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(365, 53);
             this.panel13.TabIndex = 34;
@@ -637,7 +641,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel10.Controls.Add(this.panel12);
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 192);
+            this.panel10.Location = new System.Drawing.Point(0, 173);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(365, 53);
             this.panel10.TabIndex = 33;
@@ -734,13 +738,14 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.trackBar);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.guna2TextBox2);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.label31);
             this.panel8.Controls.Add(this.label32);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 129);
+            this.panel8.Location = new System.Drawing.Point(0, 110);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(365, 63);
             this.panel8.TabIndex = 31;
@@ -829,10 +834,12 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.deleteButton);
+            this.panel9.Controls.Add(this.addButton);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 73);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(365, 56);
+            this.panel9.Size = new System.Drawing.Size(365, 37);
             this.panel9.TabIndex = 32;
             // 
             // label30
@@ -924,6 +931,54 @@ namespace Mockup.Forms.SecondLevelForms
             this.blueList.Images.SetKeyName(0, "left_arrow.png");
             this.blueList.Images.SetKeyName(1, "rigth_arrow.png");
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BorderRadius = 5;
+            this.deleteButton.CheckedState.Parent = this.deleteButton;
+            this.deleteButton.CustomImages.Parent = this.deleteButton;
+            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.HoverState.Parent = this.deleteButton;
+            this.deleteButton.Location = new System.Drawing.Point(87, 0);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
+            this.deleteButton.Size = new System.Drawing.Size(139, 37);
+            this.deleteButton.TabIndex = 40;
+            this.deleteButton.Text = "Удалить";
+            // 
+            // addButton
+            // 
+            this.addButton.BorderRadius = 5;
+            this.addButton.CheckedState.Parent = this.addButton;
+            this.addButton.CustomImages.Parent = this.addButton;
+            this.addButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.HoverState.Parent = this.addButton;
+            this.addButton.Location = new System.Drawing.Point(226, 0);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Name = "addButton";
+            this.addButton.ShadowDecoration.Parent = this.addButton;
+            this.addButton.Size = new System.Drawing.Size(139, 37);
+            this.addButton.TabIndex = 39;
+            this.addButton.Text = "Добавить";
+            // 
+            // trackBar
+            // 
+            this.trackBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.trackBar.HoverState.Parent = this.trackBar;
+            this.trackBar.LargeChange = 10;
+            this.trackBar.Location = new System.Drawing.Point(269, 5);
+            this.trackBar.Maximum = 1000;
+            this.trackBar.Minimum = 1;
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(300, 23);
+            this.trackBar.TabIndex = 35;
+            this.trackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.trackBar.Value = 100;
+            // 
             // CaloriesValueDishForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,6 +1017,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ProductContainer.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1034,5 +1090,8 @@ namespace Mockup.Forms.SecondLevelForms
         private System.Windows.Forms.ImageList blackList;
         private System.Windows.Forms.ImageList blueList;
         private System.Windows.Forms.ListBox gramsListBox;
+        private Guna.UI2.WinForms.Guna2Button deleteButton;
+        private Guna.UI2.WinForms.Guna2Button addButton;
+        private Guna.UI2.WinForms.Guna2TrackBar trackBar;
     }
 }

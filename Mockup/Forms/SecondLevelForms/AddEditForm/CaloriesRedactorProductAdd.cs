@@ -73,6 +73,7 @@ namespace Mockup.Forms.AddForms
             {
                 Animator.ShowSync(YesRB);
                 Animator.ShowSync(NoRB);
+                timer2.Start();
             }
         }
 
@@ -95,6 +96,53 @@ namespace Mockup.Forms.AddForms
         {
             if (YesRB.Checked == false)
                 AcceptButton.Enabled = true;
+        }
+
+        public void AddnewProduct()
+        {
+            try
+            {
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    if (titleTB.Text != "")
+                    {
+                        Product addproduct = new Product
+                        {
+                            Name = titleTB.Text,
+                            Description = descriptionTB.Text,
+                            Kcal = Convert.ToDouble(CaloriesTB.Text),
+                            Ffat = Convert.ToDouble(FatTB.Text),
+                            Carbohydrate = Convert.ToDouble(CarbohydrTB.Text),
+                            Protein = Convert.ToDouble(ProteinTB.Text),
+                            IsAlergic = YesRB.Checked,
+                            Density = Convert.ToDouble(densityTB.Text),
+                        };
+                        var allproducts = db.Products.ToList();
+                        foreach (Product item in allproducts)
+                        {
+                            if (item.Name == addproduct.Name)
+                            {
+                                throw new Exception("Такой продукт уже добавлен!");
+                            }
+                        }
+                        db.Products.Add(addproduct);
+                        db.SaveChanges();
+                        MessageBox.Show("Продукт добавлен.");
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (this.Width != 495)
+                this.Width += 5;
+            if (AcceptButton.Width != 240)
+                AcceptButton.Width += 7;
         }
     }
 }

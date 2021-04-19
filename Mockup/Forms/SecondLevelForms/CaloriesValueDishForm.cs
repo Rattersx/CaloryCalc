@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Mockup.Forms.SecondLevelForms
@@ -12,58 +13,55 @@ namespace Mockup.Forms.SecondLevelForms
             InitializeComponent();
             theme = _theme;
             Commands.ApplyTheme(this, theme);
-            panel24.BackColor = theme.MenuColor1.Value;
-            guna2Button1.BackColor = panel24.BackColor;
-
-            if (theme.black)
-                guna2Button1.Image = blackList.Images[1];
-            else
-                guna2Button1.Image = blueList.Images[1];
+            ProductContainer.Width = 0;
         }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void ExpandPanel()
         {
-            if(productListExpand)
-            {
-                productListExpand = false;
+            productListExpand = true;
 
-                if (theme.black)
-                    guna2Button1.Image = blackList.Images[0];
-                else
-                    guna2Button1.Image = blueList.Images[0];
-                if (Program.parent.WindowState != FormWindowState.Maximized)
-                {
-                    while (Program.parent.Width != 1200)
-                        Program.parent.Width -= 110;
-                    while (ProductContainer.Width != 30)
-                        ProductContainer.Width -= 110;
-                }
-                while (ProductContainer.Width != 30)
-                    ProductContainer.Width -= 110;
-            }
-            else
+            if (Program.parent.WindowState != FormWindowState.Maximized)
             {
-                productListExpand = true;
-
-                if (theme.black)
-                    guna2Button1.Image = blackList.Images[1];
-                else
-                    guna2Button1.Image = blueList.Images[1];
-                if (Program.parent.WindowState != FormWindowState.Maximized)
-                {
-                    while (Program.parent.Width != 1420)
-                        Program.parent.Width += 110;
-                    while (ProductContainer.Width != 250)
-                        ProductContainer.Width += 110;
-                }
-                while (ProductContainer.Width != 250)
+                while (Program.parent.Width != 1420)
+                    Program.parent.Width += 110;
+                while (ProductContainer.Width != 220)
                     ProductContainer.Width += 110;
             }
+            while (ProductContainer.Width != 220)
+                ProductContainer.Width += 110;
         }
-
-        private void CaloriesValueDishForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MinimizePanel()
         {
-            Program.parent.Width = 1200;
+            productListExpand = false;
+
+            if (Program.parent.WindowState != FormWindowState.Maximized)
+            {
+                while (Program.parent.Width != 1200)
+                    Program.parent.Width -= 110;
+                while (ProductContainer.Width != 0)
+                    ProductContainer.Width -= 110;
+            }
+            while (ProductContainer.Width != 0)
+                ProductContainer.Width -= 110;
+        }
+        // При двойном клике на эллемент, должна происходить инициализация продуктов выбранного блюда
+        private void dishListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dishListBox.SelectedItem != null)
+            {
+                ExpandPanel();
+            }
+        }
+        private void productListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(productListBox.SelectedItem != null)
+            {
+                Form fc = Application.OpenForms["CaloriesValueDish_ProductInfo"];
+                if (fc != null)
+                    fc.Close();
+
+                CaloriesValueDish_ProductInfo form = new CaloriesValueDish_ProductInfo(theme);
+                form.Show();
+            }
         }
     }
 }

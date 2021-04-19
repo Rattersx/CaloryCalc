@@ -23,6 +23,7 @@ namespace Mockup
 
             form.BackColor = theme.ContainerTheme.Value;
 
+            var panels = GetAllControls(form, typeof(Panel));
             var labels = GetAllControls(form, typeof(Label));
             var radioButtons = GetAllControls(form, typeof(RadioButton));
             var comboBoxes = GetAllControls(form, typeof(Guna2ComboBox));

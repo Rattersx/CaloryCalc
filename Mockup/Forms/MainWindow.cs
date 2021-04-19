@@ -151,6 +151,7 @@ namespace Mockup
         }
         private void EditorButton_Click(object sender, EventArgs e)
         {
+            Program.parent.Width = 1200;
             AddFormToContainer(new CaloriesRedactorForm(theme));
             titleLabel.Text = EditorButton.Text;
 
@@ -173,6 +174,7 @@ namespace Mockup
 
         private void CalculationButton_Click(object sender, EventArgs e)
         {
+            Program.parent.Width = 1200;
             AddFormToContainer(new CaloriesCalculationForm(theme));
             titleLabel.Text = CalculationButton.Text;
 
@@ -184,6 +186,7 @@ namespace Mockup
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
+            Program.parent.Width = 1200;
             AddFormToContainer(new SettingsForm(theme));
 
 

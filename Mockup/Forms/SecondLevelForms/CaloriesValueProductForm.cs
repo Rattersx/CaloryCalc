@@ -20,5 +20,6 @@ namespace Mockup.Forms.SecondLevelForms
             theme = _theme;
             Commands.ApplyTheme(this, theme);
         }
+
     }
 }

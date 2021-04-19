@@ -84,6 +84,7 @@ namespace Mockup
         }
         private void ProductButton_Click(object sender, EventArgs e)
         {
+            Program.parent.Width = 1200;
             if (!productFocused)
             {
                 dishFocused = false;

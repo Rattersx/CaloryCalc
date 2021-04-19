@@ -53,6 +53,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.blueList = new System.Windows.Forms.ImageList(this.components);
             this.blackList = new System.Windows.Forms.ImageList(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -342,6 +343,10 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.blackList.Images.SetKeyName(0, "left_dark.png");
             this.blackList.Images.SetKeyName(1, "right_dark.png");
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this.bunifuCustomLabel1;
+            // 
             // CaloriesRedactorDish_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,5 +398,6 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
         private Guna.UI2.WinForms.Guna2Button AcceptButton;
         private System.Windows.Forms.ImageList blueList;
         private System.Windows.Forms.ImageList blackList;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

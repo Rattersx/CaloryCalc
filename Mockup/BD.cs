@@ -53,7 +53,7 @@ namespace Mockup
 
         [ForeignKey(nameof(MeasurementUnit))]
         public int MeasurementUnitId { get; set; }
-        public MeasurementUnit MeasurementUnits { get; set; }
+        public MeasurementUnit MeasurementUnit { get; set; }
 
         [ForeignKey(nameof(Product))]
         public int ProductId { get; set; }

@@ -144,5 +144,48 @@ namespace Mockup.Forms.AddForms
             if (AcceptButton.Width != 240)
                 AcceptButton.Width += 7;
         }
+        public void AddNewProduct()
+        {
+            try
+            {
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    if (titleTB.Text != "")
+                    {
+                        Product addproduct = new Product
+                        {
+                            Name = titleTB.Text,
+                            Description = descriptionTB.Text,
+                            Kcal = Convert.ToDouble(CaloriesTB.Text),
+                            Ffat = Convert.ToDouble(FatTB.Text),
+                            Carbohydrate = Convert.ToDouble(CarbohydrTB.Text),
+                            Protein = Convert.ToDouble(ProteinTB.Text),
+                            IsAlergic = YesRB.Checked,
+                            Density = Convert.ToDouble(densityTB.Text),
+                        };
+                        var allproducts = db.Products.ToList();
+                        foreach (Product item in allproducts)
+                        {
+                            if (item.Name == addproduct.Name)
+                            {
+                                throw new Exception("Такой продукт уже добавлен!");
+                            }
+                        }
+                        db.Products.Add(addproduct);
+                        db.SaveChanges();
+                        MessageBox.Show("Продукт добавлен.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AcceptButton_Click(object sender, EventArgs e)
+        {
+            AddNewProduct();
+        }
     }
 }

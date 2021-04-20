@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace Mockup.Forms.SecondLevelForms
 {
@@ -124,7 +125,9 @@ namespace Mockup.Forms.SecondLevelForms
                 {
                     double caloriesPerc2 = 0; double proteinsPerc2 = 0; double fatPerc2 = 0; double carbPerc2 = 0;
                     double caloriesAll = 0; double proteinsAll = 0; double fatAll = 0; double carbAll = 0;
-                    var selectedDishProduct = db.DishItems.Where(d => d.DishId == (dishListBox.SelectedItem as Dish).Id);
+                   //
+                    int selectedDishId = (dishListBox.SelectedItem as Dish).Id;
+                    var selectedDishProduct = db.DishItems.Include(t=>t.Product).Where(d => d.DishId == selectedDishId);
                     var DishProducts = selectedDishProduct.Select(i => i.Product).ToList();
                     var DishProducts2 = selectedDishProduct.Select(i => i.MeasurementUnit).ToList();
                     productListBox.DisplayMember = "Name";

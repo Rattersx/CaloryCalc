@@ -25,9 +25,11 @@ namespace Mockup
 
             var panels = GetAllControls(form, typeof(Panel));
             var labels = GetAllControls(form, typeof(Label));
+            var labelsVar2 = GetAllControls(form, typeof(Bunifu.Framework.UI.BunifuCustomLabel));
             var radioButtons = GetAllControls(form, typeof(RadioButton));
             var comboBoxes = GetAllControls(form, typeof(Guna2ComboBox));
             var textBoxes = GetAllControls(form, typeof(Guna2TextBox));
+            var textBoxesVar2 = GetAllControls(form, typeof(Bunifu.Framework.UI.BunifuTextbox));
             var buttons = GetAllControls(form, typeof(Guna2Button));
             var progressBars = GetAllControls(form, typeof(Guna2ProgressBar));
             var GroupBoxes = GetAllControls(form, typeof(Guna2GroupBox));
@@ -35,6 +37,10 @@ namespace Mockup
             var tileButtons = GetAllControls(form, typeof(Guna2TileButton));
 
             foreach (Control label in labels)
+            {
+                label.ForeColor = theme.InterfaceLabelTheme.Value;
+            }
+            foreach (Control label in labelsVar2)
             {
                 label.ForeColor = theme.InterfaceLabelTheme.Value;
             }
@@ -52,6 +58,15 @@ namespace Mockup
                 box.FocusedState.BorderColor = theme.ComboBoxCheckedBorder.Value;
             }
             foreach (Guna2TextBox box in textBoxes)
+            {
+                box.FillColor = theme.TextBoxFill.Value;
+                box.HoverState.FillColor = theme.TextBoxHold.Value;
+                box.BorderColor = theme.TextBoxBorder.Value;
+                box.ForeColor = theme.InterfaceLabelTheme.Value;
+                box.FocusedState.ForeColor = theme.TextBoxCheckedForeColor.Value;
+                box.FocusedState.BorderColor = theme.TextBoxCheckedBorder.Value;
+            }
+            foreach (Guna2TextBox box in textBoxesVar2)
             {
                 box.FillColor = theme.TextBoxFill.Value;
                 box.HoverState.FillColor = theme.TextBoxHold.Value;

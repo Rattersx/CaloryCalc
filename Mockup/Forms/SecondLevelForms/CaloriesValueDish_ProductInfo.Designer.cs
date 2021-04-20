@@ -38,7 +38,6 @@ namespace Mockup.Forms.SecondLevelForms
             this.productTItle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.countTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.typeCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.caloriesPB = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.caloriesMin = new System.Windows.Forms.Label();
@@ -96,6 +95,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.celluloseP = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.alergicL = new System.Windows.Forms.Label();
+            this.trackbar = new Guna.UI2.WinForms.Guna2TrackBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,6 +118,8 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLable
@@ -164,8 +169,9 @@ namespace Mockup.Forms.SecondLevelForms
             // productTItle
             // 
             this.productTItle.AutoSize = true;
+            this.productTItle.Dock = System.Windows.Forms.DockStyle.Left;
             this.productTItle.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.productTItle.Location = new System.Drawing.Point(29, 87);
+            this.productTItle.Location = new System.Drawing.Point(0, 0);
             this.productTItle.Name = "productTItle";
             this.productTItle.Size = new System.Drawing.Size(225, 23);
             this.productTItle.TabIndex = 2;
@@ -205,30 +211,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.countTB.ShadowDecoration.Parent = this.countTB;
             this.countTB.Size = new System.Drawing.Size(81, 36);
             this.countTB.TabIndex = 4;
-            // 
-            // typeCB
-            // 
-            this.typeCB.Animated = true;
-            this.typeCB.BackColor = System.Drawing.Color.Transparent;
-            this.typeCB.BorderRadius = 6;
-            this.typeCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.typeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.typeCB.FocusedColor = System.Drawing.Color.Empty;
-            this.typeCB.FocusedState.Parent = this.typeCB;
-            this.typeCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.typeCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.typeCB.FormattingEnabled = true;
-            this.typeCB.HoverState.Parent = this.typeCB;
-            this.typeCB.ItemHeight = 30;
-            this.typeCB.Items.AddRange(new object[] {
-            "кг",
-            "г"});
-            this.typeCB.ItemsAppearance.Parent = this.typeCB;
-            this.typeCB.Location = new System.Drawing.Point(239, 125);
-            this.typeCB.Name = "typeCB";
-            this.typeCB.ShadowDecoration.Parent = this.typeCB;
-            this.typeCB.Size = new System.Drawing.Size(117, 36);
-            this.typeCB.TabIndex = 5;
+            this.countTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countTB_KeyPress);
             // 
             // label3
             // 
@@ -897,7 +880,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(596, 120);
+            this.guna2Button1.Location = new System.Drawing.Point(597, 120);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
@@ -905,11 +888,59 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2Button1.Text = "Выйти";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.panel21);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 65);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(813, 49);
+            this.panel20.TabIndex = 32;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.alergicL);
+            this.panel21.Controls.Add(this.productTItle);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel21.Location = new System.Drawing.Point(0, 21);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(813, 28);
+            this.panel21.TabIndex = 3;
+            // 
+            // alergicL
+            // 
+            this.alergicL.AutoSize = true;
+            this.alergicL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.alergicL.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.alergicL.ForeColor = System.Drawing.Color.Red;
+            this.alergicL.Location = new System.Drawing.Point(225, 0);
+            this.alergicL.Name = "alergicL";
+            this.alergicL.Size = new System.Drawing.Size(16, 21);
+            this.alergicL.TabIndex = 33;
+            this.alergicL.Text = "*";
+            // 
+            // trackbar
+            // 
+            this.trackbar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.trackbar.HoverState.Parent = this.trackbar;
+            this.trackbar.LargeChange = 10;
+            this.trackbar.Location = new System.Drawing.Point(239, 132);
+            this.trackbar.Maximum = 1000;
+            this.trackbar.Minimum = 1;
+            this.trackbar.Name = "trackbar";
+            this.trackbar.Size = new System.Drawing.Size(300, 23);
+            this.trackbar.TabIndex = 33;
+            this.trackbar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.trackbar.Value = 1;
+            this.trackbar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.trackbar_Scroll);
+            // 
             // CaloriesValueDish_ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 554);
+            this.Controls.Add(this.trackbar);
+            this.Controls.Add(this.panel20);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel14);
@@ -918,15 +949,14 @@ namespace Mockup.Forms.SecondLevelForms
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.typeCB);
             this.Controls.Add(this.countTB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.productTItle);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CaloriesValueDish_ProductInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CaloriesValueDish_ProductInfo";
+            this.Load += new System.EventHandler(this.CaloriesValueDish_ProductInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -946,6 +976,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel17.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -961,7 +994,6 @@ namespace Mockup.Forms.SecondLevelForms
         private System.Windows.Forms.Label productTItle;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox countTB;
-        private Guna.UI2.WinForms.Guna2ComboBox typeCB;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ProgressBar caloriesPB;
         private System.Windows.Forms.Label caloriesMin;
@@ -1019,5 +1051,9 @@ namespace Mockup.Forms.SecondLevelForms
         private System.Windows.Forms.Label celluloseP;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label alergicL;
+        private Guna.UI2.WinForms.Guna2TrackBar trackbar;
     }
 }

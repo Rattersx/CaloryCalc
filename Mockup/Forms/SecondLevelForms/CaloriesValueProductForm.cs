@@ -152,6 +152,8 @@ namespace Mockup
         {
             CaloriesRedactorProductAdd form = new CaloriesRedactorProductAdd(theme, true);
             form.ShowDialog();
+            productListBox.Items.Clear();
+            loadItems().ForEach(i => productListBox.Items.Add(i));
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

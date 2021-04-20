@@ -139,8 +139,9 @@ namespace Mockup.Forms.AddForms
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (this.Width != 495)
-                this.Width += 5;
+            
+            if (this.Width != 490)
+                this.Width += 15;
             if (AcceptButton.Width != 240)
                 AcceptButton.Width += 7;
         }
@@ -174,6 +175,7 @@ namespace Mockup.Forms.AddForms
                         db.Products.Add(addproduct);
                         db.SaveChanges();
                         MessageBox.Show("Продукт добавлен.");
+                        Close();
                     }
                 }
             }

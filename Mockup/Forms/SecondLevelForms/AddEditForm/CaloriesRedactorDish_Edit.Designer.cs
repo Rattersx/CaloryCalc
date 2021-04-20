@@ -54,9 +54,21 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.blueList = new System.Windows.Forms.ImageList(this.components);
             this.blackList = new System.Windows.Forms.ImageList(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
+            this.guna2GroupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -106,6 +118,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.TitleLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.TitleLabel.Location = new System.Drawing.Point(816, 122);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(101, 22);
@@ -134,6 +147,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.titleTB.ShadowDecoration.Parent = this.titleTB;
             this.titleTB.Size = new System.Drawing.Size(313, 28);
             this.titleTB.TabIndex = 12;
+            this.titleTB.TextChanged += new System.EventHandler(this.titleTB_TextChanged);
             // 
             // bunifuCustomLabel2
             // 
@@ -177,10 +191,10 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.SteelBlue;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(11, 135);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(11, 189);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(289, 390);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(289, 336);
             this.guna2GroupBox1.TabIndex = 36;
             this.guna2GroupBox1.Text = "Продукты";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -194,7 +208,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.listBox1.ItemHeight = 21;
             this.listBox1.Location = new System.Drawing.Point(0, 40);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(289, 350);
+            this.listBox1.Size = new System.Drawing.Size(289, 296);
             this.listBox1.TabIndex = 2;
             // 
             // panel22
@@ -215,10 +229,10 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.LightSkyBlue;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(360, 135);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(360, 147);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(289, 390);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(203, 378);
             this.guna2GroupBox2.TabIndex = 37;
             this.guna2GroupBox2.Text = "Продукты в блюде";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -227,12 +241,12 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             // 
             this.listBox2.BackColor = System.Drawing.Color.LightCyan;
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 21;
+            this.listBox2.ItemHeight = 19;
             this.listBox2.Location = new System.Drawing.Point(0, 40);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(289, 350);
+            this.listBox2.Size = new System.Drawing.Size(203, 342);
             this.listBox2.TabIndex = 2;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
@@ -242,7 +256,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(289, 40);
+            this.panel1.Size = new System.Drawing.Size(203, 40);
             this.panel1.TabIndex = 1;
             // 
             // Cancel
@@ -300,6 +314,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.AcceptButton.Size = new System.Drawing.Size(1046, 45);
             this.AcceptButton.TabIndex = 41;
             this.AcceptButton.Text = "Подтвердить";
+            this.AcceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
             // guna2ImageButton2
             // 
@@ -308,12 +323,13 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Image = global::Mockup.Properties.Resources.right_dark;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(38, 33);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(306, 318);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(306, 360);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(43, 38);
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Size = new System.Drawing.Size(48, 43);
             this.guna2ImageButton2.TabIndex = 39;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
             // guna2ImageButton1
             // 
@@ -322,12 +338,13 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = global::Mockup.Properties.Resources.left_dark;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(38, 33);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(306, 269);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(306, 311);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(43, 38);
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(48, 43);
             this.guna2ImageButton1.TabIndex = 38;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
             // blueList
             // 
@@ -347,12 +364,161 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             // 
             this.guna2DragControl1.TargetControl = this.bunifuCustomLabel1;
             // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.guna2GroupBox3.BorderThickness = 2;
+            this.guna2GroupBox3.Controls.Add(this.listBox3);
+            this.guna2GroupBox3.Controls.Add(this.panel2);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.LightSkyBlue;
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox3.Location = new System.Drawing.Point(561, 147);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
+            this.guna2GroupBox3.Size = new System.Drawing.Size(51, 378);
+            this.guna2GroupBox3.TabIndex = 42;
+            this.guna2GroupBox3.Text = "Кол-во";
+            this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // listBox3
+            // 
+            this.listBox3.BackColor = System.Drawing.Color.LightCyan;
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 19;
+            this.listBox3.Location = new System.Drawing.Point(0, 40);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(51, 342);
+            this.listBox3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(51, 40);
+            this.panel2.TabIndex = 1;
+            // 
+            // guna2GroupBox4
+            // 
+            this.guna2GroupBox4.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.guna2GroupBox4.BorderThickness = 2;
+            this.guna2GroupBox4.Controls.Add(this.listBox4);
+            this.guna2GroupBox4.Controls.Add(this.panel3);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.LightSkyBlue;
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox4.Location = new System.Drawing.Point(611, 147);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(69, 378);
+            this.guna2GroupBox4.TabIndex = 43;
+            this.guna2GroupBox4.Text = "Вес";
+            this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // listBox4
+            // 
+            this.listBox4.BackColor = System.Drawing.Color.LightCyan;
+            this.listBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 19;
+            this.listBox4.Location = new System.Drawing.Point(0, 40);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(69, 342);
+            this.listBox4.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(69, 40);
+            this.panel3.TabIndex = 1;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(18, 121);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(126, 22);
+            this.bunifuCustomLabel3.TabIndex = 45;
+            this.bunifuCustomLabel3.Text = "Колличество";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.Animated = true;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Location = new System.Drawing.Point(11, 147);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Size = new System.Drawing.Size(140, 28);
+            this.guna2TextBox2.TabIndex = 44;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(155, 122);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(151, 22);
+            this.bunifuCustomLabel4.TabIndex = 47;
+            this.bunifuCustomLabel4.Text = "Тип измерения";
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 22;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Грамм",
+            "Мл"});
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(160, 147);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 28);
+            this.guna2ComboBox1.TabIndex = 48;
+            // 
             // CaloriesRedactorDish_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1046, 665);
+            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.bunifuCustomLabel4);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.guna2GroupBox4);
+            this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.AcceptButton);
             this.Controls.Add(this.guna2ImageButton2);
             this.Controls.Add(this.guna2ImageButton1);
@@ -369,6 +535,8 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
+            this.guna2GroupBox3.ResumeLayout(false);
+            this.guna2GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +567,15 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
         private System.Windows.Forms.ImageList blueList;
         private System.Windows.Forms.ImageList blackList;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }

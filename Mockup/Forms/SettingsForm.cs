@@ -91,7 +91,8 @@ namespace Mockup
                 theme.SetComboBox(Color.White, Color.PaleTurquoise, Color.FromArgb(217, 221, 226), Color.PowderBlue,
     Color.Black);
                 theme.SetPanelAnimation(Color.FromArgb(190, 217, 217), Color.FromArgb(133,152,152));
-                theme.SetTextBoxTheme(Color.LightSteelBlue, Color.Azure, Color.Black, Color.White, Color.White);
+                theme.SetTextBoxTheme(Color.White, Color.PaleTurquoise, Color.FromArgb(217, 221, 226), Color.PowderBlue,
+    Color.Black);
                 theme.SetButton(Color.PaleTurquoise, Color.Black, Color.FromArgb(94, 148, 255), Color.Black);
                 theme.SetProgressBar(Color.FromArgb(0, 197, 199), Color.FromArgb(192, 192, 255), Color.RoyalBlue);
                 theme.SetListView(Color.White, Color.PaleTurquoise, Color.Black);

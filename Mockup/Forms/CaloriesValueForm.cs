@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Mockup.Forms;
 using Mockup.Forms.SecondLevelForms;
 using System;
 using System.Collections.Generic;
@@ -32,23 +33,36 @@ namespace Mockup
             ProductBorder.FillColor = theme.ButtonFill.Value;
             DishBorder.FillColor = theme.ButtonFill.Value;
         }
-        private void AddFormToContainer(object form)
+        private void AddFormToContainer(object form, bool deleteIsNeeded)
         {
-            foreach (Control item in Container.Controls)
+            if (deleteIsNeeded)
             {
-                Container.Controls.Remove(item);
+                foreach (Control item in Container.Controls)
+                {
+                    Container.Controls.Remove(item);
+                }
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                Container.Controls.Add(f);
+                Container.Tag = f;
+                f.Visible = true;
+                f.Show();
             }
-            Form f = form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            Container.Controls.Add(f);
-            Container.Tag = f;
-            f.Visible = true;
-            f.Show();
+            else
+            {
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                Container.Controls.Add(f);
+                Container.Tag = f;
+                f.Visible = true;
+                f.Show();
+            }
         }
         private void CaloriesValueForm_Load(object sender, EventArgs e)
         {
-            AddFormToContainer(new CaloriesValueProductForm(theme));
+            AddFormToContainer(new CaloriesValueProductForm(theme), false);
             ProductBorder.Visible = true;
 
             ProductButton.FillColor = theme.ContainerTheme.Value;
@@ -76,12 +90,19 @@ namespace Mockup
                 DishButton.HoverState.FillColor = theme.ContainerTheme.Value;
                 DishButton.CheckedState.FillColor = theme.ContainerTheme.Value;
                 DishButton.PressedDepth = 0;
+                AddFormToContainer(new SplashScreen(theme), true);
+                Program.parent.CaloriesButton.Enabled = false;
+                Program.parent.CalculationButton.Enabled = false;
+                Program.parent.SettingsButton.Enabled = false;
+                Program.parent.EditorButton.Enabled = false;
+                timer1.Start();
 
                 ProductBorder.Visible = false;
                 DishBorder.Visible = true;
-                AddFormToContainer(new CaloriesValueDishForm(theme));
+                AddFormToContainer(new CaloriesValueDishForm(theme), false);
             }
         }
+
         private void ProductButton_Click(object sender, EventArgs e)
         {
             Program.parent.Width = 1200;
@@ -104,14 +125,33 @@ namespace Mockup
 
                 ProductBorder.Visible = true;
                 DishBorder.Visible = false;
+                AddFormToContainer(new SplashScreen(theme), true);
+                Program.parent.CaloriesButton.Enabled = false;
+                Program.parent.CalculationButton.Enabled = false;
+                Program.parent.SettingsButton.Enabled = false;
+                Program.parent.EditorButton.Enabled = false;
+                timer1.Start();
 
-                AddFormToContainer(new CaloriesValueProductForm(theme));
+                AddFormToContainer(new CaloriesValueProductForm(theme), false);
             }
         }
 
         private void Container_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Program.parent.progressEnd)
+            {
+                Program.parent.CaloriesButton.Enabled = true;
+                Program.parent.CalculationButton.Enabled = true;
+                Program.parent.SettingsButton.Enabled = true;
+                Program.parent.EditorButton.Enabled = true;
+                Program.parent.progressEnd = false;
+                timer1.Stop();
+            }
         }
     }
 }

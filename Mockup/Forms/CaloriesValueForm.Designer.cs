@@ -40,6 +40,7 @@ namespace Mockup
             this.ProductButton = new Guna.UI2.WinForms.Guna2TileButton();
             this.DishButton = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,6 +153,10 @@ namespace Mockup
             this.panel1.Size = new System.Drawing.Size(947, 44);
             this.panel1.TabIndex = 4;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // CaloriesValueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +184,6 @@ namespace Mockup
         private Guna.UI2.WinForms.Guna2TileButton ProductButton;
         private Guna.UI2.WinForms.Guna2Panel ProductBorder;
         private Guna.UI2.WinForms.Guna2Panel DishBorder;
+        private System.Windows.Forms.Timer timer1;
     }
 }

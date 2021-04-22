@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace Mockup.Forms.SecondLevelForms
 {
@@ -37,7 +38,7 @@ namespace Mockup.Forms.SecondLevelForms
 
             ClearProgressBar();
             dishListBox.DisplayMember = "Name";
-            loadItems().ForEach(i => dishListBox.Items.Add(i));
+            loadItems();
             label1.Text = "Блюдо";
         }
         private void ClearProgressBar()
@@ -61,13 +62,34 @@ namespace Mockup.Forms.SecondLevelForms
             label10.Text = $"Макс : {TOTALFAT}";
             label15.Text = $"Макс : {TOTALCARBOHYDRATES}";
         }
-        private List<Dish> loadItems()
+        private delegate void AddItemToPLBDelegate(object item);
+        private void AddItemToPLB(object item)
         {
-            using (ApplicationContext context = new ApplicationContext())
+            Dish product = item as Dish;
+            dishListBox.Items.Add(product);
+        }
+
+        private void loadItems()
+        {
+            Task.Run(() =>
             {
-                items = context.Dishes.ToList<Dish>();
-                return items;
-            }
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    try
+                    {
+                        items = context.Dishes.ToList<Dish>();
+                        foreach (Dish product in items)
+                        {
+                            productListBox.BeginInvoke(new AddItemToPLBDelegate(AddItemToPLB), product);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        loadItems();
+                    }
+                }
+                Program.parent.progressEnd = true;
+            });
         }
 
         private void ExpandPanel()

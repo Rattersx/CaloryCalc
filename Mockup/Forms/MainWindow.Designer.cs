@@ -30,29 +30,31 @@ namespace Mockup
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.TitlePanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.minimizeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.expandBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.exitBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Animator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.Container = new System.Windows.Forms.Panel();
             this.Menu = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.SettingsButton = new Guna.UI2.WinForms.Guna2TileButton();
+            this.EditorButton = new Guna.UI2.WinForms.Guna2TileButton();
+            this.CalculationButton = new Guna.UI2.WinForms.Guna2TileButton();
+            this.burgerMenuBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.CaloriesButton = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.blackIcons = new System.Windows.Forms.ImageList(this.components);
             this.blueIcons = new System.Windows.Forms.ImageList(this.components);
             this.fadeTransition = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SettingsButton = new Guna.UI2.WinForms.Guna2TileButton();
-            this.EditorButton = new Guna.UI2.WinForms.Guna2TileButton();
-            this.CalculationButton = new Guna.UI2.WinForms.Guna2TileButton();
-            this.burgerMenuBtn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.CaloriesButton = new Guna.UI2.WinForms.Guna2TileButton();
-            this.minimizeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.expandBtn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.exitBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.splashScreenTimer = new System.Windows.Forms.Timer(this.components);
             this.TitlePanel.SuspendLayout();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
@@ -91,26 +93,80 @@ namespace Mockup
             this.titleLabel.TabIndex = 8;
             this.titleLabel.Text = "Главная страница";
             // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeBtn.CheckedState.Parent = this.minimizeBtn;
+            this.Animator.SetDecoration(this.minimizeBtn, BunifuAnimatorNS.DecorationType.None);
+            this.minimizeBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minimizeBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
+            this.minimizeBtn.Image = global::Mockup.Properties.Resources.BlueMinimize;
+            this.minimizeBtn.ImageSize = new System.Drawing.Size(46, 46);
+            this.minimizeBtn.Location = new System.Drawing.Point(981, 0);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
+            this.minimizeBtn.PressedState.Parent = this.minimizeBtn;
+            this.minimizeBtn.Size = new System.Drawing.Size(73, 46);
+            this.minimizeBtn.TabIndex = 7;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            // 
+            // expandBtn
+            // 
+            this.expandBtn.BackColor = System.Drawing.Color.Transparent;
+            this.expandBtn.CheckedState.Parent = this.expandBtn;
+            this.Animator.SetDecoration(this.expandBtn, BunifuAnimatorNS.DecorationType.None);
+            this.expandBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.expandBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.expandBtn.HoverState.Parent = this.expandBtn;
+            this.expandBtn.Image = global::Mockup.Properties.Resources.BlueExpand;
+            this.expandBtn.ImageSize = new System.Drawing.Size(46, 46);
+            this.expandBtn.Location = new System.Drawing.Point(1054, 0);
+            this.expandBtn.Name = "expandBtn";
+            this.expandBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
+            this.expandBtn.PressedState.Parent = this.expandBtn;
+            this.expandBtn.Size = new System.Drawing.Size(73, 46);
+            this.expandBtn.TabIndex = 2;
+            this.expandBtn.Click += new System.EventHandler(this.expandBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.CheckedState.Parent = this.exitBtn;
+            this.Animator.SetDecoration(this.exitBtn, BunifuAnimatorNS.DecorationType.None);
+            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.exitBtn.HoverState.Parent = this.exitBtn;
+            this.exitBtn.Image = global::Mockup.Properties.Resources.blueExit;
+            this.exitBtn.ImageSize = new System.Drawing.Size(46, 46);
+            this.exitBtn.Location = new System.Drawing.Point(1127, 0);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
+            this.exitBtn.PressedState.Parent = this.exitBtn;
+            this.exitBtn.Size = new System.Drawing.Size(73, 46);
+            this.exitBtn.TabIndex = 4;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // Animator
             // 
             this.Animator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.Animator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.Animator.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.Animator.DefaultAnimation = animation4;
             // 
             // Container
             // 
@@ -139,47 +195,6 @@ namespace Mockup
             this.Menu.ShadowDecoration.Parent = this.Menu;
             this.Menu.Size = new System.Drawing.Size(260, 653);
             this.Menu.TabIndex = 20;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this.TitlePanel;
-            // 
-            // blackIcons
-            // 
-            this.blackIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blackIcons.ImageStream")));
-            this.blackIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.blackIcons.Images.SetKeyName(0, "exit.png");
-            this.blackIcons.Images.SetKeyName(1, "expand.png");
-            this.blackIcons.Images.SetKeyName(2, "compress_96px.png");
-            this.blackIcons.Images.SetKeyName(3, "rollDown.png");
-            this.blackIcons.Images.SetKeyName(4, "BurgerMenu.png");
-            this.blackIcons.Images.SetKeyName(5, "calories_96px.png");
-            this.blackIcons.Images.SetKeyName(6, "calculator_96px.png");
-            this.blackIcons.Images.SetKeyName(7, "pencil_96px.png");
-            this.blackIcons.Images.SetKeyName(8, "settings_96px.png");
-            // 
-            // blueIcons
-            // 
-            this.blueIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blueIcons.ImageStream")));
-            this.blueIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.blueIcons.Images.SetKeyName(0, "blueExit.png");
-            this.blueIcons.Images.SetKeyName(1, "BlueExpand.png");
-            this.blueIcons.Images.SetKeyName(2, "collapseBlue.png");
-            this.blueIcons.Images.SetKeyName(3, "BlueMinimize.png");
-            this.blueIcons.Images.SetKeyName(4, "BlueMenu.png");
-            this.blueIcons.Images.SetKeyName(5, "calories_80px.png");
-            this.blueIcons.Images.SetKeyName(6, "calculator_80px.png");
-            this.blueIcons.Images.SetKeyName(7, "pencil_drawing_80px.png");
-            this.blueIcons.Images.SetKeyName(8, "settings_80px.png");
-            // 
-            // fadeTransition
-            // 
-            this.fadeTransition.Delay = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SettingsButton
             // 
@@ -301,59 +316,50 @@ namespace Mockup
             this.CaloriesButton.TextOffset = new System.Drawing.Point(0, -20);
             this.CaloriesButton.Click += new System.EventHandler(this.CaloriesButton_Click);
             // 
-            // minimizeBtn
+            // guna2DragControl1
             // 
-            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeBtn.CheckedState.Parent = this.minimizeBtn;
-            this.Animator.SetDecoration(this.minimizeBtn, BunifuAnimatorNS.DecorationType.None);
-            this.minimizeBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizeBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
-            this.minimizeBtn.Image = global::Mockup.Properties.Resources.BlueMinimize;
-            this.minimizeBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.minimizeBtn.Location = new System.Drawing.Point(981, 0);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
-            this.minimizeBtn.PressedState.Parent = this.minimizeBtn;
-            this.minimizeBtn.Size = new System.Drawing.Size(73, 46);
-            this.minimizeBtn.TabIndex = 7;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            this.guna2DragControl1.TargetControl = this.TitlePanel;
             // 
-            // expandBtn
+            // blackIcons
             // 
-            this.expandBtn.BackColor = System.Drawing.Color.Transparent;
-            this.expandBtn.CheckedState.Parent = this.expandBtn;
-            this.Animator.SetDecoration(this.expandBtn, BunifuAnimatorNS.DecorationType.None);
-            this.expandBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.expandBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.expandBtn.HoverState.Parent = this.expandBtn;
-            this.expandBtn.Image = global::Mockup.Properties.Resources.BlueExpand;
-            this.expandBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.expandBtn.Location = new System.Drawing.Point(1054, 0);
-            this.expandBtn.Name = "expandBtn";
-            this.expandBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
-            this.expandBtn.PressedState.Parent = this.expandBtn;
-            this.expandBtn.Size = new System.Drawing.Size(73, 46);
-            this.expandBtn.TabIndex = 2;
-            this.expandBtn.Click += new System.EventHandler(this.expandBtn_Click);
+            this.blackIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blackIcons.ImageStream")));
+            this.blackIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.blackIcons.Images.SetKeyName(0, "exit.png");
+            this.blackIcons.Images.SetKeyName(1, "expand.png");
+            this.blackIcons.Images.SetKeyName(2, "compress_96px.png");
+            this.blackIcons.Images.SetKeyName(3, "rollDown.png");
+            this.blackIcons.Images.SetKeyName(4, "BurgerMenu.png");
+            this.blackIcons.Images.SetKeyName(5, "calories_96px.png");
+            this.blackIcons.Images.SetKeyName(6, "calculator_96px.png");
+            this.blackIcons.Images.SetKeyName(7, "pencil_96px.png");
+            this.blackIcons.Images.SetKeyName(8, "settings_96px.png");
             // 
-            // exitBtn
+            // blueIcons
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitBtn.CheckedState.Parent = this.exitBtn;
-            this.Animator.SetDecoration(this.exitBtn, BunifuAnimatorNS.DecorationType.None);
-            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exitBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.exitBtn.HoverState.Parent = this.exitBtn;
-            this.exitBtn.Image = global::Mockup.Properties.Resources.blueExit;
-            this.exitBtn.ImageSize = new System.Drawing.Size(46, 46);
-            this.exitBtn.Location = new System.Drawing.Point(1127, 0);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.PressedState.ImageSize = new System.Drawing.Size(42, 42);
-            this.exitBtn.PressedState.Parent = this.exitBtn;
-            this.exitBtn.Size = new System.Drawing.Size(73, 46);
-            this.exitBtn.TabIndex = 4;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.blueIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("blueIcons.ImageStream")));
+            this.blueIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.blueIcons.Images.SetKeyName(0, "blueExit.png");
+            this.blueIcons.Images.SetKeyName(1, "BlueExpand.png");
+            this.blueIcons.Images.SetKeyName(2, "collapseBlue.png");
+            this.blueIcons.Images.SetKeyName(3, "BlueMinimize.png");
+            this.blueIcons.Images.SetKeyName(4, "BlueMenu.png");
+            this.blueIcons.Images.SetKeyName(5, "calories_80px.png");
+            this.blueIcons.Images.SetKeyName(6, "calculator_80px.png");
+            this.blueIcons.Images.SetKeyName(7, "pencil_drawing_80px.png");
+            this.blueIcons.Images.SetKeyName(8, "settings_80px.png");
+            // 
+            // fadeTransition
+            // 
+            this.fadeTransition.Delay = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // splashScreenTimer
+            // 
+            this.splashScreenTimer.Tick += new System.EventHandler(this.splashScreenTimer_Tick);
             // 
             // Form1
             // 
@@ -385,20 +391,22 @@ namespace Mockup
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2ImageButton burgerMenuBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel TitlePanel;
-        private Guna.UI2.WinForms.Guna2TileButton CaloriesButton;
         private BunifuAnimatorNS.BunifuTransition Animator;
         private System.Windows.Forms.Panel Container;
-        private Guna.UI2.WinForms.Guna2TileButton EditorButton;
-        private Guna.UI2.WinForms.Guna2TileButton CalculationButton;
         private Guna.UI2.WinForms.Guna2GradientPanel Menu;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.Label titleLabel;
-        private Guna.UI2.WinForms.Guna2TileButton SettingsButton;
         private System.Windows.Forms.ImageList blackIcons;
         private System.Windows.Forms.ImageList blueIcons;
         private Bunifu.Framework.UI.BunifuFormFadeTransition fadeTransition;
         private System.Windows.Forms.Timer timer1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer splashScreenTimer;
+        public Guna.UI2.WinForms.Guna2TileButton CaloriesButton;
+        public Guna.UI2.WinForms.Guna2TileButton EditorButton;
+        public Guna.UI2.WinForms.Guna2TileButton CalculationButton;
+        public Guna.UI2.WinForms.Guna2TileButton SettingsButton;
     }
 }
 

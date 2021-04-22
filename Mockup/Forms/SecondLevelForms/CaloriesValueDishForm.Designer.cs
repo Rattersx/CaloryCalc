@@ -45,8 +45,8 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.panel22 = new System.Windows.Forms.Panel();
             this.dishListBox = new System.Windows.Forms.ListBox();
+            this.panel22 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -301,15 +301,6 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2GroupBox1.Text = "Блюда";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.Transparent;
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(0, 0);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(264, 40);
-            this.panel22.TabIndex = 3;
-            // 
             // dishListBox
             // 
             this.dishListBox.BackColor = System.Drawing.Color.AliceBlue;
@@ -321,6 +312,15 @@ namespace Mockup.Forms.SecondLevelForms
             this.dishListBox.Size = new System.Drawing.Size(264, 322);
             this.dishListBox.TabIndex = 4;
             this.dishListBox.SelectedIndexChanged += new System.EventHandler(this.dishListBox_SelectedIndexChanged);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Transparent;
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(264, 40);
+            this.panel22.TabIndex = 3;
             // 
             // label23
             // 

@@ -1,4 +1,5 @@
-﻿using Mockup.Forms.AddForms;
+﻿using Mockup.Forms;
+using Mockup.Forms.AddForms;
 using Mockup.Themes;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +18,8 @@ namespace Mockup
     {
         bool expanded = false;
         ThemeInfo theme = new ThemeInfo();
+        public bool progressEnd = false;
+        SplashScreen ss;
         public Form1()
         {
             Program.parent = this;
@@ -152,7 +156,7 @@ namespace Mockup
         private void EditorButton_Click(object sender, EventArgs e)
         {
             Program.parent.Width = 1200;
-            AddFormToContainer(new CaloriesRedactorForm(theme));
+            AddFormToContainer(new CaloriesRedactorForm(theme),true);
             titleLabel.Text = EditorButton.Text;
 
             CaloriesButton.Checked = false;
@@ -163,7 +167,13 @@ namespace Mockup
 
         private void CaloriesButton_Click(object sender, EventArgs e)
         {
-            AddFormToContainer(new CaloriesValueForm(theme));
+            AddFormToContainer(new SplashScreen(theme), true);
+            CaloriesButton.Enabled = false;
+            CalculationButton.Enabled = false;
+            SettingsButton.Enabled = false;
+            EditorButton.Enabled = false;
+            splashScreenTimer.Start();
+            AddFormToContainer(new CaloriesValueForm(theme),false);
             titleLabel.Text = CaloriesButton.Text;
 
             CaloriesButton.Checked = true;
@@ -175,7 +185,7 @@ namespace Mockup
         private void CalculationButton_Click(object sender, EventArgs e)
         {
             Program.parent.Width = 1200;
-            AddFormToContainer(new CaloriesCalculationForm(theme));
+            AddFormToContainer(new CaloriesCalculationForm(theme), true);
             titleLabel.Text = CalculationButton.Text;
 
             CaloriesButton.Checked = false;
@@ -187,7 +197,7 @@ namespace Mockup
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             Program.parent.Width = 1200;
-            AddFormToContainer(new SettingsForm(theme));
+            AddFormToContainer(new SettingsForm(theme), true);
 
 
             CaloriesButton.Checked = false;
@@ -196,20 +206,40 @@ namespace Mockup
             SettingsButton.Checked = true;
         }
         #endregion
-
-        private void AddFormToContainer(object form)
+        private void ContainerRemoveItems()
         {
             foreach (Control item in Container.Controls)
             {
                 Container.Controls.Remove(item);
             }
-            Form f = form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            Container.Controls.Add(f);
-            Container.Tag = f;
-            f.Visible = true;
-            f.Show();
+        }
+        private void ContainerAddItem(object f)
+        {
+            Form form = f as Form;
+            Container.Controls.Add(form);
+            Container.Tag = form;
+            form.Visible = true;
+            form.Show();
+        }
+        private delegate void ContainerRemoveItemsDelegate();
+        private delegate void ContainerAddItemDelegate(object f);
+        private void AddFormToContainer(object form, bool deleteIsNeeded)
+        {
+            if (deleteIsNeeded)
+            {
+                Container.BeginInvoke(new ContainerRemoveItemsDelegate(ContainerRemoveItems));
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                Container.BeginInvoke(new ContainerAddItemDelegate(ContainerAddItem), f);
+            }
+            else
+            {
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                Container.BeginInvoke(new ContainerAddItemDelegate(ContainerAddItem), f);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -221,6 +251,20 @@ namespace Mockup
                 this.WindowState = FormWindowState.Minimized;
                 this.Opacity = 1.0;
                 timer1.Stop();
+            }
+        }
+
+        private void splashScreenTimer_Tick(object sender, EventArgs e)
+        {
+            if (progressEnd)
+            {
+                
+                CaloriesButton.Enabled = true;
+                CalculationButton.Enabled = true;
+                SettingsButton.Enabled = true;
+                EditorButton.Enabled = true;
+                progressEnd = false;
+                splashScreenTimer.Stop();
             }
         }
     }

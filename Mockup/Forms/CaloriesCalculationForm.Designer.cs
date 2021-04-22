@@ -29,6 +29,7 @@ namespace Mockup
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.modeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.activityComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -48,7 +49,9 @@ namespace Mockup
             this.dailyCalorieRequirement1 = new System.Windows.Forms.Label();
             this.dailyCalorieRequirement2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.errorAll = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAll)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +83,10 @@ namespace Mockup
             this.modeComboBox.HoverState.FillColor = System.Drawing.Color.PaleTurquoise;
             this.modeComboBox.HoverState.Parent = this.modeComboBox;
             this.modeComboBox.ItemHeight = 30;
+            this.modeComboBox.Items.AddRange(new object[] {
+            "Сброс веса",
+            "Поддержание",
+            "Набор веса"});
             this.modeComboBox.ItemsAppearance.Parent = this.modeComboBox;
             this.modeComboBox.Location = new System.Drawing.Point(20, 62);
             this.modeComboBox.Margin = new System.Windows.Forms.Padding(2);
@@ -105,18 +112,24 @@ namespace Mockup
             this.activityComboBox.HoverState.FillColor = System.Drawing.Color.PaleTurquoise;
             this.activityComboBox.HoverState.Parent = this.activityComboBox;
             this.activityComboBox.ItemHeight = 30;
+            this.activityComboBox.Items.AddRange(new object[] {
+            "Минимальный (никаких физических нагрузок)",
+            "Низкий (физические нагрузки 1-3 раза в неделю)",
+            "Средний (физические нагрузки 3-5 раза в неделю)",
+            "Высокий (ежедневные физические нагрузки)",
+            "Очень высокий (физические нагрузки по несколько раз в день)"});
             this.activityComboBox.ItemsAppearance.Parent = this.activityComboBox;
-            this.activityComboBox.Location = new System.Drawing.Point(393, 62);
+            this.activityComboBox.Location = new System.Drawing.Point(440, 62);
             this.activityComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.activityComboBox.Name = "activityComboBox";
             this.activityComboBox.ShadowDecoration.Parent = this.activityComboBox;
-            this.activityComboBox.Size = new System.Drawing.Size(287, 36);
+            this.activityComboBox.Size = new System.Drawing.Size(438, 36);
             this.activityComboBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(391, 46);
+            this.label2.Location = new System.Drawing.Point(447, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -147,6 +160,8 @@ namespace Mockup
             this.growthTextBox.ShadowDecoration.Parent = this.growthTextBox;
             this.growthTextBox.Size = new System.Drawing.Size(150, 32);
             this.growthTextBox.TabIndex = 4;
+            this.growthTextBox.TextChanged += new System.EventHandler(this.growthTextBox_TextChanged);
+            this.growthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.growthTextBox_KeyPress);
             // 
             // label3
             // 
@@ -173,7 +188,7 @@ namespace Mockup
             this.weigthTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.weigthTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(182)))), ((int)(((byte)(255)))));
             this.weigthTextBox.HoverState.Parent = this.weigthTextBox;
-            this.weigthTextBox.Location = new System.Drawing.Point(328, 163);
+            this.weigthTextBox.Location = new System.Drawing.Point(378, 163);
             this.weigthTextBox.Name = "weigthTextBox";
             this.weigthTextBox.PasswordChar = '\0';
             this.weigthTextBox.PlaceholderText = "";
@@ -181,6 +196,8 @@ namespace Mockup
             this.weigthTextBox.ShadowDecoration.Parent = this.weigthTextBox;
             this.weigthTextBox.Size = new System.Drawing.Size(150, 32);
             this.weigthTextBox.TabIndex = 6;
+            this.weigthTextBox.TextChanged += new System.EventHandler(this.weigthTextBox_TextChanged);
+            this.weigthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.weigthTextBox_KeyPress);
             // 
             // ageTextBox
             // 
@@ -196,7 +213,7 @@ namespace Mockup
             this.ageTextBox.FocusedState.Parent = this.ageTextBox;
             this.ageTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ageTextBox.HoverState.Parent = this.ageTextBox;
-            this.ageTextBox.Location = new System.Drawing.Point(641, 163);
+            this.ageTextBox.Location = new System.Drawing.Point(728, 163);
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.PasswordChar = '\0';
             this.ageTextBox.PlaceholderText = "";
@@ -204,11 +221,13 @@ namespace Mockup
             this.ageTextBox.ShadowDecoration.Parent = this.ageTextBox;
             this.ageTextBox.Size = new System.Drawing.Size(150, 32);
             this.ageTextBox.TabIndex = 7;
+            this.ageTextBox.TextChanged += new System.EventHandler(this.ageTextBox_TextChanged);
+            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(639, 146);
+            this.label4.Location = new System.Drawing.Point(729, 147);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
@@ -218,7 +237,7 @@ namespace Mockup
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 148);
+            this.label5.Location = new System.Drawing.Point(378, 147);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
@@ -320,6 +339,7 @@ namespace Mockup
             this.calculateButton.Size = new System.Drawing.Size(150, 37);
             this.calculateButton.TabIndex = 15;
             this.calculateButton.Text = "Расcчитать";
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // dailyCalorieRequirement1
             // 
@@ -328,9 +348,9 @@ namespace Mockup
             this.dailyCalorieRequirement1.Location = new System.Drawing.Point(18, 508);
             this.dailyCalorieRequirement1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dailyCalorieRequirement1.Name = "dailyCalorieRequirement1";
-            this.dailyCalorieRequirement1.Size = new System.Drawing.Size(64, 26);
+            this.dailyCalorieRequirement1.Size = new System.Drawing.Size(25, 26);
             this.dailyCalorieRequirement1.TabIndex = 16;
-            this.dailyCalorieRequirement1.Text = "9149";
+            this.dailyCalorieRequirement1.Text = "0";
             // 
             // dailyCalorieRequirement2
             // 
@@ -339,9 +359,9 @@ namespace Mockup
             this.dailyCalorieRequirement2.Location = new System.Drawing.Point(18, 566);
             this.dailyCalorieRequirement2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dailyCalorieRequirement2.Name = "dailyCalorieRequirement2";
-            this.dailyCalorieRequirement2.Size = new System.Drawing.Size(64, 26);
+            this.dailyCalorieRequirement2.Size = new System.Drawing.Size(25, 26);
             this.dailyCalorieRequirement2.TabIndex = 17;
-            this.dailyCalorieRequirement2.Text = "9149";
+            this.dailyCalorieRequirement2.Text = "0";
             // 
             // guna2GradientPanel1
             // 
@@ -359,11 +379,15 @@ namespace Mockup
             this.guna2GradientPanel1.Size = new System.Drawing.Size(949, 49);
             this.guna2GradientPanel1.TabIndex = 18;
             // 
+            // errorAll
+            // 
+            this.errorAll.ContainerControl = this;
+            // 
             // CaloriesCalculationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(947, 653);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.dailyCalorieRequirement2);
@@ -387,6 +411,7 @@ namespace Mockup
             this.Text = "n";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAll)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,6 +438,7 @@ namespace Mockup
         private System.Windows.Forms.Label dailyCalorieRequirement1;
         private System.Windows.Forms.Label dailyCalorieRequirement2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.ErrorProvider errorAll;
     }
 }
 

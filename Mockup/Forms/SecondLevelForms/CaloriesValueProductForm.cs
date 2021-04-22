@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,16 +40,37 @@ namespace Mockup
 
             ClearProgressBar();
             productListBox.DisplayMember = "Name";
-            loadItems().ForEach(i => productListBox.Items.Add(i));
+            loadItems();
             guna2GroupBox1.Text = "Продукт";
         }
-        private List<Product> loadItems()
+        private delegate void AddItemToPLBDelegate(object item);
+        private void AddItemToPLB(object item)
         {
-            using (ApplicationContext context = new ApplicationContext())
+            Product product = item as Product;
+            productListBox.Items.Add(product);
+        }
+
+        private void loadItems()
+        {
+            Task.Run(() =>
             {
-                items = context.Products.ToList<Product>();
-                return items;
-            }
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    try
+                    {
+                        items = context.Products.ToList<Product>();
+                        foreach (Product product in items)
+                        {
+                            productListBox.BeginInvoke(new AddItemToPLBDelegate(AddItemToPLB), product);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        loadItems();
+                    }
+                }
+                Program.parent.progressEnd = true;
+            });
         }
         private void ClearProgressBar()
         {
@@ -153,7 +175,7 @@ namespace Mockup
             CaloriesRedactorProductAdd form = new CaloriesRedactorProductAdd(theme, true);
             form.ShowDialog();
             productListBox.Items.Clear();
-            loadItems().ForEach(i => productListBox.Items.Add(i));
+            loadItems();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

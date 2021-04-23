@@ -63,13 +63,13 @@ namespace Mockup
                         {
                             productListBox.BeginInvoke(new AddItemToPLBDelegate(AddItemToPLB), product);
                         }
+                        Program.parent.progressEnd = true;
                     }
                     catch(Exception ex)
                     {
                         loadItems();
                     }
                 }
-                Program.parent.progressEnd = true;
             });
         }
         private void ClearProgressBar()
@@ -97,13 +97,16 @@ namespace Mockup
 
         private void productListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (productListBox.SelectedItem != null)
             {
-                selectItem();
-            }
-            catch (Exception ex)
-            {
-                // MessageBox.Show(ex.Message);
+                try
+                {
+                    selectItem();
+                }
+                catch (Exception ex)
+                {
+                    // MessageBox.Show(ex.Message);
+                }
             }
         }
         private void selectItem() // listbox1 selected item changed
@@ -114,10 +117,10 @@ namespace Mockup
 
                 Product selectedItem = productListBox.SelectedItem as Product;
 
-                label1.Text = $"{Math.Round((selectedItem.Kcal * (double.Parse(weightTB.Text) / 100)), 2)} Ккал";
-                label2.Text = $"{Math.Round((selectedItem.Protein * (double.Parse(weightTB.Text) / 100)), 2)} г";
-                label3.Text = $"{Math.Round((selectedItem.Ffat * (double.Parse(weightTB.Text) / 100)), 2)} г";
-                label4.Text = $"{Math.Round((selectedItem.Carbohydrate * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                label5.Text = $"{Math.Round((selectedItem.Kcal * (double.Parse(weightTB.Text) / 100)), 2)} Ккал";
+                label8.Text = $"{Math.Round((selectedItem.Protein * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                label13.Text = $"{Math.Round((selectedItem.Ffat * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                label18.Text = $"{Math.Round((selectedItem.Carbohydrate * (double.Parse(weightTB.Text) / 100)), 2)} г";
 
                 caloriesPerc = (selectedItem.Kcal / TOTALCALORIES * 100) * (double.Parse(weightTB.Text) / 100);
                 proteinsPerc = (selectedItem.Protein / TOTALPROTEIN * 100) * (double.Parse(weightTB.Text) / 100);
@@ -172,7 +175,7 @@ namespace Mockup
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            CaloriesRedactorProductAdd form = new CaloriesRedactorProductAdd(theme, true);
+            CaloriesRedactorProductAdd form = new CaloriesRedactorProductAdd(theme);
             form.ShowDialog();
             productListBox.Items.Clear();
             loadItems();
@@ -196,6 +199,17 @@ namespace Mockup
                     }
                     productListBox.DisplayMember = "Name";
                 }
+            }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (productListBox.SelectedIndex > -1)
+            {
+                CaloriesRedactorProductAdd form4 = new CaloriesRedactorProductAdd(theme, productListBox.SelectedItem as Product);
+
+                form4.ShowDialog();
+
             }
         }
     }

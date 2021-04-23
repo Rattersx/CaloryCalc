@@ -14,17 +14,16 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
     public partial class CaloriesRedactorDish_Edit : Form
     {
         Themes.ThemeInfo theme = new Themes.ThemeInfo();
-        public CaloriesRedactorDish_Edit(Themes.ThemeInfo _theme, bool isAdd)
+        public Dish selectedItem;
+        bool isAdd = false;
+        public CaloriesRedactorDish_Edit(Themes.ThemeInfo _theme)
         {
             InitializeComponent();
             theme = _theme;
             AnimateWindow.SetAnimateWindow(this);
             guna2ShadowForm1.SetShadowForm(this);
             timer1.Start();
-            if (isAdd)
-                bunifuCustomLabel1.Text = "Добавить";
-            else
-                bunifuCustomLabel1.Text = "Изменить";
+            bunifuCustomLabel1.Text = "Добавить";
             Commands.ApplyTheme(this, theme);
             if(theme.black)
             {
@@ -38,18 +37,94 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             }
             listBox1.DisplayMember = "Name";
             listBox2.DisplayMember = "Name";
-            foreach (Product item in LoadAllProducts())
-            {
-                listBox1.Items.Add(item);
-            }
+            LoadAllProducts();
             guna2ComboBox1.SelectedIndex = 0;
+            isAdd = true;
+
         }
-        private List<Product> LoadAllProducts()
+        public CaloriesRedactorDish_Edit(Themes.ThemeInfo _theme, Dish selectedDish)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            InitializeComponent();
+            theme = _theme;
+            AnimateWindow.SetAnimateWindow(this);
+            guna2ShadowForm1.SetShadowForm(this);
+            timer1.Start();
+            bunifuCustomLabel1.Text = "Изменить";
+            Commands.ApplyTheme(this, theme);
+            if (theme.black)
             {
-                return db.Products.ToList<Product>();
+                guna2ImageButton1.Image = blackList.Images[0];
+                guna2ImageButton2.Image = blackList.Images[1];
             }
+            else
+            {
+                guna2ImageButton1.Image = blueList.Images[0];
+                guna2ImageButton2.Image = blueList.Images[1];
+            }
+            listBox1.DisplayMember = "Name";
+            listBox2.DisplayMember = "Name";
+            LoadAllProducts();
+            guna2ComboBox1.SelectedIndex = 0;
+            selectedItem = selectedDish;
+
+            dishInfo(selectedDish);
+            listBox2.Items.Clear();
+            LoadThisProducts(selectedDish);
+            LoadAllProducts();
+            isAdd = false;
+        }
+        void dishInfo(Dish dish)
+        {
+            using (ApplicationContext context = new ApplicationContext())
+            {
+                var selectedDish = context.Dishes.Where(d => d.Id == dish.Id).ToList<Dish>();
+
+
+                titleTB.Text = selectedDish[0].Name;
+                guna2TextBox1.Text = selectedDish[0].Description;
+            }
+        }
+        private delegate void AddToListDelegate(object product);
+        private void AddToAllProductList(object _product)
+        {
+            Product product = _product as Product;
+            listBox1.Items.Add(product);
+        }
+        private void AddToThisProductList(object _product)
+        {
+            Product product = _product as Product;
+            listBox2.Items.Add(product);
+        }
+        private void LoadThisProducts(object _dish)
+        {
+            Task.Run(() =>
+            {
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    Dish dish = _dish as Dish;
+                    var selectedDishProduct = db.DishItems.Where(d => d.DishId == dish.Id);
+                    var DishProducts = selectedDishProduct.Select(i => i.Product).ToList<Product>();
+
+                    foreach (Product product in DishProducts)
+                    {
+                        listBox2.BeginInvoke(new AddToListDelegate(AddToThisProductList), product);
+                    }
+                }
+            });
+        }
+        private void LoadAllProducts()
+        {
+            Task.Run(() =>
+            {
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    var products = db.Products.ToList<Product>();
+                    foreach (Product item in products)
+                    {
+                        listBox1.BeginInvoke(new AddToListDelegate(AddToAllProductList), item);
+                    }
+                }
+            });
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -81,7 +156,8 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
                     MessageBox.Show(ex.Message);
                 }
             }
-            else MessageBox.Show("Заполните поля, количество и тип измерения и выберите продукт.");
+            else 
+                MessageBox.Show("Заполните поля, количество и тип измерения и выберите продукт.");
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -96,56 +172,112 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            try
+            if (isAdd)
             {
-                if (titleTB.Text != "" && listBox2.Items.Count > -1)
+                try
                 {
-                    using (ApplicationContext db = new ApplicationContext())
+                    if (titleTB.Text != "" && listBox2.Items.Count > -1)
                     {
-                        Dish newDish = new Dish
+                        using (ApplicationContext db = new ApplicationContext())
                         {
-                            Name = titleTB.Text,
-                            Description = guna2TextBox1.Text,
-                        };
-                        db.Dishes.ToList().ForEach(i => {
-                            if (i.Name == newDish.Name)
-                                throw new Exception("Такое блюдо уже есть в списке");
-                        });
-                        db.Dishes.Add(newDish); db.SaveChanges();
-                        for (int i = 0; i < listBox2.Items.Count; i++)
-                        {
-                            MeasurementUnit newMU = new MeasurementUnit();
-                            if (listBox4.Items[i].ToString() == "Грамм")
+                            Dish newDish = new Dish
                             {
-                                newMU.Title = "Грамм";
-                                newMU.InGramm = (double)listBox3.Items[i];
-                            }
-                            else if (listBox4.Items[i].ToString() == "Мл")
-                            {
-                                newMU.Title = "Мл";
-                                newMU.Volume = (double)listBox3.Items[i];
-                            }
-                            db.MeasurementUnits.Add(newMU);
-                            db.SaveChanges();
-                            DishItem newDishitem = new DishItem
-                            {
-                                ProductId = (listBox2.Items[i] as Product).Id,
-                                DishId = newDish.Id,
-                                Value = 0,
-                                MeasurementUnitId = newMU.Id,
+                                Name = titleTB.Text,
+                                Description = guna2TextBox1.Text,
                             };
-                            db.DishItems.Add(newDishitem);
-                            db.SaveChanges();
+                            db.Dishes.ToList().ForEach(i =>
+                            {
+                                if (i.Name == newDish.Name)
+                                    throw new Exception("Такое блюдо уже есть в списке");
+                            });
+                            db.Dishes.Add(newDish); db.SaveChanges();
+                            for (int i = 0; i < listBox2.Items.Count; i++)
+                            {
+                                MeasurementUnit newMU = new MeasurementUnit();
+                                if (listBox4.Items[i].ToString() == "Грамм")
+                                {
+                                    newMU.Title = "Грамм";
+                                    newMU.InGramm = (double)listBox3.Items[i];
+                                }
+                                else if (listBox4.Items[i].ToString() == "Мл")
+                                {
+                                    newMU.Title = "Мл";
+                                    newMU.Volume = (double)listBox3.Items[i];
+                                }
+                                db.MeasurementUnits.Add(newMU);
+                                db.SaveChanges();
+                                DishItem newDishitem = new DishItem
+                                {
+                                    ProductId = (listBox2.Items[i] as Product).Id,
+                                    DishId = newDish.Id,
+                                    Value = 0,
+                                    MeasurementUnitId = newMU.Id,
+                                };
+                                db.DishItems.Add(newDishitem);
+                                db.SaveChanges();
+                            }
                         }
+                        MessageBox.Show("Блюдо добавлено!");
+                        Close();
                     }
-                    MessageBox.Show("Блюдо добавлено!");
-                    Close();
+                    else MessageBox.Show("Введите название блюда!");
                 }
-                else MessageBox.Show("Введите название блюда!");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    if (titleTB.Text != "" && listBox2.Items.Count > -1)
+                    {
+                        using (ApplicationContext db = new ApplicationContext())
+                        {
+                            var dish = db.Dishes.Where(d => d.Id == selectedItem.Id).ToList<Dish>()[0];
+                            dish.Name = titleTB.Text;
+                            dish.Description = guna2TextBox1.Text;
+
+                            db.SaveChanges();
+
+
+                            for (int i = 0; i < listBox2.Items.Count; i++)
+                            {
+                                MeasurementUnit newMU = new MeasurementUnit();
+                                if (listBox4.Items[i].ToString() == "Грамм")
+                                {
+                                    newMU.Title = "Грамм";
+                                    newMU.InGramm = (double)listBox3.Items[i];
+                                }
+                                else if (listBox4.Items[i].ToString() == "Мл")
+                                {
+                                    newMU.Title = "Мл";
+                                    newMU.Volume = (double)listBox3.Items[i];
+                                }
+
+                                db.MeasurementUnits.Add(newMU);
+                                db.SaveChanges();
+
+                                DishItem newDishitem = new DishItem
+                                {
+                                    ProductId = (listBox2.Items[i] as Product).Id,
+                                    DishId = dish.Id,
+                                    Value = 0,
+                                    MeasurementUnitId = newMU.Id,
+                                };
+                                db.DishItems.Add(newDishitem);
+                                db.SaveChanges();
+                            }
+                        }
+                        MessageBox.Show("Блюдо добавлено!");
+                    }
+                    else MessageBox.Show("Введите название блюда!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

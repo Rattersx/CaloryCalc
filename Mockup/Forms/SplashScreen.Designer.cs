@@ -52,13 +52,13 @@ namespace Mockup.Forms
             this.bunifuCircleProgressbar1.LabelVisible = false;
             this.bunifuCircleProgressbar1.LineProgressThickness = 20;
             this.bunifuCircleProgressbar1.LineThickness = 0;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(170, 18);
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(148, 2);
             this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.bunifuCircleProgressbar1.MaxValue = 100;
             this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
             this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Transparent;
             this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(617, 617);
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(653, 653);
             this.bunifuCircleProgressbar1.TabIndex = 0;
             this.bunifuCircleProgressbar1.Value = 35;
             // 

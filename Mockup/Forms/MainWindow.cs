@@ -65,7 +65,6 @@ namespace Mockup
                     burgerMenuBtn.Image = blackIcons.Images[4];
                     CaloriesButton.Image = blackIcons.Images[5];
                     CalculationButton.Image = blackIcons.Images[6];
-                    EditorButton.Image = blackIcons.Images[7];
                     SettingsButton.Image = blackIcons.Images[8];
                 }
                 else
@@ -79,7 +78,6 @@ namespace Mockup
                     burgerMenuBtn.Image = blueIcons.Images[4];
                     CaloriesButton.Image = blueIcons.Images[5];
                     CalculationButton.Image = blueIcons.Images[6];
-                    EditorButton.Image = blueIcons.Images[7];
                     SettingsButton.Image = blueIcons.Images[8];
                 }
             }
@@ -133,7 +131,6 @@ namespace Mockup
             if (burgerMenuBtn.Location.X != 10)
             {
                 CaloriesButton.ForeColor = Menu.BackColor;
-                EditorButton.ForeColor = Menu.BackColor;
                 CalculationButton.ForeColor = Menu.BackColor;
 
                 Menu.Visible = false;
@@ -144,7 +141,6 @@ namespace Mockup
             else
             {
                 CaloriesButton.ForeColor = Color.Black;
-                EditorButton.ForeColor = Color.Black;
                 CalculationButton.ForeColor = Color.Black;
 
                 Menu.Visible = false;
@@ -153,32 +149,18 @@ namespace Mockup
                 Animator.ShowSync(Menu, false, BunifuAnimatorNS.Animation.HorizSlide);
             }
         }
-        private void EditorButton_Click(object sender, EventArgs e)
-        {
-            Program.parent.Width = 1200;
-            AddFormToContainer(new CaloriesRedactorForm(theme),true);
-            titleLabel.Text = EditorButton.Text;
-
-            CaloriesButton.Checked = false;
-            CalculationButton.Checked = false;
-            EditorButton.Checked = true;
-            SettingsButton.Checked = false;
-        }
-
         private void CaloriesButton_Click(object sender, EventArgs e)
         {
             AddFormToContainer(new SplashScreen(theme), true);
             CaloriesButton.Enabled = false;
             CalculationButton.Enabled = false;
             SettingsButton.Enabled = false;
-            EditorButton.Enabled = false;
             splashScreenTimer.Start();
             AddFormToContainer(new CaloriesValueForm(theme),false);
             titleLabel.Text = CaloriesButton.Text;
 
             CaloriesButton.Checked = true;
             CalculationButton.Checked = false;
-            EditorButton.Checked = false;
             SettingsButton.Checked = false;
         }
 
@@ -190,7 +172,6 @@ namespace Mockup
 
             CaloriesButton.Checked = false;
             CalculationButton.Checked = true;
-            EditorButton.Checked = false;
             SettingsButton.Checked = false;
         }
 
@@ -202,7 +183,6 @@ namespace Mockup
 
             CaloriesButton.Checked = false;
             CalculationButton.Checked = false;
-            EditorButton.Checked = false;
             SettingsButton.Checked = true;
         }
         #endregion
@@ -262,7 +242,6 @@ namespace Mockup
                 CaloriesButton.Enabled = true;
                 CalculationButton.Enabled = true;
                 SettingsButton.Enabled = true;
-                EditorButton.Enabled = true;
                 progressEnd = false;
                 splashScreenTimer.Stop();
             }

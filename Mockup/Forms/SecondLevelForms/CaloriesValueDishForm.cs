@@ -259,7 +259,7 @@ namespace Mockup.Forms.SecondLevelForms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            CaloriesRedactorDish_Edit form3 = new CaloriesRedactorDish_Edit(theme, true);
+            CaloriesRedactorDish_Edit form3 = new CaloriesRedactorDish_Edit(theme);
             form3.ShowDialog();
         }
 
@@ -288,7 +288,13 @@ namespace Mockup.Forms.SecondLevelForms
 
         private void addButton_Click_1(object sender, EventArgs e)
         {
-            CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme, false);
+            CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme);
+            form.ShowDialog();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme, dishListBox.SelectedItem as Dish);
             form.ShowDialog();
         }
     }

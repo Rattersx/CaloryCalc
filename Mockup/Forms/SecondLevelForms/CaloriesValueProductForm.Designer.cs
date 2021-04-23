@@ -35,6 +35,10 @@ namespace Mockup
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.editButton = new Guna.UI2.WinForms.Guna2Button();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.productListBox = new System.Windows.Forms.ListBox();
@@ -44,7 +48,6 @@ namespace Mockup
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -93,13 +96,12 @@ namespace Mockup
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.addButton = new Guna.UI2.WinForms.Guna2Button();
             this.allergicLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.productTitle = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,6 +152,7 @@ namespace Mockup
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel23);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.guna2GroupBox1);
             this.panel1.Controls.Add(this.label25);
@@ -157,13 +160,71 @@ namespace Mockup
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.label22);
             this.guna2Transition1.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 570);
+            this.panel1.Size = new System.Drawing.Size(286, 570);
             this.panel1.TabIndex = 34;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.editButton);
+            this.panel23.Controls.Add(this.deleteButton);
+            this.panel23.Controls.Add(this.panel3);
+            this.guna2Transition1.SetDecoration(this.panel23, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(13, 514);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(258, 56);
+            this.panel23.TabIndex = 49;
+            // 
+            // editButton
+            // 
+            this.editButton.BorderRadius = 5;
+            this.editButton.CheckedState.Parent = this.editButton;
+            this.editButton.CustomImages.Parent = this.editButton;
+            this.guna2Transition1.SetDecoration(this.editButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.editButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.editButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.HoverState.Parent = this.editButton;
+            this.editButton.Location = new System.Drawing.Point(-2, 20);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Name = "editButton";
+            this.editButton.ShadowDecoration.Parent = this.editButton;
+            this.editButton.Size = new System.Drawing.Size(130, 36);
+            this.editButton.TabIndex = 40;
+            this.editButton.Text = "Изменить";
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BorderRadius = 5;
+            this.deleteButton.CheckedState.Parent = this.deleteButton;
+            this.deleteButton.CustomImages.Parent = this.deleteButton;
+            this.guna2Transition1.SetDecoration(this.deleteButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.HoverState.Parent = this.deleteButton;
+            this.deleteButton.Location = new System.Drawing.Point(128, 20);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
+            this.deleteButton.Size = new System.Drawing.Size(130, 36);
+            this.deleteButton.TabIndex = 38;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // panel3
+            // 
+            this.guna2Transition1.SetDecoration(this.panel3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(258, 20);
+            this.panel3.TabIndex = 42;
             // 
             // label23
             // 
@@ -187,10 +248,10 @@ namespace Mockup
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(41, 120);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(13, 120);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(264, 362);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(258, 450);
             this.guna2GroupBox1.TabIndex = 33;
             this.guna2GroupBox1.Text = "Продукты";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -204,7 +265,7 @@ namespace Mockup
             this.productListBox.ItemHeight = 21;
             this.productListBox.Location = new System.Drawing.Point(0, 40);
             this.productListBox.Name = "productListBox";
-            this.productListBox.Size = new System.Drawing.Size(264, 322);
+            this.productListBox.Size = new System.Drawing.Size(258, 410);
             this.productListBox.TabIndex = 4;
             this.productListBox.SelectedIndexChanged += new System.EventHandler(this.productListBox_SelectedIndexChanged);
             this.productListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productListBox_KeyPress);
@@ -216,7 +277,7 @@ namespace Mockup
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 0);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(264, 40);
+            this.panel22.Size = new System.Drawing.Size(258, 40);
             this.panel22.TabIndex = 3;
             // 
             // label25
@@ -225,9 +286,9 @@ namespace Mockup
             this.label25.Dock = System.Windows.Forms.DockStyle.Top;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(41, 87);
+            this.label25.Location = new System.Drawing.Point(13, 87);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(264, 33);
+            this.label25.Size = new System.Drawing.Size(258, 33);
             this.label25.TabIndex = 28;
             // 
             // searchTB
@@ -255,14 +316,14 @@ namespace Mockup
             this.searchTB.HoverState.Parent = this.searchTB;
             this.searchTB.IconLeft = global::Mockup.Properties.Resources.search_64px;
             this.searchTB.IconLeftSize = new System.Drawing.Size(36, 36);
-            this.searchTB.Location = new System.Drawing.Point(41, 51);
+            this.searchTB.Location = new System.Drawing.Point(13, 51);
             this.searchTB.Name = "searchTB";
             this.searchTB.PasswordChar = '\0';
             this.searchTB.PlaceholderForeColor = System.Drawing.Color.Black;
             this.searchTB.PlaceholderText = "Поиск продукта";
             this.searchTB.SelectedText = "";
             this.searchTB.ShadowDecoration.Parent = this.searchTB;
-            this.searchTB.Size = new System.Drawing.Size(264, 36);
+            this.searchTB.Size = new System.Drawing.Size(258, 36);
             this.searchTB.TabIndex = 0;
             this.searchTB.TextChanged += new System.EventHandler(this.searchTB_TextChanged);
             // 
@@ -272,9 +333,9 @@ namespace Mockup
             this.label26.Dock = System.Windows.Forms.DockStyle.Top;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(41, 0);
+            this.label26.Location = new System.Drawing.Point(13, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(264, 51);
+            this.label26.Size = new System.Drawing.Size(258, 51);
             this.label26.TabIndex = 29;
             // 
             // label27
@@ -285,7 +346,7 @@ namespace Mockup
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(0, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(41, 482);
+            this.label27.Size = new System.Drawing.Size(13, 570);
             this.label27.TabIndex = 30;
             // 
             // label28
@@ -294,21 +355,10 @@ namespace Mockup
             this.label28.Dock = System.Windows.Forms.DockStyle.Right;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(305, 0);
+            this.label28.Location = new System.Drawing.Point(271, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(41, 482);
+            this.label28.Size = new System.Drawing.Size(15, 570);
             this.label28.TabIndex = 31;
-            // 
-            // label22
-            // 
-            this.guna2Transition1.SetDecoration(this.label22, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(0, 482);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(346, 88);
-            this.label22.TabIndex = 32;
             // 
             // flowLayoutPanel1
             // 
@@ -317,7 +367,7 @@ namespace Mockup
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 74);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(585, 28);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(645, 28);
             this.flowLayoutPanel1.TabIndex = 48;
             // 
             // label1
@@ -337,9 +387,9 @@ namespace Mockup
             this.panel2.Controls.Add(this.panel5);
             this.guna2Transition1.SetDecoration(this.panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(346, 0);
+            this.panel2.Location = new System.Drawing.Point(286, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 570);
+            this.panel2.Size = new System.Drawing.Size(645, 570);
             this.panel2.TabIndex = 35;
             // 
             // panel5
@@ -350,7 +400,7 @@ namespace Mockup
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(585, 570);
+            this.panel5.Size = new System.Drawing.Size(645, 570);
             this.panel5.TabIndex = 33;
             // 
             // panel6
@@ -362,7 +412,7 @@ namespace Mockup
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 468);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(585, 102);
+            this.panel6.Size = new System.Drawing.Size(645, 102);
             this.panel6.TabIndex = 0;
             // 
             // descriptionLabel
@@ -373,7 +423,7 @@ namespace Mockup
             this.descriptionLabel.ForeColor = System.Drawing.Color.Black;
             this.descriptionLabel.Location = new System.Drawing.Point(0, 19);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(585, 52);
+            this.descriptionLabel.Size = new System.Drawing.Size(645, 52);
             this.descriptionLabel.TabIndex = 28;
             this.descriptionLabel.Text = "описание";
             // 
@@ -403,7 +453,7 @@ namespace Mockup
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(585, 570);
+            this.panel7.Size = new System.Drawing.Size(645, 570);
             this.panel7.TabIndex = 33;
             // 
             // panel19
@@ -414,7 +464,7 @@ namespace Mockup
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 332);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(585, 53);
+            this.panel19.Size = new System.Drawing.Size(645, 53);
             this.panel19.TabIndex = 36;
             // 
             // panel20
@@ -426,7 +476,7 @@ namespace Mockup
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(100, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(485, 53);
+            this.panel20.Size = new System.Drawing.Size(545, 53);
             this.panel20.TabIndex = 16;
             // 
             // hydroTB
@@ -442,7 +492,7 @@ namespace Mockup
             this.hydroTB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.hydroTB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.hydroTB.ShadowDecoration.Parent = this.hydroTB;
-            this.hydroTB.Size = new System.Drawing.Size(433, 37);
+            this.hydroTB.Size = new System.Drawing.Size(493, 37);
             this.hydroTB.TabIndex = 15;
             this.hydroTB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -454,7 +504,7 @@ namespace Mockup
             this.label15.ForeColor = System.Drawing.Color.Gray;
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(433, 16);
+            this.label15.Size = new System.Drawing.Size(493, 16);
             this.label15.TabIndex = 23;
             this.label15.Text = "мин.: 0";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -465,7 +515,7 @@ namespace Mockup
             this.hydroP.Dock = System.Windows.Forms.DockStyle.Right;
             this.hydroP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.hydroP.ForeColor = System.Drawing.Color.Black;
-            this.hydroP.Location = new System.Drawing.Point(433, 0);
+            this.hydroP.Location = new System.Drawing.Point(493, 0);
             this.hydroP.Name = "hydroP";
             this.hydroP.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.hydroP.Size = new System.Drawing.Size(52, 53);
@@ -516,7 +566,7 @@ namespace Mockup
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 279);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(585, 53);
+            this.panel16.Size = new System.Drawing.Size(645, 53);
             this.panel16.TabIndex = 35;
             // 
             // panel17
@@ -528,7 +578,7 @@ namespace Mockup
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(100, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(485, 53);
+            this.panel17.Size = new System.Drawing.Size(545, 53);
             this.panel17.TabIndex = 16;
             // 
             // fatTB
@@ -544,7 +594,7 @@ namespace Mockup
             this.fatTB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.fatTB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.fatTB.ShadowDecoration.Parent = this.fatTB;
-            this.fatTB.Size = new System.Drawing.Size(433, 37);
+            this.fatTB.Size = new System.Drawing.Size(493, 37);
             this.fatTB.TabIndex = 15;
             this.fatTB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -556,7 +606,7 @@ namespace Mockup
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(433, 16);
+            this.label10.Size = new System.Drawing.Size(493, 16);
             this.label10.TabIndex = 23;
             this.label10.Text = "мин.: 0";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -567,7 +617,7 @@ namespace Mockup
             this.fatP.Dock = System.Windows.Forms.DockStyle.Right;
             this.fatP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.fatP.ForeColor = System.Drawing.Color.Black;
-            this.fatP.Location = new System.Drawing.Point(433, 0);
+            this.fatP.Location = new System.Drawing.Point(493, 0);
             this.fatP.Name = "fatP";
             this.fatP.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.fatP.Size = new System.Drawing.Size(52, 53);
@@ -618,7 +668,7 @@ namespace Mockup
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 226);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(585, 53);
+            this.panel13.Size = new System.Drawing.Size(645, 53);
             this.panel13.TabIndex = 34;
             // 
             // panel14
@@ -630,7 +680,7 @@ namespace Mockup
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(100, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(485, 53);
+            this.panel14.Size = new System.Drawing.Size(545, 53);
             this.panel14.TabIndex = 16;
             // 
             // proteinsTB
@@ -646,7 +696,7 @@ namespace Mockup
             this.proteinsTB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.proteinsTB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.proteinsTB.ShadowDecoration.Parent = this.proteinsTB;
-            this.proteinsTB.Size = new System.Drawing.Size(433, 37);
+            this.proteinsTB.Size = new System.Drawing.Size(493, 37);
             this.proteinsTB.TabIndex = 15;
             this.proteinsTB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -658,7 +708,7 @@ namespace Mockup
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(433, 16);
+            this.label6.Size = new System.Drawing.Size(493, 16);
             this.label6.TabIndex = 23;
             this.label6.Text = "мин.: 0";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -669,7 +719,7 @@ namespace Mockup
             this.proteinsP.Dock = System.Windows.Forms.DockStyle.Right;
             this.proteinsP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.proteinsP.ForeColor = System.Drawing.Color.Black;
-            this.proteinsP.Location = new System.Drawing.Point(433, 0);
+            this.proteinsP.Location = new System.Drawing.Point(493, 0);
             this.proteinsP.Name = "proteinsP";
             this.proteinsP.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.proteinsP.Size = new System.Drawing.Size(52, 53);
@@ -720,7 +770,7 @@ namespace Mockup
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 173);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(585, 53);
+            this.panel10.Size = new System.Drawing.Size(645, 53);
             this.panel10.TabIndex = 33;
             // 
             // panel12
@@ -732,7 +782,7 @@ namespace Mockup
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(100, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(485, 53);
+            this.panel12.Size = new System.Drawing.Size(545, 53);
             this.panel12.TabIndex = 16;
             // 
             // CaloriesPB
@@ -750,7 +800,7 @@ namespace Mockup
             this.CaloriesPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.CaloriesPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.CaloriesPB.ShadowDecoration.Parent = this.CaloriesPB;
-            this.CaloriesPB.Size = new System.Drawing.Size(433, 37);
+            this.CaloriesPB.Size = new System.Drawing.Size(493, 37);
             this.CaloriesPB.TabIndex = 15;
             this.CaloriesPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -762,7 +812,7 @@ namespace Mockup
             this.label16.ForeColor = System.Drawing.Color.Gray;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(433, 53);
+            this.label16.Size = new System.Drawing.Size(493, 53);
             this.label16.TabIndex = 23;
             this.label16.Text = "мин.: 0";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -773,7 +823,7 @@ namespace Mockup
             this.caloriesP.Dock = System.Windows.Forms.DockStyle.Right;
             this.caloriesP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.caloriesP.ForeColor = System.Drawing.Color.Black;
-            this.caloriesP.Location = new System.Drawing.Point(433, 0);
+            this.caloriesP.Location = new System.Drawing.Point(493, 0);
             this.caloriesP.Name = "caloriesP";
             this.caloriesP.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
             this.caloriesP.Size = new System.Drawing.Size(52, 53);
@@ -828,7 +878,7 @@ namespace Mockup
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 110);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(585, 63);
+            this.panel8.Size = new System.Drawing.Size(645, 63);
             this.panel8.TabIndex = 31;
             // 
             // trackBar
@@ -920,13 +970,11 @@ namespace Mockup
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(0, 35);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(585, 28);
+            this.label32.Size = new System.Drawing.Size(645, 28);
             this.label32.TabIndex = 33;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.deleteButton);
-            this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.addButton);
             this.panel9.Controls.Add(this.allergicLabel);
             this.panel9.Controls.Add(this.productTitle);
@@ -934,38 +982,8 @@ namespace Mockup
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 73);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(585, 37);
+            this.panel9.Size = new System.Drawing.Size(645, 37);
             this.panel9.TabIndex = 32;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BorderRadius = 5;
-            this.deleteButton.CheckedState.Parent = this.deleteButton;
-            this.deleteButton.CustomImages.Parent = this.deleteButton;
-            this.guna2Transition1.SetDecoration(this.deleteButton, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.deleteButton.ForeColor = System.Drawing.Color.White;
-            this.deleteButton.HoverState.Parent = this.deleteButton;
-            this.deleteButton.Location = new System.Drawing.Point(293, 0);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
-            this.deleteButton.Size = new System.Drawing.Size(139, 37);
-            this.deleteButton.TabIndex = 38;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // label7
-            // 
-            this.guna2Transition1.SetDecoration(this.label7, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(432, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 37);
-            this.label7.TabIndex = 39;
             // 
             // addButton
             // 
@@ -977,7 +995,7 @@ namespace Mockup
             this.addButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.HoverState.Parent = this.addButton;
-            this.addButton.Location = new System.Drawing.Point(446, 0);
+            this.addButton.Location = new System.Drawing.Point(506, 0);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.ShadowDecoration.Parent = this.addButton;
@@ -991,8 +1009,9 @@ namespace Mockup
             this.allergicLabel.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.allergicLabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.allergicLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.allergicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allergicLabel.ForeColor = System.Drawing.Color.Red;
-            this.allergicLabel.Location = new System.Drawing.Point(125, 0);
+            this.allergicLabel.Location = new System.Drawing.Point(115, 0);
             this.allergicLabel.Name = "allergicLabel";
             this.allergicLabel.Size = new System.Drawing.Size(16, 37);
             this.allergicLabel.TabIndex = 4;
@@ -1004,11 +1023,11 @@ namespace Mockup
             this.productTitle.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.productTitle, Guna.UI2.AnimatorNS.DecorationType.None);
             this.productTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.productTitle.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.productTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.productTitle.ForeColor = System.Drawing.Color.Black;
             this.productTitle.Location = new System.Drawing.Point(0, 0);
             this.productTitle.Name = "productTitle";
-            this.productTitle.Size = new System.Drawing.Size(125, 30);
+            this.productTitle.Size = new System.Drawing.Size(115, 28);
             this.productTitle.TabIndex = 3;
             this.productTitle.Text = "Продукт";
             // 
@@ -1020,7 +1039,7 @@ namespace Mockup
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(0, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(585, 73);
+            this.label30.Size = new System.Drawing.Size(645, 73);
             this.label30.TabIndex = 30;
             // 
             // CaloriesValueProductForm
@@ -1037,6 +1056,7 @@ namespace Mockup
             this.Text = "CaloriesValueProductForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel23.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1077,7 +1097,6 @@ namespace Mockup
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -1131,6 +1150,8 @@ namespace Mockup
         private Guna.UI2.WinForms.Guna2TrackBar trackBar;
         private Guna.UI2.WinForms.Guna2Button addButton;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
-        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button editButton;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel3;
     }
 }

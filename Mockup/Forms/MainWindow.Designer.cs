@@ -30,7 +30,7 @@ namespace Mockup
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -43,7 +43,6 @@ namespace Mockup
             this.Container = new System.Windows.Forms.Panel();
             this.Menu = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.SettingsButton = new Guna.UI2.WinForms.Guna2TileButton();
-            this.EditorButton = new Guna.UI2.WinForms.Guna2TileButton();
             this.CalculationButton = new Guna.UI2.WinForms.Guna2TileButton();
             this.burgerMenuBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.CaloriesButton = new Guna.UI2.WinForms.Guna2TileButton();
@@ -151,22 +150,22 @@ namespace Mockup
             // 
             this.Animator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.Animator.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.Animator.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.Animator.DefaultAnimation = animation1;
             // 
             // Container
             // 
@@ -181,7 +180,6 @@ namespace Mockup
             // Menu
             // 
             this.Menu.Controls.Add(this.SettingsButton);
-            this.Menu.Controls.Add(this.EditorButton);
             this.Menu.Controls.Add(this.CalculationButton);
             this.Menu.Controls.Add(this.burgerMenuBtn);
             this.Menu.Controls.Add(this.CaloriesButton);
@@ -221,32 +219,6 @@ namespace Mockup
             this.SettingsButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SettingsButton.TextOffset = new System.Drawing.Point(0, -20);
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
-            // 
-            // EditorButton
-            // 
-            this.EditorButton.Animated = true;
-            this.EditorButton.BackColor = System.Drawing.Color.Transparent;
-            this.EditorButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.EditorButton.CheckedState.Parent = this.EditorButton;
-            this.EditorButton.CustomImages.Parent = this.EditorButton;
-            this.Animator.SetDecoration(this.EditorButton, BunifuAnimatorNS.DecorationType.None);
-            this.EditorButton.FillColor = System.Drawing.Color.Transparent;
-            this.EditorButton.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.EditorButton.ForeColor = System.Drawing.Color.White;
-            this.EditorButton.HoverState.Parent = this.EditorButton;
-            this.EditorButton.Image = global::Mockup.Properties.Resources.pencil_drawing_80px;
-            this.EditorButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.EditorButton.ImageOffset = new System.Drawing.Point(0, 17);
-            this.EditorButton.ImageSize = new System.Drawing.Size(36, 36);
-            this.EditorButton.Location = new System.Drawing.Point(0, 362);
-            this.EditorButton.Name = "EditorButton";
-            this.EditorButton.ShadowDecoration.Parent = this.EditorButton;
-            this.EditorButton.Size = new System.Drawing.Size(260, 35);
-            this.EditorButton.TabIndex = 18;
-            this.EditorButton.Text = "Редактор";
-            this.EditorButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.EditorButton.TextOffset = new System.Drawing.Point(0, -20);
-            this.EditorButton.Click += new System.EventHandler(this.EditorButton_Click);
             // 
             // CalculationButton
             // 
@@ -404,7 +376,6 @@ namespace Mockup
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Timer splashScreenTimer;
         public Guna.UI2.WinForms.Guna2TileButton CaloriesButton;
-        public Guna.UI2.WinForms.Guna2TileButton EditorButton;
         public Guna.UI2.WinForms.Guna2TileButton CalculationButton;
         public Guna.UI2.WinForms.Guna2TileButton SettingsButton;
     }

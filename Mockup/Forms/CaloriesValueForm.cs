@@ -94,7 +94,6 @@ namespace Mockup
                 Program.parent.CaloriesButton.Enabled = false;
                 Program.parent.CalculationButton.Enabled = false;
                 Program.parent.SettingsButton.Enabled = false;
-                Program.parent.EditorButton.Enabled = false;
                 timer1.Start();
 
                 ProductBorder.Visible = false;
@@ -129,7 +128,6 @@ namespace Mockup
                 Program.parent.CaloriesButton.Enabled = false;
                 Program.parent.CalculationButton.Enabled = false;
                 Program.parent.SettingsButton.Enabled = false;
-                Program.parent.EditorButton.Enabled = false;
                 timer1.Start();
 
                 AddFormToContainer(new CaloriesValueProductForm(theme), false);
@@ -148,7 +146,6 @@ namespace Mockup
                 Program.parent.CaloriesButton.Enabled = true;
                 Program.parent.CalculationButton.Enabled = true;
                 Program.parent.SettingsButton.Enabled = true;
-                Program.parent.EditorButton.Enabled = true;
                 Program.parent.progressEnd = false;
                 timer1.Stop();
             }

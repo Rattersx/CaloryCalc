@@ -25,6 +25,9 @@ namespace Mockup
             activityComboBox.DropDownStyle = ComboBoxStyle.DropDownList; //запрещаем на ввод значения в comboBox
             modeComboBox.SelectedIndex = 0;
             activityComboBox.SelectedIndex = 0;
+            weigthTextBox.Text = "65";
+            growthTextBox.Text = "170";
+            ageTextBox.Text = "25";
             modeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             System.Threading.Timer t = new System.Threading.Timer(CheckedTextBox, null, 0, 400);
         }
@@ -58,20 +61,27 @@ namespace Mockup
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            if (Controls.OfType<Guna2TextBox>().Any(t => string.IsNullOrWhiteSpace(t.Text)) && Controls.OfType<Guna2TextBox>().All(t => t.BackColor == Color.GreenYellow)) //проверка на пустоту строк и элементов, если не пустые идем дальше
-                return;
-            else
+            try
             {
-                if (maleRadioButton.Checked)
-                {
-                    dailyCalorieRequirement1.Text = FormulaGeoraMaleSimple().ToString();
-                    dailyCalorieRequirement2.Text = FormulaGeoraMale().ToString();
-                }
+                if (Controls.OfType<Guna2TextBox>().Any(t => string.IsNullOrWhiteSpace(t.Text)) && Controls.OfType<Guna2TextBox>().All(t => t.BackColor == Color.GreenYellow)) //проверка на пустоту строк и элементов, если не пустые идем дальше
+                    return;
                 else
                 {
-                    dailyCalorieRequirement1.Text = FormulaGeoraFemaleSimple().ToString();
-                    dailyCalorieRequirement2.Text = FormulaGeoraFemale().ToString();
+                    if (maleRadioButton.Checked)
+                    {
+                        dailyCalorieRequirement1.Text = FormulaGeoraMaleSimple().ToString();
+                        dailyCalorieRequirement2.Text = FormulaGeoraMale().ToString();
+                    }
+                    else
+                    {
+                        dailyCalorieRequirement1.Text = FormulaGeoraFemaleSimple().ToString();
+                        dailyCalorieRequirement2.Text = FormulaGeoraFemale().ToString();
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Заполните все поля");
             }
         }
         private double FormulaGeoraMale()   //метод подсчета формулы (+ Активность) для мужчин
@@ -81,12 +91,12 @@ namespace Mockup
             {
                 rezult = FormulaGeoraMaleSimple() * A[activityComboBox.SelectedIndex];  // считаем по простой формуле + значение активности
             }
-            return rezult;
+            return (int)(rezult);
         }
         private double FormulaGeoraMaleSimple() //метод подсчета простой формулы для мужчин с режимом
         {
             double rezult = 88.362 + (13.397 * double.Parse(weigthTextBox.Text)) + (4.799 * double.Parse(growthTextBox.Text)) - (5.677 * double.Parse(ageTextBox.Text)) * R[modeComboBox.SelectedIndex];
-            return rezult;
+            return (int)(rezult);
         }
         private double FormulaGeoraFemale()     //метод подсчета формулы (+ Активность) для женщин
         {
@@ -95,13 +105,13 @@ namespace Mockup
             {
                 rezult = FormulaGeoraFemaleSimple() * A[activityComboBox.SelectedIndex]; // считаем по простой формуле + значение активности
             }
-            return rezult;
+            return (int)(rezult);
         }
 
         private double FormulaGeoraFemaleSimple() // метод подсчета простой формулы для женщин с режимом
         {
             double rezult = 447.593 + (9.247 * double.Parse(weigthTextBox.Text)) + (3.098 * double.Parse(growthTextBox.Text)) - (4.330 * double.Parse(ageTextBox.Text)) * R[modeComboBox.SelectedIndex];
-            return rezult;
+            return (int)(rezult);
         }
 
         private void ageTextBox_TextChanged(object sender, EventArgs e)
@@ -115,7 +125,7 @@ namespace Mockup
             if (textBox.Text != "")
             {
                 double buff = Double.Parse(textBox.Text);
-                if (buff >= down && buff <= up)
+                if (buff >= down && buff <= up )
                 {
                     textBox.BackColor = Color.GreenYellow;
                     errorAll.Clear();
@@ -136,12 +146,12 @@ namespace Mockup
 
         private void weigthTextBox_TextChanged(object sender, EventArgs e)
         {
-            Validate(weigthTextBox, 10, 120);
+            Validate(weigthTextBox, 30, 320);
         }
 
         private void growthTextBox_TextChanged(object sender, EventArgs e)
         {
-            Validate(growthTextBox, 10, 120);
+            Validate(growthTextBox, 120, 230);
         }
         private void CheckedTextBox(Object obj)
         {

@@ -127,8 +127,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.titleLable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleLable.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLable.Location = new System.Drawing.Point(0, 0);
+            this.titleLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLable.Name = "titleLable";
-            this.titleLable.Size = new System.Drawing.Size(813, 65);
+            this.titleLable.Size = new System.Drawing.Size(1084, 80);
             this.titleLable.TabIndex = 0;
             this.titleLable.Text = "Подробный химический состав";
             this.titleLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,8 +140,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel1.Controls.Add(this.titleLable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 65);
+            this.panel1.Size = new System.Drawing.Size(1084, 80);
             this.panel1.TabIndex = 1;
             // 
             // guna2ColorTransition1
@@ -172,8 +174,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.productTItle.Dock = System.Windows.Forms.DockStyle.Left;
             this.productTItle.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.productTItle.Location = new System.Drawing.Point(0, 0);
+            this.productTItle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.productTItle.Name = "productTItle";
-            this.productTItle.Size = new System.Drawing.Size(225, 23);
+            this.productTItle.Size = new System.Drawing.Size(286, 28);
             this.productTItle.TabIndex = 2;
             this.productTItle.Text = "Какой-то там продукт";
             // 
@@ -181,9 +184,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(30, 132);
+            this.label2.Location = new System.Drawing.Point(40, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 21);
+            this.label2.Size = new System.Drawing.Size(134, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Колличество";
             // 
@@ -202,24 +206,27 @@ namespace Mockup.Forms.SecondLevelForms
             this.countTB.FocusedState.Parent = this.countTB;
             this.countTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.countTB.HoverState.Parent = this.countTB;
-            this.countTB.Location = new System.Drawing.Point(152, 125);
+            this.countTB.Location = new System.Drawing.Point(203, 154);
+            this.countTB.Margin = new System.Windows.Forms.Padding(5);
             this.countTB.Name = "countTB";
             this.countTB.PasswordChar = '\0';
             this.countTB.PlaceholderText = "";
             this.countTB.SelectedText = "";
             this.countTB.SelectionStart = 1;
             this.countTB.ShadowDecoration.Parent = this.countTB;
-            this.countTB.Size = new System.Drawing.Size(81, 36);
+            this.countTB.Size = new System.Drawing.Size(108, 44);
             this.countTB.TabIndex = 4;
+            this.countTB.TextChanged += new System.EventHandler(this.countTB_TextChanged);
             this.countTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countTB_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(29, 198);
+            this.label3.Location = new System.Drawing.Point(39, 244);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 23);
+            this.label3.Size = new System.Drawing.Size(225, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Макронутриенты";
             // 
@@ -230,12 +237,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.caloriesPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.caloriesPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.caloriesPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.caloriesPB.Location = new System.Drawing.Point(151, 16);
+            this.caloriesPB.Location = new System.Drawing.Point(201, 20);
+            this.caloriesPB.Margin = new System.Windows.Forms.Padding(4);
             this.caloriesPB.Name = "caloriesPB";
             this.caloriesPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.caloriesPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.caloriesPB.ShadowDecoration.Parent = this.caloriesPB;
-            this.caloriesPB.Size = new System.Drawing.Size(618, 30);
+            this.caloriesPB.Size = new System.Drawing.Size(825, 37);
             this.caloriesPB.TabIndex = 26;
             this.caloriesPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -244,9 +252,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.caloriesMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.caloriesMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.caloriesMin.ForeColor = System.Drawing.Color.Gray;
-            this.caloriesMin.Location = new System.Drawing.Point(151, 0);
+            this.caloriesMin.Location = new System.Drawing.Point(201, 0);
+            this.caloriesMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.caloriesMin.Name = "caloriesMin";
-            this.caloriesMin.Size = new System.Drawing.Size(618, 16);
+            this.caloriesMin.Size = new System.Drawing.Size(825, 20);
             this.caloriesMin.TabIndex = 28;
             this.caloriesMin.Text = "мин.: 0";
             this.caloriesMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -257,9 +266,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.caloriesP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.caloriesP.ForeColor = System.Drawing.Color.Black;
             this.caloriesP.Location = new System.Drawing.Point(0, 0);
+            this.caloriesP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.caloriesP.Name = "caloriesP";
-            this.caloriesP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.caloriesP.Size = new System.Drawing.Size(37, 52);
+            this.caloriesP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.caloriesP.Size = new System.Drawing.Size(49, 64);
             this.caloriesP.TabIndex = 27;
             this.caloriesP.Text = "0 %";
             this.caloriesP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,9 +279,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.caloriesValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.caloriesValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.caloriesValue.ForeColor = System.Drawing.Color.Black;
-            this.caloriesValue.Location = new System.Drawing.Point(0, 33);
+            this.caloriesValue.Location = new System.Drawing.Point(0, 41);
+            this.caloriesValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.caloriesValue.Name = "caloriesValue";
-            this.caloriesValue.Size = new System.Drawing.Size(151, 16);
+            this.caloriesValue.Size = new System.Drawing.Size(201, 20);
             this.caloriesValue.TabIndex = 25;
             this.caloriesValue.Text = "0 ккал";
             this.caloriesValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,9 +293,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label4.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label4.Size = new System.Drawing.Size(151, 33);
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label4.Size = new System.Drawing.Size(201, 41);
             this.label4.TabIndex = 24;
             this.label4.Text = "Каллории";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,9 +308,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(8, 224);
+            this.panel2.Location = new System.Drawing.Point(11, 276);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(806, 52);
+            this.panel2.Size = new System.Drawing.Size(1075, 64);
             this.panel2.TabIndex = 29;
             // 
             // label7
@@ -306,9 +319,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(151, 46);
+            this.label7.Location = new System.Drawing.Point(201, 57);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(618, 6);
+            this.label7.Size = new System.Drawing.Size(825, 7);
             this.label7.TabIndex = 27;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -318,17 +332,19 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 52);
+            this.panel3.Size = new System.Drawing.Size(201, 64);
             this.panel3.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.caloriesP);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(769, 0);
+            this.panel4.Location = new System.Drawing.Point(1026, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(37, 52);
+            this.panel4.Size = new System.Drawing.Size(49, 64);
             this.panel4.TabIndex = 28;
             // 
             // panel5
@@ -338,9 +354,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel7);
-            this.panel5.Location = new System.Drawing.Point(7, 279);
+            this.panel5.Location = new System.Drawing.Point(9, 343);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(806, 52);
+            this.panel5.Size = new System.Drawing.Size(1075, 64);
             this.panel5.TabIndex = 30;
             // 
             // proteinsPB
@@ -350,12 +367,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.proteinsPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.proteinsPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.proteinsPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.proteinsPB.Location = new System.Drawing.Point(151, 16);
+            this.proteinsPB.Location = new System.Drawing.Point(201, 20);
+            this.proteinsPB.Margin = new System.Windows.Forms.Padding(4);
             this.proteinsPB.Name = "proteinsPB";
             this.proteinsPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.proteinsPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.proteinsPB.ShadowDecoration.Parent = this.proteinsPB;
-            this.proteinsPB.Size = new System.Drawing.Size(618, 30);
+            this.proteinsPB.Size = new System.Drawing.Size(825, 37);
             this.proteinsPB.TabIndex = 26;
             this.proteinsPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -364,9 +382,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.proteinsMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.proteinsMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.proteinsMin.ForeColor = System.Drawing.Color.Gray;
-            this.proteinsMin.Location = new System.Drawing.Point(151, 0);
+            this.proteinsMin.Location = new System.Drawing.Point(201, 0);
+            this.proteinsMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.proteinsMin.Name = "proteinsMin";
-            this.proteinsMin.Size = new System.Drawing.Size(618, 16);
+            this.proteinsMin.Size = new System.Drawing.Size(825, 20);
             this.proteinsMin.TabIndex = 28;
             this.proteinsMin.Text = "мин.: 0";
             this.proteinsMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -376,9 +395,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(151, 46);
+            this.label8.Location = new System.Drawing.Point(201, 57);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(618, 6);
+            this.label8.Size = new System.Drawing.Size(825, 7);
             this.label8.TabIndex = 27;
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -388,8 +408,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel6.Controls.Add(this.label10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(151, 52);
+            this.panel6.Size = new System.Drawing.Size(201, 64);
             this.panel6.TabIndex = 0;
             // 
             // proteinsValue
@@ -397,9 +418,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.proteinsValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.proteinsValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.proteinsValue.ForeColor = System.Drawing.Color.Black;
-            this.proteinsValue.Location = new System.Drawing.Point(0, 33);
+            this.proteinsValue.Location = new System.Drawing.Point(0, 41);
+            this.proteinsValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.proteinsValue.Name = "proteinsValue";
-            this.proteinsValue.Size = new System.Drawing.Size(151, 16);
+            this.proteinsValue.Size = new System.Drawing.Size(201, 20);
             this.proteinsValue.TabIndex = 25;
             this.proteinsValue.Text = "0 г";
             this.proteinsValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,9 +432,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label10.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label10.Size = new System.Drawing.Size(151, 33);
+            this.label10.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label10.Size = new System.Drawing.Size(201, 41);
             this.label10.TabIndex = 24;
             this.label10.Text = "Белки";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -421,9 +444,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel7.Controls.Add(this.proteinsP);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(769, 0);
+            this.panel7.Location = new System.Drawing.Point(1026, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(37, 52);
+            this.panel7.Size = new System.Drawing.Size(49, 64);
             this.panel7.TabIndex = 28;
             // 
             // proteinsP
@@ -432,9 +456,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.proteinsP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.proteinsP.ForeColor = System.Drawing.Color.Black;
             this.proteinsP.Location = new System.Drawing.Point(0, 0);
+            this.proteinsP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.proteinsP.Name = "proteinsP";
-            this.proteinsP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.proteinsP.Size = new System.Drawing.Size(37, 52);
+            this.proteinsP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.proteinsP.Size = new System.Drawing.Size(49, 64);
             this.proteinsP.TabIndex = 27;
             this.proteinsP.Text = "0 %";
             this.proteinsP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -446,9 +471,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.panel10);
-            this.panel8.Location = new System.Drawing.Point(7, 331);
+            this.panel8.Location = new System.Drawing.Point(9, 407);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(806, 52);
+            this.panel8.Size = new System.Drawing.Size(1075, 64);
             this.panel8.TabIndex = 30;
             // 
             // fatPB
@@ -458,12 +484,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.fatPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fatPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.fatPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.fatPB.Location = new System.Drawing.Point(151, 16);
+            this.fatPB.Location = new System.Drawing.Point(201, 20);
+            this.fatPB.Margin = new System.Windows.Forms.Padding(4);
             this.fatPB.Name = "fatPB";
             this.fatPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.fatPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.fatPB.ShadowDecoration.Parent = this.fatPB;
-            this.fatPB.Size = new System.Drawing.Size(618, 30);
+            this.fatPB.Size = new System.Drawing.Size(825, 37);
             this.fatPB.TabIndex = 26;
             this.fatPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -472,9 +499,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.fatMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.fatMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.fatMin.ForeColor = System.Drawing.Color.Gray;
-            this.fatMin.Location = new System.Drawing.Point(151, 0);
+            this.fatMin.Location = new System.Drawing.Point(201, 0);
+            this.fatMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fatMin.Name = "fatMin";
-            this.fatMin.Size = new System.Drawing.Size(618, 16);
+            this.fatMin.Size = new System.Drawing.Size(825, 20);
             this.fatMin.TabIndex = 28;
             this.fatMin.Text = "мин.: 0";
             this.fatMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -484,9 +512,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label14.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(151, 46);
+            this.label14.Location = new System.Drawing.Point(201, 57);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(618, 6);
+            this.label14.Size = new System.Drawing.Size(825, 7);
             this.label14.TabIndex = 27;
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -496,8 +525,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel9.Controls.Add(this.label17);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(151, 52);
+            this.panel9.Size = new System.Drawing.Size(201, 64);
             this.panel9.TabIndex = 0;
             // 
             // fatValue
@@ -505,9 +535,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.fatValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.fatValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.fatValue.ForeColor = System.Drawing.Color.Black;
-            this.fatValue.Location = new System.Drawing.Point(0, 33);
+            this.fatValue.Location = new System.Drawing.Point(0, 41);
+            this.fatValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fatValue.Name = "fatValue";
-            this.fatValue.Size = new System.Drawing.Size(151, 16);
+            this.fatValue.Size = new System.Drawing.Size(201, 20);
             this.fatValue.TabIndex = 25;
             this.fatValue.Text = "0 г";
             this.fatValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,9 +549,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label17.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label17.Size = new System.Drawing.Size(151, 33);
+            this.label17.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label17.Size = new System.Drawing.Size(201, 41);
             this.label17.TabIndex = 24;
             this.label17.Text = "Жиры";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -529,9 +561,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel10.Controls.Add(this.fatP);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(769, 0);
+            this.panel10.Location = new System.Drawing.Point(1026, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(37, 52);
+            this.panel10.Size = new System.Drawing.Size(49, 64);
             this.panel10.TabIndex = 28;
             // 
             // fatP
@@ -540,9 +573,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.fatP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.fatP.ForeColor = System.Drawing.Color.Black;
             this.fatP.Location = new System.Drawing.Point(0, 0);
+            this.fatP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fatP.Name = "fatP";
-            this.fatP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.fatP.Size = new System.Drawing.Size(37, 52);
+            this.fatP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.fatP.Size = new System.Drawing.Size(49, 64);
             this.fatP.TabIndex = 27;
             this.fatP.Text = "0 %";
             this.fatP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,9 +588,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel11.Controls.Add(this.label20);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Controls.Add(this.panel13);
-            this.panel11.Location = new System.Drawing.Point(7, 383);
+            this.panel11.Location = new System.Drawing.Point(9, 471);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(806, 52);
+            this.panel11.Size = new System.Drawing.Size(1075, 64);
             this.panel11.TabIndex = 30;
             // 
             // hydroPB
@@ -566,12 +601,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.hydroPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hydroPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.hydroPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.hydroPB.Location = new System.Drawing.Point(151, 16);
+            this.hydroPB.Location = new System.Drawing.Point(201, 20);
+            this.hydroPB.Margin = new System.Windows.Forms.Padding(4);
             this.hydroPB.Name = "hydroPB";
             this.hydroPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.hydroPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.hydroPB.ShadowDecoration.Parent = this.hydroPB;
-            this.hydroPB.Size = new System.Drawing.Size(618, 30);
+            this.hydroPB.Size = new System.Drawing.Size(825, 37);
             this.hydroPB.TabIndex = 26;
             this.hydroPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -580,9 +616,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.hydroMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.hydroMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.hydroMin.ForeColor = System.Drawing.Color.Gray;
-            this.hydroMin.Location = new System.Drawing.Point(151, 0);
+            this.hydroMin.Location = new System.Drawing.Point(201, 0);
+            this.hydroMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hydroMin.Name = "hydroMin";
-            this.hydroMin.Size = new System.Drawing.Size(618, 16);
+            this.hydroMin.Size = new System.Drawing.Size(825, 20);
             this.hydroMin.TabIndex = 28;
             this.hydroMin.Text = "мин.: 0";
             this.hydroMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -592,9 +629,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label20.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(151, 46);
+            this.label20.Location = new System.Drawing.Point(201, 57);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(618, 6);
+            this.label20.Size = new System.Drawing.Size(825, 7);
             this.label20.TabIndex = 27;
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -604,8 +642,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel12.Controls.Add(this.label22);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(151, 52);
+            this.panel12.Size = new System.Drawing.Size(201, 64);
             this.panel12.TabIndex = 0;
             // 
             // hydroValue
@@ -613,9 +652,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.hydroValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.hydroValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.hydroValue.ForeColor = System.Drawing.Color.Black;
-            this.hydroValue.Location = new System.Drawing.Point(0, 33);
+            this.hydroValue.Location = new System.Drawing.Point(0, 41);
+            this.hydroValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hydroValue.Name = "hydroValue";
-            this.hydroValue.Size = new System.Drawing.Size(151, 16);
+            this.hydroValue.Size = new System.Drawing.Size(201, 20);
             this.hydroValue.TabIndex = 25;
             this.hydroValue.Text = "0 г";
             this.hydroValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -626,9 +666,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label22.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label22.ForeColor = System.Drawing.Color.Black;
             this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label22.Size = new System.Drawing.Size(151, 33);
+            this.label22.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label22.Size = new System.Drawing.Size(201, 41);
             this.label22.TabIndex = 24;
             this.label22.Text = "Углеводы";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -637,9 +678,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel13.Controls.Add(this.hydroP);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(769, 0);
+            this.panel13.Location = new System.Drawing.Point(1026, 0);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(37, 52);
+            this.panel13.Size = new System.Drawing.Size(49, 64);
             this.panel13.TabIndex = 28;
             // 
             // hydroP
@@ -648,9 +690,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.hydroP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.hydroP.ForeColor = System.Drawing.Color.Black;
             this.hydroP.Location = new System.Drawing.Point(0, 0);
+            this.hydroP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hydroP.Name = "hydroP";
-            this.hydroP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.hydroP.Size = new System.Drawing.Size(37, 52);
+            this.hydroP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.hydroP.Size = new System.Drawing.Size(49, 64);
             this.hydroP.TabIndex = 27;
             this.hydroP.Text = "0 %";
             this.hydroP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -662,9 +705,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel14.Controls.Add(this.label25);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel16);
-            this.panel14.Location = new System.Drawing.Point(7, 438);
+            this.panel14.Location = new System.Drawing.Point(9, 539);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(806, 52);
+            this.panel14.Size = new System.Drawing.Size(1075, 64);
             this.panel14.TabIndex = 30;
             // 
             // waterPB
@@ -674,12 +718,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.waterPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.waterPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.waterPB.Location = new System.Drawing.Point(151, 16);
+            this.waterPB.Location = new System.Drawing.Point(201, 20);
+            this.waterPB.Margin = new System.Windows.Forms.Padding(4);
             this.waterPB.Name = "waterPB";
             this.waterPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.waterPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.waterPB.ShadowDecoration.Parent = this.waterPB;
-            this.waterPB.Size = new System.Drawing.Size(618, 30);
+            this.waterPB.Size = new System.Drawing.Size(825, 37);
             this.waterPB.TabIndex = 26;
             this.waterPB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -688,9 +733,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.waterMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.waterMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.waterMin.ForeColor = System.Drawing.Color.Gray;
-            this.waterMin.Location = new System.Drawing.Point(151, 0);
+            this.waterMin.Location = new System.Drawing.Point(201, 0);
+            this.waterMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.waterMin.Name = "waterMin";
-            this.waterMin.Size = new System.Drawing.Size(618, 16);
+            this.waterMin.Size = new System.Drawing.Size(825, 20);
             this.waterMin.TabIndex = 28;
             this.waterMin.Text = "мин.: 0";
             this.waterMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -700,9 +746,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label25.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(151, 46);
+            this.label25.Location = new System.Drawing.Point(201, 57);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(618, 6);
+            this.label25.Size = new System.Drawing.Size(825, 7);
             this.label25.TabIndex = 27;
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -712,8 +759,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel15.Controls.Add(this.label27);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(151, 52);
+            this.panel15.Size = new System.Drawing.Size(201, 64);
             this.panel15.TabIndex = 0;
             // 
             // waterValue
@@ -721,9 +769,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.waterValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.waterValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.waterValue.ForeColor = System.Drawing.Color.Black;
-            this.waterValue.Location = new System.Drawing.Point(0, 33);
+            this.waterValue.Location = new System.Drawing.Point(0, 41);
+            this.waterValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.waterValue.Name = "waterValue";
-            this.waterValue.Size = new System.Drawing.Size(151, 16);
+            this.waterValue.Size = new System.Drawing.Size(201, 20);
             this.waterValue.TabIndex = 25;
             this.waterValue.Text = "0 г";
             this.waterValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -734,9 +783,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label27.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label27.Size = new System.Drawing.Size(151, 33);
+            this.label27.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label27.Size = new System.Drawing.Size(201, 41);
             this.label27.TabIndex = 24;
             this.label27.Text = "Вода";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -745,9 +795,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel16.Controls.Add(this.waterP);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel16.Location = new System.Drawing.Point(769, 0);
+            this.panel16.Location = new System.Drawing.Point(1026, 0);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(37, 52);
+            this.panel16.Size = new System.Drawing.Size(49, 64);
             this.panel16.TabIndex = 28;
             // 
             // waterP
@@ -756,9 +807,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.waterP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.waterP.ForeColor = System.Drawing.Color.Black;
             this.waterP.Location = new System.Drawing.Point(0, 0);
+            this.waterP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.waterP.Name = "waterP";
-            this.waterP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.waterP.Size = new System.Drawing.Size(37, 52);
+            this.waterP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.waterP.Size = new System.Drawing.Size(49, 64);
             this.waterP.TabIndex = 27;
             this.waterP.Text = "0 %";
             this.waterP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -770,9 +822,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel17.Controls.Add(this.label30);
             this.panel17.Controls.Add(this.panel18);
             this.panel17.Controls.Add(this.panel19);
-            this.panel17.Location = new System.Drawing.Point(7, 490);
+            this.panel17.Location = new System.Drawing.Point(9, 603);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(806, 52);
+            this.panel17.Size = new System.Drawing.Size(1075, 64);
             this.panel17.TabIndex = 30;
             // 
             // cellulosePB
@@ -782,12 +835,13 @@ namespace Mockup.Forms.SecondLevelForms
             this.cellulosePB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cellulosePB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.cellulosePB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cellulosePB.Location = new System.Drawing.Point(151, 16);
+            this.cellulosePB.Location = new System.Drawing.Point(201, 20);
+            this.cellulosePB.Margin = new System.Windows.Forms.Padding(4);
             this.cellulosePB.Name = "cellulosePB";
             this.cellulosePB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.cellulosePB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
             this.cellulosePB.ShadowDecoration.Parent = this.cellulosePB;
-            this.cellulosePB.Size = new System.Drawing.Size(618, 30);
+            this.cellulosePB.Size = new System.Drawing.Size(825, 37);
             this.cellulosePB.TabIndex = 26;
             this.cellulosePB.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -796,9 +850,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.celluloseMin.Dock = System.Windows.Forms.DockStyle.Top;
             this.celluloseMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.celluloseMin.ForeColor = System.Drawing.Color.Gray;
-            this.celluloseMin.Location = new System.Drawing.Point(151, 0);
+            this.celluloseMin.Location = new System.Drawing.Point(201, 0);
+            this.celluloseMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.celluloseMin.Name = "celluloseMin";
-            this.celluloseMin.Size = new System.Drawing.Size(618, 16);
+            this.celluloseMin.Size = new System.Drawing.Size(825, 20);
             this.celluloseMin.TabIndex = 28;
             this.celluloseMin.Text = "мин.: 0";
             this.celluloseMin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -808,9 +863,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label30.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(151, 46);
+            this.label30.Location = new System.Drawing.Point(201, 57);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(618, 6);
+            this.label30.Size = new System.Drawing.Size(825, 7);
             this.label30.TabIndex = 27;
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -820,8 +876,9 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel18.Controls.Add(this.label32);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(151, 52);
+            this.panel18.Size = new System.Drawing.Size(201, 64);
             this.panel18.TabIndex = 0;
             // 
             // celluloseValue
@@ -829,9 +886,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.celluloseValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.celluloseValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.celluloseValue.ForeColor = System.Drawing.Color.Black;
-            this.celluloseValue.Location = new System.Drawing.Point(0, 33);
+            this.celluloseValue.Location = new System.Drawing.Point(0, 41);
+            this.celluloseValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.celluloseValue.Name = "celluloseValue";
-            this.celluloseValue.Size = new System.Drawing.Size(151, 16);
+            this.celluloseValue.Size = new System.Drawing.Size(201, 20);
             this.celluloseValue.TabIndex = 25;
             this.celluloseValue.Text = "0 г";
             this.celluloseValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -842,9 +900,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.label32.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(0, 0);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label32.Size = new System.Drawing.Size(151, 33);
+            this.label32.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label32.Size = new System.Drawing.Size(201, 41);
             this.label32.TabIndex = 24;
             this.label32.Text = "Клетчатка";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -853,9 +912,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel19.Controls.Add(this.celluloseP);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel19.Location = new System.Drawing.Point(769, 0);
+            this.panel19.Location = new System.Drawing.Point(1026, 0);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(37, 52);
+            this.panel19.Size = new System.Drawing.Size(49, 64);
             this.panel19.TabIndex = 28;
             // 
             // celluloseP
@@ -864,9 +924,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.celluloseP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.celluloseP.ForeColor = System.Drawing.Color.Black;
             this.celluloseP.Location = new System.Drawing.Point(0, 0);
+            this.celluloseP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.celluloseP.Name = "celluloseP";
-            this.celluloseP.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.celluloseP.Size = new System.Drawing.Size(37, 52);
+            this.celluloseP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.celluloseP.Size = new System.Drawing.Size(49, 64);
             this.celluloseP.TabIndex = 27;
             this.celluloseP.Text = "0 %";
             this.celluloseP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -880,10 +941,11 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(597, 120);
+            this.guna2Button1.Location = new System.Drawing.Point(796, 148);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(240, 55);
             this.guna2Button1.TabIndex = 31;
             this.guna2Button1.Text = "Выйти";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -892,9 +954,10 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 65);
+            this.panel20.Location = new System.Drawing.Point(0, 80);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(813, 49);
+            this.panel20.Size = new System.Drawing.Size(1084, 60);
             this.panel20.TabIndex = 32;
             // 
             // panel21
@@ -902,9 +965,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel21.Controls.Add(this.alergicL);
             this.panel21.Controls.Add(this.productTItle);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel21.Location = new System.Drawing.Point(0, 21);
+            this.panel21.Location = new System.Drawing.Point(0, 26);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(813, 28);
+            this.panel21.Size = new System.Drawing.Size(1084, 34);
             this.panel21.TabIndex = 3;
             // 
             // alergicL
@@ -913,9 +977,10 @@ namespace Mockup.Forms.SecondLevelForms
             this.alergicL.Dock = System.Windows.Forms.DockStyle.Left;
             this.alergicL.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergicL.ForeColor = System.Drawing.Color.Red;
-            this.alergicL.Location = new System.Drawing.Point(225, 0);
+            this.alergicL.Location = new System.Drawing.Point(286, 0);
+            this.alergicL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alergicL.Name = "alergicL";
-            this.alergicL.Size = new System.Drawing.Size(16, 21);
+            this.alergicL.Size = new System.Drawing.Size(19, 23);
             this.alergicL.TabIndex = 33;
             this.alergicL.Text = "*";
             // 
@@ -924,11 +989,12 @@ namespace Mockup.Forms.SecondLevelForms
             this.trackbar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.trackbar.HoverState.Parent = this.trackbar;
             this.trackbar.LargeChange = 10;
-            this.trackbar.Location = new System.Drawing.Point(239, 132);
+            this.trackbar.Location = new System.Drawing.Point(319, 162);
+            this.trackbar.Margin = new System.Windows.Forms.Padding(4);
             this.trackbar.Maximum = 1000;
             this.trackbar.Minimum = 1;
             this.trackbar.Name = "trackbar";
-            this.trackbar.Size = new System.Drawing.Size(300, 23);
+            this.trackbar.Size = new System.Drawing.Size(400, 28);
             this.trackbar.TabIndex = 33;
             this.trackbar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.trackbar.Value = 1;
@@ -936,9 +1002,9 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             // CaloriesValueDish_ProductInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 554);
+            this.ClientSize = new System.Drawing.Size(1084, 682);
             this.Controls.Add(this.trackbar);
             this.Controls.Add(this.panel20);
             this.Controls.Add(this.guna2Button1);
@@ -953,6 +1019,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CaloriesValueDish_ProductInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CaloriesValueDish_ProductInfo";

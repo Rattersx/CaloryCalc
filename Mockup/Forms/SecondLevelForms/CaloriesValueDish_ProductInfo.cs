@@ -120,5 +120,10 @@ namespace Mockup.Forms.SecondLevelForms
             countTB.Text = trackbar.Value.ToString();
             showprogress(selectedprod);
         }
+
+        private void countTB_TextChanged(object sender, EventArgs e)
+        {
+            showprogress(selectedprod);
+        }
     }
 }

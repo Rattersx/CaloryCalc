@@ -65,7 +65,7 @@ namespace Mockup
                         }
                         Program.parent.progressEnd = true;
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         loadItems();
                     }
@@ -103,7 +103,7 @@ namespace Mockup
                 {
                     selectItem();
                 }
-                catch (Exception ex)
+                catch
                 {
                     // MessageBox.Show(ex.Message);
                 }
@@ -130,7 +130,7 @@ namespace Mockup
 
                 CaloriesPB.Value = ((int)caloriesPerc > 100) ? 100 : (int)caloriesPerc;
                 proteinsTB.Value = ((int)proteinsPerc > 100) ? 100 : (int)proteinsPerc;
-                hydroTB.Value = ((int)fatPerc > 100) ? 100 : (int)fatPerc;
+                fatTB.Value = ((int)fatPerc > 100) ? 100 : (int)fatPerc;
                 hydroTB.Value = ((int)carbPerc > 100) ? 100 : (int)carbPerc;
 
                 caloriesP.Text = Math.Round(caloriesPerc, 2).ToString() + " %";
@@ -210,6 +210,30 @@ namespace Mockup
 
                 form4.ShowDialog();
 
+            }
+        }
+
+        private void weightTB_TextChanged(object sender, EventArgs e)
+        {
+            if(productListBox.SelectedIndex != -1)
+            {
+                try
+                {
+                    selectItem();
+                }
+                catch
+                {
+                    // MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void weightTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // ввод цифры и клавиша BackSpace
+            {
+                e.Handled = true;
             }
         }
     }

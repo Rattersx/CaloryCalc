@@ -83,7 +83,7 @@ namespace Mockup.Forms.SecondLevelForms
                             productListBox.BeginInvoke(new AddItemToPLBDelegate(AddItemToPLB), product);
                         }
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         loadItems();
                     }
@@ -130,7 +130,7 @@ namespace Mockup.Forms.SecondLevelForms
                 {
                     selectItem();
                 }
-                catch (Exception ex)
+                catch 
                 {
                     // MessageBox.Show(ex.Message);
                 }
@@ -167,10 +167,10 @@ namespace Mockup.Forms.SecondLevelForms
                         carbAll = carbAll + DishProducts[i].Carbohydrate;
                     }
 
-                    label1.Text = $"{Math.Round((caloriesAll * (double.Parse(weightTB.Text) / 100)), 2)} Ккал";
-                    label2.Text = $"{Math.Round((proteinsAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
-                    label3.Text = $"{Math.Round((fatAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
-                    label4.Text = $"{Math.Round((carbAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                    label5.Text = $"{Math.Round((caloriesAll * (double.Parse(weightTB.Text) / 100)), 2)} Ккал";
+                    label8.Text = $"{Math.Round((proteinsAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                    label13.Text = $"{Math.Round((fatAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
+                    label18.Text = $"{Math.Round((carbAll * (double.Parse(weightTB.Text) / 100)), 2)} г";
 
                     caloriesPerc2 = (caloriesAll / TOTALCALORIES * 100) * (double.Parse(weightTB.Text) / 100);
                     proteinsPerc2 = (proteinsAll / TOTALPROTEIN * 100) * (double.Parse(weightTB.Text) / 100);
@@ -182,10 +182,10 @@ namespace Mockup.Forms.SecondLevelForms
                     guna2ProgressBar2.Value = ((int)fatPerc2 > 100) ? 100 : (int)fatPerc2;
                     guna2ProgressBar3.Value = ((int)carbPerc2 > 100) ? 100 : (int)carbPerc2;
 
-                    label5.Text = Math.Round(caloriesPerc2, 2).ToString() + " %";
-                    label6.Text = Math.Round(proteinsPerc2, 2).ToString() + " %";
-                    label7.Text = Math.Round(fatPerc2, 2).ToString() + " %";
-                    label8.Text = Math.Round(carbPerc2, 2).ToString() + " %";
+                    label12.Text = Math.Round(caloriesPerc2, 2).ToString() + " %";
+                    label7.Text = Math.Round(proteinsPerc2, 2).ToString() + " %";
+                    label11.Text = Math.Round(fatPerc2, 2).ToString() + " %";
+                    label17.Text = Math.Round(carbPerc2, 2).ToString() + " %";
 
                     if ((dishListBox.SelectedItem as Dish).Description != "")
                         label21.Text = (dishListBox.SelectedItem as Dish).Description;
@@ -296,6 +296,35 @@ namespace Mockup.Forms.SecondLevelForms
         {
             CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme, dishListBox.SelectedItem as Dish);
             form.ShowDialog();
+        }
+
+        private void weightTB_TextChanged_1(object sender, EventArgs e)
+        {
+            if (dishListBox.SelectedItem != null)
+            {
+                try
+                {
+                    selectItem();
+                }
+                catch
+                {
+                    // MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void weightTB_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // ввод цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void trackBar_Scroll_1(object sender, ScrollEventArgs e)
+        {
+            weightTB.Text = trackBar.Value.ToString();
         }
     }
 }

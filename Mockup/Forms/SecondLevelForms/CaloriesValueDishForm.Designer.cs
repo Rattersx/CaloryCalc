@@ -131,7 +131,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.ProductContainer.Controls.Add(this.guna2GroupBox2);
             this.ProductContainer.Dock = System.Windows.Forms.DockStyle.Right;
             this.ProductContainer.Location = new System.Drawing.Point(1241, 0);
-            this.ProductContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductContainer.Margin = new System.Windows.Forms.Padding(4);
             this.ProductContainer.Name = "ProductContainer";
             this.ProductContainer.Size = new System.Drawing.Size(0, 702);
             this.ProductContainer.TabIndex = 37;
@@ -147,7 +147,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2GroupBox2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(0, 702);
@@ -163,7 +163,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.productListBox.FormattingEnabled = true;
             this.productListBox.ItemHeight = 21;
             this.productListBox.Location = new System.Drawing.Point(0, 49);
-            this.productListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productListBox.Margin = new System.Windows.Forms.Padding(4);
             this.productListBox.Name = "productListBox";
             this.productListBox.Size = new System.Drawing.Size(0, 653);
             this.productListBox.TabIndex = 4;
@@ -177,7 +177,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.gramsListBox.FormattingEnabled = true;
             this.gramsListBox.ItemHeight = 21;
             this.gramsListBox.Location = new System.Drawing.Point(-63, 49);
-            this.gramsListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gramsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.gramsListBox.Name = "gramsListBox";
             this.gramsListBox.Size = new System.Drawing.Size(63, 653);
             this.gramsListBox.TabIndex = 5;
@@ -188,7 +188,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(0, 49);
             this.panel4.TabIndex = 3;
@@ -265,7 +265,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2TextBox1.IconLeft = global::Mockup.Properties.Resources.search_64px;
             this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(36, 36);
             this.guna2TextBox1.Location = new System.Drawing.Point(17, 63);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -297,7 +297,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2GroupBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(17, 148);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(348, 485);
@@ -312,7 +312,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.dishListBox.FormattingEnabled = true;
             this.dishListBox.ItemHeight = 21;
             this.dishListBox.Location = new System.Drawing.Point(0, 49);
-            this.dishListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dishListBox.Margin = new System.Windows.Forms.Padding(4);
             this.dishListBox.Name = "dishListBox";
             this.dishListBox.Size = new System.Drawing.Size(348, 436);
             this.dishListBox.TabIndex = 4;
@@ -323,7 +323,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel22.BackColor = System.Drawing.Color.Transparent;
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 0);
-            this.panel22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(348, 49);
             this.panel22.TabIndex = 3;
@@ -352,7 +352,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel1.Controls.Add(this.label27);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(381, 702);
             this.panel1.TabIndex = 33;
@@ -364,7 +364,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel23.Controls.Add(this.panel3);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel23.Location = new System.Drawing.Point(17, 633);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(348, 69);
             this.panel23.TabIndex = 48;
@@ -408,7 +408,7 @@ namespace Mockup.Forms.SecondLevelForms
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(348, 25);
             this.panel3.TabIndex = 42;
@@ -418,7 +418,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(381, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 702);
             this.panel2.TabIndex = 38;
@@ -429,7 +429,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(860, 702);
             this.panel5.TabIndex = 33;
@@ -440,7 +440,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel6.Controls.Add(this.label21);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 576);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(860, 126);
             this.panel6.TabIndex = 0;
@@ -482,7 +482,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel7.Controls.Add(this.label30);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(860, 702);
             this.panel7.TabIndex = 33;
@@ -493,7 +493,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel19.Controls.Add(this.panel21);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 409);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(860, 65);
             this.panel19.TabIndex = 36;
@@ -505,7 +505,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel20.Controls.Add(this.label17);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(133, 0);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(727, 65);
             this.panel20.TabIndex = 16;
@@ -518,7 +518,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2ProgressBar3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.guna2ProgressBar3.Location = new System.Drawing.Point(0, 20);
-            this.guna2ProgressBar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ProgressBar3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ProgressBar3.Name = "guna2ProgressBar3";
             this.guna2ProgressBar3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar3.ProgressColor2 = System.Drawing.Color.RoyalBlue;
@@ -560,7 +560,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel21.Controls.Add(this.label19);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel21.Location = new System.Drawing.Point(0, 0);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(133, 65);
             this.panel21.TabIndex = 0;
@@ -599,7 +599,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel16.Controls.Add(this.panel18);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 344);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(860, 65);
             this.panel16.TabIndex = 35;
@@ -611,7 +611,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel17.Controls.Add(this.label11);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(133, 0);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(727, 65);
             this.panel17.TabIndex = 16;
@@ -624,7 +624,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2ProgressBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.guna2ProgressBar2.Location = new System.Drawing.Point(0, 20);
-            this.guna2ProgressBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ProgressBar2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ProgressBar2.Name = "guna2ProgressBar2";
             this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.RoyalBlue;
@@ -666,7 +666,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel18.Controls.Add(this.label14);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel18.Location = new System.Drawing.Point(0, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(133, 65);
             this.panel18.TabIndex = 0;
@@ -705,7 +705,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 279);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(860, 65);
             this.panel13.TabIndex = 34;
@@ -717,7 +717,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel14.Controls.Add(this.label7);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(133, 0);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(727, 65);
             this.panel14.TabIndex = 16;
@@ -730,7 +730,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.guna2ProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.guna2ProgressBar1.Location = new System.Drawing.Point(0, 20);
-            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.RoyalBlue;
@@ -772,7 +772,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel15.Controls.Add(this.label9);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(133, 65);
             this.panel15.TabIndex = 0;
@@ -811,7 +811,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 214);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(860, 65);
             this.panel10.TabIndex = 33;
@@ -823,7 +823,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel12.Controls.Add(this.label12);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(133, 0);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(727, 65);
             this.panel12.TabIndex = 16;
@@ -838,7 +838,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.CaloriesPB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.CaloriesPB.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.CaloriesPB.Location = new System.Drawing.Point(0, 20);
-            this.CaloriesPB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CaloriesPB.Margin = new System.Windows.Forms.Padding(4);
             this.CaloriesPB.Name = "CaloriesPB";
             this.CaloriesPB.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.CaloriesPB.ProgressColor2 = System.Drawing.Color.RoyalBlue;
@@ -880,7 +880,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel11.Controls.Add(this.label4);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(133, 65);
             this.panel11.TabIndex = 0;
@@ -923,7 +923,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel8.Controls.Add(this.label32);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 136);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(860, 78);
             this.panel8.TabIndex = 31;
@@ -934,7 +934,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.trackBar.HoverState.Parent = this.trackBar;
             this.trackBar.LargeChange = 10;
             this.trackBar.Location = new System.Drawing.Point(359, 6);
-            this.trackBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.trackBar.Margin = new System.Windows.Forms.Padding(4);
             this.trackBar.Maximum = 1000;
             this.trackBar.Minimum = 1;
             this.trackBar.Name = "trackBar";
@@ -1038,7 +1038,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.panel9.Controls.Add(this.addButton);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 90);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(860, 46);
             this.panel9.TabIndex = 32;
@@ -1082,7 +1082,7 @@ namespace Mockup.Forms.SecondLevelForms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ProductContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CaloriesValueDishForm";
             this.Text = "CaloriesValueDishForm";
             this.ProductContainer.ResumeLayout(false);

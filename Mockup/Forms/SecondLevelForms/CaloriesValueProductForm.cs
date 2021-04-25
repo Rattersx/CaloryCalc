@@ -17,7 +17,9 @@ namespace Mockup
     {
         public bool isProduct = true;
         bool dopinfo = false; // show more info about dish components
-        List<Product> items = new List<Product>(); // list Products        
+        List<Product> items = new List<Product>(); // list Products
+        int index = 0;
+
 
         const double TOTALCALORIES = 2000;
         const double TOTALPROTEIN = 160;
@@ -50,9 +52,9 @@ namespace Mockup
             productListBox.Items.Add(product);
         }
 
-        private void loadItems()
+        private async void loadItems()
         {
-            Task.Run(() =>
+            await Task.Run(() =>
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
@@ -71,6 +73,8 @@ namespace Mockup
                     }
                 }
             });
+            if (productListBox.Items.Count > 0)
+                productListBox.SelectedIndex = index;
         }
         private void ClearProgressBar()
         {
@@ -188,6 +192,7 @@ namespace Mockup
                 using (ApplicationContext db = new ApplicationContext())
                 {
                     Product prodfordel = productListBox.SelectedItem as Product;
+                    db.Products.Attach(prodfordel);
                     db.Products.Remove(prodfordel);
                     db.SaveChanges();
                     var itemslb = db.Products.ToList();
@@ -206,17 +211,24 @@ namespace Mockup
         {
             if (productListBox.SelectedIndex > -1)
             {
+                index = productListBox.SelectedIndex;
                 CaloriesRedactorProductAdd form4 = new CaloriesRedactorProductAdd(theme, productListBox.SelectedItem as Product);
 
                 form4.ShowDialog();
 
+
+
             }
+
+            productListBox.Items.Clear();
+            loadItems();
         }
 
         private void weightTB_TextChanged(object sender, EventArgs e)
         {
-            if(productListBox.SelectedIndex != -1)
+            if (productListBox.SelectedIndex != -1)
             {
+
                 try
                 {
                     selectItem();

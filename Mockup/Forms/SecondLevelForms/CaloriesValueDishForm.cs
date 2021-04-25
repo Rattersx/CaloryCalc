@@ -12,7 +12,8 @@ namespace Mockup.Forms.SecondLevelForms
     public partial class CaloriesValueDishForm : Form
     {
         bool dopinfo = false; // show more info about dish components
-        List<Dish> items = new List<Dish>(); // list Products        
+        List<Dish> items = new List<Dish>(); // list Products
+        int index = 0;
 
         const double TOTALCALORIES = 2000;
         const double TOTALPROTEIN = 160;
@@ -20,10 +21,10 @@ namespace Mockup.Forms.SecondLevelForms
         const double TOTALCARBOHYDRATES = 320;
 
 
-        double caloriesPerc;
-        double fatPerc;
-        double carbPerc;
-        double proteinsPerc;
+        //double caloriesPerc;
+        //double fatPerc;
+        //double carbPerc;
+        //double proteinsPerc;
 
         bool productListExpand = false;
         Themes.ThemeInfo theme = null;
@@ -69,9 +70,9 @@ namespace Mockup.Forms.SecondLevelForms
             dishListBox.Items.Add(product);
         }
 
-        private void loadItems()
+        private async void loadItems()
         {
-            Task.Run(() =>
+            await Task.Run(() =>
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
@@ -83,13 +84,15 @@ namespace Mockup.Forms.SecondLevelForms
                             productListBox.BeginInvoke(new AddItemToPLBDelegate(AddItemToPLB), product);
                         }
                     }
-                    catch 
+                    catch
                     {
                         loadItems();
                     }
                 }
                 Program.parent.progressEnd = true;
             });
+            if (dishListBox.Items.Count > 0)
+                dishListBox.SelectedIndex = index;
         }
 
         private void ExpandPanel()
@@ -130,11 +133,11 @@ namespace Mockup.Forms.SecondLevelForms
                 {
                     selectItem();
                 }
-                catch 
+                catch
                 {
                     // MessageBox.Show(ex.Message);
                 }
-            }            
+            }
         }
         private void selectItem() // listbox1 selected item changed
         {
@@ -147,9 +150,9 @@ namespace Mockup.Forms.SecondLevelForms
                 {
                     double caloriesPerc2 = 0; double proteinsPerc2 = 0; double fatPerc2 = 0; double carbPerc2 = 0;
                     double caloriesAll = 0; double proteinsAll = 0; double fatAll = 0; double carbAll = 0;
-                   //
+                    //
                     int selectedDishId = (dishListBox.SelectedItem as Dish).Id;
-                    var selectedDishProduct = db.DishItems.Include(t=>t.Product).Where(d => d.DishId == selectedDishId);
+                    var selectedDishProduct = db.DishItems.Include(t => t.Product).Where(d => d.DishId == selectedDishId);
                     var DishProducts = selectedDishProduct.Select(i => i.Product).ToList();
                     var DishProducts2 = selectedDishProduct.Select(i => i.MeasurementUnit).ToList();
                     productListBox.DisplayMember = "Name";
@@ -241,7 +244,7 @@ namespace Mockup.Forms.SecondLevelForms
                 if (fc != null)
                     fc.Close();
                 gramsListBox.SelectedIndex = productListBox.SelectedIndex;
-                CaloriesValueDish_ProductInfo form2 = new  CaloriesValueDish_ProductInfo(theme, productListBox.SelectedItem as Product);
+                CaloriesValueDish_ProductInfo form2 = new CaloriesValueDish_ProductInfo(theme, productListBox.SelectedItem as Product);
                 form2.Text = $"Блюдо : {(dishListBox.SelectedItem as Dish).Name}";
                 form2.Show();
             }
@@ -294,8 +297,15 @@ namespace Mockup.Forms.SecondLevelForms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme, dishListBox.SelectedItem as Dish);
-            form.ShowDialog();
+            if (dishListBox.SelectedIndex > -1)
+            {
+                index = dishListBox.SelectedIndex;
+                CaloriesRedactorDish_Edit form = new CaloriesRedactorDish_Edit(theme, dishListBox.SelectedItem as Dish);
+                form.ShowDialog();
+            }
+
+            dishListBox.Items.Clear();
+            loadItems();
         }
 
         private void weightTB_TextChanged_1(object sender, EventArgs e)
@@ -326,5 +336,7 @@ namespace Mockup.Forms.SecondLevelForms
         {
             weightTB.Text = trackBar.Value.ToString();
         }
+
+
     }
 }

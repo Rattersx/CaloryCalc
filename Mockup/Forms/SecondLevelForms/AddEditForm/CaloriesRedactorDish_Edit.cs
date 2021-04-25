@@ -25,7 +25,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             timer1.Start();
             bunifuCustomLabel1.Text = "Добавить";
             Commands.ApplyTheme(this, theme);
-            if(theme.black)
+            if (theme.black)
             {
                 guna2ImageButton1.Image = blackList.Images[0];
                 guna2ImageButton2.Image = blackList.Images[1];
@@ -70,7 +70,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             dishInfo(selectedDish);
             listBox2.Items.Clear();
             LoadThisProducts(selectedDish);
-            LoadAllProducts();
+            //LoadAllProducts();
             isAdd = false;
         }
         void dishInfo(Dish dish)
@@ -85,6 +85,8 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             }
         }
         private delegate void AddToListDelegate(object product);
+        private delegate void AddToListValueDelegate(double value);
+        private delegate void AddToListMeasDelegate(string type);
         private void AddToAllProductList(object _product)
         {
             Product product = _product as Product;
@@ -95,6 +97,16 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
             Product product = _product as Product;
             listBox2.Items.Add(product);
         }
+        private void AddProductValueList(double value)
+        {
+            listBox3.Items.Add(value);
+        }
+        private void AddProductMeasList(string type)
+        {
+            listBox4.Items.Add(type);
+        }
+
+
         private void LoadThisProducts(object _dish)
         {
             Task.Run(() =>
@@ -104,11 +116,29 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
                     Dish dish = _dish as Dish;
                     var selectedDishProduct = db.DishItems.Where(d => d.DishId == dish.Id);
                     var DishProducts = selectedDishProduct.Select(i => i.Product).ToList<Product>();
+                    var DishProductValue = selectedDishProduct.Select(i => i.Value).ToList<double>();
+                    var DishProductMeas = selectedDishProduct.Select(i => i.MeasurementUnitId).ToList<int>();
+                    List<string> DishMeasurements = new List<string>();
+
+                    //ToList().Select(n => n.to)
+                    foreach (var meas in DishProductMeas)
+                    {
+                        DishMeasurements.AddRange(db.MeasurementUnits.Where(i => i.Id == meas).Select(n => n.Title.ToString()).ToList());
+
+                    }
+                    DishMeasurements.Reverse();
+
+                    //DishMeasurements.Add(meas => db.MeasurementUnits.Where(i => i.Id = meas).Select(n => n.Title).);
+                    //DishMeasurements.ForEach(item => item.Add(meas=> db.MeasurementUnits.Where(i => i.Id = meas).Select(n => n.Title));
 
                     foreach (Product product in DishProducts)
                     {
                         listBox2.BeginInvoke(new AddToListDelegate(AddToThisProductList), product);
                     }
+
+                    DishProductValue.ForEach(value => listBox3.BeginInvoke(new AddToListValueDelegate(AddProductValueList), value));
+
+                    DishMeasurements.ForEach(meas => listBox4.BeginInvoke(new AddToListMeasDelegate(AddProductMeasList), meas));
                 }
             });
         }
@@ -143,7 +173,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex > -1 && (guna2ComboBox1.Text == "Грамм" || guna2ComboBox1.Text == "Мл") && (int.Parse(guna2TextBox2.Text) > 0 && int.Parse(guna2TextBox2.Text) < 5000))
+            if (guna2TextBox2.Text != "" && listBox1.SelectedIndex > -1 && (guna2ComboBox1.Text == "Грамм" || guna2ComboBox1.Text == "Мл") && (int.Parse(guna2TextBox2.Text) > 0 && int.Parse(guna2TextBox2.Text) < 5000))
             {
                 try
                 {
@@ -156,7 +186,7 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
                     MessageBox.Show(ex.Message);
                 }
             }
-            else 
+            else
                 MessageBox.Show("Заполните поля, количество и тип измерения и выберите продукт.");
         }
 
@@ -285,6 +315,15 @@ namespace Mockup.Forms.SecondLevelForms.AddEditForm
         {
             if (titleTB.Text != "")
                 AcceptButton.Enabled = true;
+        }
+
+        private void guna2TextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // ввод цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
         }
     }
 }
